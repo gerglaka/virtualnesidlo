@@ -26,13 +26,13 @@
 
                 <!-- Navigation links -->
                 <div class="nav-links" id="navLinks">
-                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Účtovníctvo</a>
-                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Mzdy</a>
-                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Kúpa spoločnosti</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.accounting">Účtovníctvo</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.payroll">Mzdy</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.buyCompany">Kúpa spoločnosti</a>
                     <span class="separator">•</span>
-                    <a href="contact.html" class="nav-link">Kontakt</a>
-                    <a href="services.html" class="cta-button">Naše Balíky</a>
-                    <a href="index-hu.html" class="flag-link" title="Magyar verzió">
+                    <a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a>
+                    <a href="services.html" class="cta-button" data-i18n="nav.packages">Naše Balíky</a>
+                    <a href="javascript:void(0)" class="flag-link" data-i18n-title="nav.flagTitle" title="Magyar verzió">
                         <img src="images/flag-hu.png" alt="Hungarian flag" class="flag-icon">
                     </a>
                 </div>
@@ -44,8 +44,8 @@
     <section class="services-hero">
         <div class="container">
             <div class="services-hero-content">
-                <span class="services-hero-label">Služby</span>
-                <h1 class="services-hero-title">Flexibilné možnosti platby pre každého.</h1>
+                <span class="services-hero-label" data-i18n="servicesPage.heroLabel">Služby</span>
+                <h1 class="services-hero-title" data-i18n="servicesPage.heroTitle">Flexibilné možnosti platby pre každého.</h1>
             </div>
         </div>
     </section>
@@ -53,17 +53,17 @@
     <!-- Pricing Cards Section -->
     <section class="pricing-section">
         <div class="container">
-            <h2 class="pricing-title">Jednoduché a rýchle riešenia.</h2>
-            <p class="pricing-subtitle">Postaráme sa o doručovanie pošty a komunikáciu s úradmi, aby ste sa mohli sústrediť na svoje podnikanie.</p>
-            
+            <h2 class="pricing-title" data-i18n="servicesPage.pricingTitle">Jednoduché a rýchle riešenia.</h2>
+            <p class="pricing-subtitle" data-i18n="servicesPage.pricingSubtitle">Postaráme sa o doručovanie pošty a komunikáciu s úradmi, aby ste sa mohli sústrediť na svoje podnikanie.</p>
+
             <!-- Billing Toggle -->
             <div class="billing-toggle">
-                <span class="billing-label monthly-label active">Mesačne</span>
+                <span class="billing-label monthly-label active" data-i18n="servicesPage.monthly">Mesačne</span>
                 <div class="toggle-switch" id="billingToggle">
                     <div class="toggle-slider"></div>
                 </div>
-                <span class="billing-label yearly-label">Ročne</span>
-                <span class="discount-badge" id="discountBadge">-10% zľava</span>
+                <span class="billing-label yearly-label" data-i18n="servicesPage.yearly">Ročne</span>
+                <span class="discount-badge" id="discountBadge" data-i18n="servicesPage.discount">-10% zľava</span>
             </div>
 
             <!-- Pricing Cards -->
@@ -71,56 +71,56 @@
                 <!-- Bratislava Card -->
                 <div class="pricing-card">
                     <div class="card-header">
-                        <h3 class="location-name">Bratislava</h3>
+                        <h3 class="location-name" data-i18n="servicesPage.locations.bratislava">Bratislava</h3>
                         <div class="price" id="price-bratislava">25€</div>
-                        <div class="price-period" id="period-bratislava">+ DPH / mesiac</div>
+                        <div class="price-period" id="period-bratislava" data-i18n="servicesPage.periodMonthly">+ DPH / mesiac</div>
                     </div>
                     <ul class="services-list">
-                        <li>Preberanie zásielok ročne</li>
-                        <li>Súhlas so zriadením sídla s.r.o. / živnosti</li>
-                        <li>E-mailové notifikácie</li>
-                        <li>Skenovanie obsahu zásielok</li>
-                        <li>Preberanie doporučenej pošty</li>
-                        <li>1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                        <li data-i18n="servicesPage.servicesList.item1">Preberanie zásielok ročne</li>
+                        <li data-i18n="servicesPage.servicesList.item2">Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li data-i18n="servicesPage.servicesList.item3">E-mailové notifikácie</li>
+                        <li data-i18n="servicesPage.servicesList.item4">Skenovanie obsahu zásielok</li>
+                        <li data-i18n="servicesPage.servicesList.item5">Preberanie doporučenej pošty</li>
+                        <li data-i18n="servicesPage.servicesList.item6">1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
                     </ul>
-                    <a href="contact.html" class="pricing-cta-button">Mám záujem</a>
+                    <a href="contact.html" class="pricing-cta-button" data-i18n="servicesPage.interested">Mám záujem</a>
                 </div>
 
                 <!-- Komárno Card (Featured) -->
                 <div class="pricing-card featured">
-                    <div class="featured-badge">Top voľba</div>
+                    <div class="featured-badge" data-i18n="servicesPage.topChoice">Top voľba</div>
                     <div class="card-header">
-                        <h3 class="location-name">Komárno</h3>
+                        <h3 class="location-name" data-i18n="servicesPage.locations.komarno">Komárno</h3>
                         <div class="price" id="price-komarno">25€</div>
-                        <div class="price-period" id="period-komarno">+ DPH / mesiac</div>
+                        <div class="price-period" id="period-komarno" data-i18n="servicesPage.periodMonthly">+ DPH / mesiac</div>
                     </div>
                     <ul class="services-list">
-                        <li>Preberanie zásielok ročne</li>
-                        <li>Súhlas so zriadením sídla s.r.o. / živnosti</li>
-                        <li>E-mailové notifikácie</li>
-                        <li>Skenovanie obsahu zásielok</li>
-                        <li>Preberanie doporučenej pošty</li>
-                        <li>1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                        <li data-i18n="servicesPage.servicesList.item1">Preberanie zásielok ročne</li>
+                        <li data-i18n="servicesPage.servicesList.item2">Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li data-i18n="servicesPage.servicesList.item3">E-mailové notifikácie</li>
+                        <li data-i18n="servicesPage.servicesList.item4">Skenovanie obsahu zásielok</li>
+                        <li data-i18n="servicesPage.servicesList.item5">Preberanie doporučenej pošty</li>
+                        <li data-i18n="servicesPage.servicesList.item6">1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
                     </ul>
-                    <a href="contact.html" class="pricing-cta-button">Mám záujem</a>
+                    <a href="contact.html" class="pricing-cta-button" data-i18n="servicesPage.interested">Mám záujem</a>
                 </div>
 
                 <!-- Rimavská Sobota Card -->
                 <div class="pricing-card">
                     <div class="card-header">
-                        <h3 class="location-name">Rimavská Sobota</h3>
+                        <h3 class="location-name" data-i18n="servicesPage.locations.rimavska">Rimavská Sobota</h3>
                         <div class="price" id="price-rimavska">25€</div>
-                        <div class="price-period" id="period-rimavska">+ DPH / mesiac</div>
+                        <div class="price-period" id="period-rimavska" data-i18n="servicesPage.periodMonthly">+ DPH / mesiac</div>
                     </div>
                     <ul class="services-list">
-                        <li>Preberanie zásielok ročne</li>
-                        <li>Súhlas so zriadením sídla s.r.o. / živnosti</li>
-                        <li>E-mailové notifikácie</li>
-                        <li>Skenovanie obsahu zásielok</li>
-                        <li>Preberanie doporučenej pošty</li>
-                        <li>1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                        <li data-i18n="servicesPage.servicesList.item1">Preberanie zásielok ročne</li>
+                        <li data-i18n="servicesPage.servicesList.item2">Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li data-i18n="servicesPage.servicesList.item3">E-mailové notifikácie</li>
+                        <li data-i18n="servicesPage.servicesList.item4">Skenovanie obsahu zásielok</li>
+                        <li data-i18n="servicesPage.servicesList.item5">Preberanie doporučenej pošty</li>
+                        <li data-i18n="servicesPage.servicesList.item6">1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
                     </ul>
-                    <a href="contact.html" class="pricing-cta-button">Mám záujem</a>
+                    <a href="contact.html" class="pricing-cta-button" data-i18n="servicesPage.interested">Mám záujem</a>
                 </div>
             </div>
         </div>
@@ -134,32 +134,32 @@
                     <div class="feature-icon">
                         <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
                     </div>
-                    <h3 class="feature-title">Rýchle zriadenie</h3>
-                    <p class="feature-description">Váš súhlas so zriadením sídla pripravíme do 24 hodín od objednávky.</p>
+                    <h3 class="feature-title" data-i18n="servicesPage.features.title1">Rýchle zriadenie</h3>
+                    <p class="feature-description" data-i18n="servicesPage.features.desc1">Váš súhlas so zriadením sídla pripravíme do 24 hodín od objednávky.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
                     </div>
-                    <h3 class="feature-title">Profesionálna adresa</h3>
-                    <p class="feature-description">Získajte prestížnu adresu v centre mesta pre vašu firmu.</p>
+                    <h3 class="feature-title" data-i18n="servicesPage.features.title2">Profesionálna adresa</h3>
+                    <p class="feature-description" data-i18n="servicesPage.features.desc2">Získajte prestížnu adresu v centre mesta pre vašu firmu.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
                     </div>
-                    <h3 class="feature-title">Správa pošty</h3>
-                    <p class="feature-description">Kompletná starostlivosť o vašu poštu vrátane skenovania a preposielania.</p>
+                    <h3 class="feature-title" data-i18n="servicesPage.features.title3">Správa pošty</h3>
+                    <p class="feature-description" data-i18n="servicesPage.features.desc3">Kompletná starostlivosť o vašu poštu vrátane skenovania a preposielania.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
                     </div>
-                    <h3 class="feature-title">Bez skrytých poplatkov</h3>
-                    <p class="feature-description">Transparentné ceny bez ďalších poplatkov alebo nepríjemných prekvapení.</p>
+                    <h3 class="feature-title" data-i18n="servicesPage.features.title4">Bez skrytých poplatkov</h3>
+                    <p class="feature-description" data-i18n="servicesPage.features.desc4">Transparentné ceny bez ďalších poplatkov alebo nepríjemných prekvapení.</p>
                 </div>
             </div>
         </div>
@@ -168,56 +168,56 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="faq-title">Často kladené otázky</h2>
-            
+            <h2 class="faq-title" data-i18n="servicesPage.faq.title">Často kladené otázky</h2>
+
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Ako dlho trvá zriadenie virtuálneho sídla?</h3>
+                        <h3 data-i18n="servicesPage.faq.q1">Ako dlho trvá zriadenie virtuálneho sídla?</h3>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Súhlas so zriadením sídla pripravíme do 24 hodín od objednávky a zaplatenia. Dokument obdržíte elektronicky a môžete ho ihneď použiť pre registráciu firmy.</p>
+                        <p data-i18n="servicesPage.faq.a1">Súhlas so zriadením sídla pripravíme do 24 hodín od objednávky a zaplatenia. Dokument obdržíte elektronicky a môžete ho ihneď použiť pre registráciu firmy.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Môžem používať virtuálne sídlo pre rôzne typy firiem?</h3>
+                        <h3 data-i18n="servicesPage.faq.q2">Môžem používať virtuálne sídlo pre rôzne typy firiem?</h3>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Áno, naše virtuálne sídlo je vhodné pre s.r.o., živnosti, občianske združenia aj iné právne formy podnikania. Služba je v súlade so slovenským právom.</p>
+                        <p data-i18n="servicesPage.faq.a2">Áno, naše virtuálne sídlo je vhodné pre s.r.o., živnosti, občianske združenia aj iné právne formy podnikania. Služba je v súlade so slovenským právom.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Čo zahŕňa správa pošty?</h3>
+                        <h3 data-i18n="servicesPage.faq.q3">Čo zahŕňa správa pošty?</h3>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Preberáme všetku poštu na vašu adresu, skenujeme dôležité dokumenty, posielame emailové notifikácie a 1x mesačne vám preposielame poštu na vami zvolenú adresu.</p>
+                        <p data-i18n="servicesPage.faq.a3">Preberáme všetku poštu na vašu adresu, skenujeme dôležité dokumenty, posielame emailové notifikácie a 1x mesačne vám preposielame poštu na vami zvolenú adresu.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Sú v cene zahrnuté všetky služby?</h3>
+                        <h3 data-i18n="servicesPage.faq.q4">Sú v cene zahrnuté všetky služby?</h3>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Áno, cena 25€ + DPH mesačne zahŕňa všetky uvedené služby bez ďalších poplatkov. Neúčtujeme žiadne skryté poplatky alebo dodatočné náklady.</p>
+                        <p data-i18n="servicesPage.faq.a4">Áno, cena 25€ + DPH mesačne zahŕňa všetky uvedené služby bez ďalších poplatkov. Neúčtujeme žiadne skryté poplatky alebo dodatočné náklady.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h3>Je možné službu kedykoľvek ukončiť?</h3>
+                        <h3 data-i18n="servicesPage.faq.q5">Je možné službu kedykoľvek ukončiť?</h3>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Službu môžete ukončiť kedykoľvek s jednomesačnou výpovednou lehotou. Pri ročnom balíčku je výpovedná lehota 3 mesiace.</p>
+                        <p data-i18n="servicesPage.faq.a5">Službu môžete ukončiť kedykoľvek s jednomesačnou výpovednou lehotou. Pri ročnom balíčku je výpovedná lehota 3 mesiace.</p>
                     </div>
                 </div>
             </div>
@@ -233,40 +233,40 @@
                         <div class="logo">V</div>
                         <span class="footer-company-name">Virtuálne sídlo</span>
                     </div>
-                    <p class="footer-description">Profesionálne virtuálne sídlo pre vašu firmu</p>
+                    <p class="footer-description" data-i18n="footer.description">Profesionálne virtuálne sídlo pre vašu firmu</p>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h3 class="footer-title">Kontakt</h3>
+                    <h3 class="footer-title" data-i18n="footer.contactTitle">Kontakt</h3>
                     <div class="footer-contact">
                         <p>📞 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a></p>
                         <p>📧 <a href="mailto:yxyxyxy@yxxyxyyx.sk">yxyxyxy@yxxyxyyx.sk</a></p>
                         <p>📍 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h3 class="footer-title">Stránky</h3>
+                    <h3 class="footer-title" data-i18n="footer.pagesTitle">Stránky</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Domov</a></li>
-                        <li><a href="contact.html">Kontakt</a></li>
-                        <li><a href="services.html">Služby</a></li>
+                        <li><a href="index.html" data-i18n="footer.home">Domov</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Kontakt</a></li>
+                        <li><a href="services.html" data-i18n="footer.services">Služby</a></li>
                         <li><a href="https://mastersoffice.sk/sk/" target="_blank">Masters Office</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h3 class="footer-title">Právne</h3>
+                    <h3 class="footer-title" data-i18n="footer.legalTitle">Právne</h3>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="showCookiePolicy()">Cookies</a></li>
-                        <li><a href="#" onclick="showPrivacyPolicy()">Ochrana údajov</a></li>
-                        <li><a href="#" onclick="showTerms()">Obchodné podmienky</a></li>
+                        <li><a href="#" onclick="showCookiePolicy()" data-i18n="footer.cookies">Cookies</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()" data-i18n="footer.privacy">Ochrana údajov</a></li>
+                        <li><a href="#" onclick="showTerms()" data-i18n="footer.terms">Obchodné podmienky</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
             </div>
         </div>
     </footer>
@@ -276,6 +276,7 @@
         ↑
     </button>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

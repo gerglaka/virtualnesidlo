@@ -147,45 +147,42 @@ function initializeContactForm() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
-            
-            // Detect language
-            const isHungarian = document.documentElement.lang === 'hu';
-            
+
             // Simple validation
             if (!data.name || !data.email || !data.message) {
                 showAlert(
-                    isHungarian ? 'Kérjük, töltse ki az összes kötelező mezőt *' : 'Prosím vyplňte všetky povinné polia označené *', 
+                    window.I18n ? window.I18n.t('alerts.fillRequired') : 'Prosím vyplňte všetky povinné polia označené *',
                     'error'
                 );
                 return;
             }
-        
+
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 showAlert(
-                    isHungarian ? 'Kérjük, adjon meg érvényes email címet' : 'Prosím zadajte platnú emailovú adresu', 
+                    window.I18n ? window.I18n.t('alerts.invalidEmail') : 'Prosím zadajte platnú emailovú adresu',
                     'error'
                 );
                 return;
             }
-            
+
             // Show success message
             showAlert(
-                isHungarian ? 'Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.' : 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.', 
+                window.I18n ? window.I18n.t('alerts.thankYou') : 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.',
                 'success'
             );
-            
+
             // Reset form
             this.reset();
             if (companyFields) {
                 companyFields.classList.remove('show');
             }
-            
+
             console.log('Form data:', data); // For debugging
         });
     }
@@ -257,15 +254,15 @@ function showAlert(message, type = 'info') {
 
 // Footer legal links functionality
 function showCookiePolicy() {
-    showAlert('Informácie o cookies budú dostupné čoskoro.', 'info');
+    showAlert(window.I18n ? window.I18n.t('alerts.cookieInfo') : 'Informácie o cookies budú dostupné čoskoro.', 'info');
 }
 
 function showPrivacyPolicy() {
-    showAlert('Zásady ochrany údajov budú dostupné čoskoro.', 'info');
+    showAlert(window.I18n ? window.I18n.t('alerts.privacyInfo') : 'Zásady ochrany údajov budú dostupné čoskoro.', 'info');
 }
 
 function showTerms() {
-    showAlert('Obchodné podmienky budú dostupné čoskoro.', 'info');
+    showAlert(window.I18n ? window.I18n.t('alerts.termsInfo') : 'Obchodné podmienky budú dostupné čoskoro.', 'info');
 }
 
 // Mobile menu functionality
@@ -455,40 +452,41 @@ function initializeServicesBillingToggle() {
 
     toggle.addEventListener('click', function() {
         isYearly = !isYearly;
-        
-        // Detect language
-        const isHungarian = document.documentElement.lang === 'hu';
-        
+
         if (isYearly) {
             toggle.classList.add('active');
             if (discountBadge) discountBadge.classList.add('show');
             if (monthlyLabel) monthlyLabel.classList.remove('active');
             if (yearlyLabel) yearlyLabel.classList.add('active');
-            
+
             // Update prices (25€ * 12 * 0.9 = 270€)
             Object.values(prices).forEach(price => {
                 if (price) price.textContent = '270€';
             });
-            
-            // Update periods
+
+            // Update periods using i18n
             Object.values(periods).forEach(period => {
-                if (period) period.textContent = isHungarian ? '+ ÁFA / év' : '+ DPH / rok';
+                if (period) {
+                    period.textContent = window.I18n ? window.I18n.t('servicesPage.periodYearly') : '+ DPH / rok';
+                }
             });
-            
+
         } else {
             toggle.classList.remove('active');
             if (discountBadge) discountBadge.classList.remove('show');
             if (monthlyLabel) monthlyLabel.classList.add('active');
             if (yearlyLabel) yearlyLabel.classList.remove('active');
-            
+
             // Update prices back to monthly
             Object.values(prices).forEach(price => {
                 if (price) price.textContent = '25€';
             });
-            
-            // Update periods back to monthly
+
+            // Update periods back to monthly using i18n
             Object.values(periods).forEach(period => {
-                if (period) period.textContent = isHungarian ? '+ ÁFA / hónap' : '+ DPH / mesiac';
+                if (period) {
+                    period.textContent = window.I18n ? window.I18n.t('servicesPage.periodMonthly') : '+ DPH / mesiac';
+                }
             });
         }
     });
