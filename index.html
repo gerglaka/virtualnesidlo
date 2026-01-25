@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtuálne sídlo - Najlepšie virtuálne sídlo na Slovensku</title>
+    <meta name="description" content="Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">V</div>
+                <h1 class="company-name"><a href="index.html" style="color: white; text-decoration: none;">Virtuálne sídlo</a></h1>
+            </div>
+
+            <nav class="nav-section">
+                <!-- Mobile hamburger menu -->
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Navigation links -->
+                <div class="nav-links" id="navLinks">
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Účtovníctvo</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Mzdy</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Kúpa spoločnosti</a>
+                    <span class="separator">•</span>
+                    <a href="contact.html" class="nav-link">Kontakt</a>
+                    <a href="services.html" class="cta-button">Naše Balíky</a>
+                    <a href="index-hu.html" class="flag-link" title="Magyar verzió">
+                        <img src="images/flag-hu.png" alt="Hungarian flag" class="flag-icon">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Najlepšie virtuálne sídlo na Slovensku</h1>
+                <p class="hero-subtitle">Už od 25€+dph mesačne, bez ďalších poplatkov</p>
+                <a href="services.html" class="hero-button">Naše balíky</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">Služba virtuálnej centrály jednoducho a spoľahlivo:</h2>
+            <p class="section-subtitle">Osloboďte sa od administratívnej záťaže a zabezpečte svojej firme profesionálne sídlo za najlepších podmienok.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3 class="benefit-title">Voľné ruky</h3>
+                    <p class="benefit-description">Nechajte všetko na nás. Radi za Vás vyriešime všetky potrebné procesy.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚙️</div>
+                    <h3 class="benefit-title">Služby</h3>
+                    <p class="benefit-description">Komplexné portfólio služieb Vám poskytne skutočný komfort pri správe Vašej firmy.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3 class="benefit-title">Návratnosť</h3>
+                    <p class="benefit-description">Investícia do virtuálnej adresy sa Vám vráti v podobe času, ktorý ušetríte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Ako funguje virtuálne sídlo s.r.o.?</h2>
+            <p class="section-description">Virtuálne sídlo je mimoriadne užitočná služba pre podniky a živnostníkov, ktorí potrebujú registrovať svoje sídlo firmy bez nutnosti fyzického prenájmu kancelárie. Ak spoločnosť nemôže získať notárom overený súhlas od vlastníka nehnuteľnosti, alebo sa rozhodne pre iné mesto v ktorom práve pôsobí, ideálnym riešením je využiť virtuálne sídlo.</p>
+            <a href="contact.html" class="contact-link">Kontakt</a>
+        </div>
+    </section>
+
+    <!-- Office Gallery Section -->
+    <section class="office-gallery">
+        <div class="container">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="images/office1.jpg" alt="Naša kancelária 1">
+                </div>
+                <div class="slide">
+                    <img src="images/office2.jpg" alt="Naša kancelária 2">
+                </div>
+                <div class="slide">
+                    <img src="images/office3.jpg" alt="Naša kancelária 3">
+                </div>
+                
+                <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+                
+                <div class="slide-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Benefits Section -->
+    <section class="additional-benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <h2 class="benefits-title">Vaše výhody s našou službou</h2>
+                <p class="benefits-text">Medzi ďalšie výhody patrí fakt, že nehnuteľnosť, v ktorej sa sídlo nachádza je v našom vlastníctve. Pri zakúpení tejto služby ďalej získate online evidenciu a správu pošty, skenovanie, preberanie a úschovu zásielok, emailovú notifikáciu o prijatej pošte a 1x mesačne preposielanie zásielok na vami zvolenú adresu. Získajte prémiovú adresu pre vašu firmu, dôveryhodnosť pred obchodnými partnermi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="why-choose-row reverse">
+                <div class="why-choose-content">
+                    <h2 class="why-choose-title">Prečo si vybrať virtuálne sídlo pre vašu firmu?</h2>
+                    <p class="why-choose-subtitle">Rýchle, jednoduché a výhodné riešenie pre podnikateľov.</p>
+                    <p class="why-choose-description">Naša služba virtuálneho sídla vám poskytne všetko potrebné a za poplatok vám obratom zašleme oficiálny súhlas na zriadenie sídla, ktorý je nevyhnutný na zápis do Obchodného registra. Okrem toho sa postaráme o všetku administratívu spojenú s prichádzajúcou poštou, čím vám ušetríme čas a zabezpečíme bezproblémový chod vašej firmy.</p>
+                </div>
+                <div class="why-choose-image">
+                    <img src="images/office-main.jpg" alt="Naša kancelária" class="office-image">
+                </div>
+            </div>
+            
+            <div class="why-choose-row reverse">
+                <div class="why-choose-image">
+                    <img src="images/office-secondary.jpg" alt="Naša kancelária" class="office-image">
+                </div>
+                <div class="why-choose-content">
+                    <h2 class="why-choose-title">Šetrite čas aj peniaze s našimi službami.</h2>
+                    <p class="why-choose-subtitle">Virtuálne sídlo vám prináša flexibilitu a profesionálny vzhľad.</p>
+                    <p class="why-choose-description">Prečo investovať do fyzického prenájmu kancelárie, keď to nie je nevyhnutné? S virtuálnym sídlom výrazne znížite náklady firmy, ktoré by ste inak museli vynaložiť na nájomné, služby a ďalšie prevádzkové náklady spojené s fyzickým priestorom. Virtuálne sídlo vám umožňuje ušetriť peniaze a súčasne zabezpečiť profesionálny vzhľad a stabilitu vašej firmy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <p class="cta-question">Chcete sa dozvedieť viac o našich balíkoch?</p>
+            <a href="services.html" class="cta-link">POZRITE SI VŠETKY NAŠE SLUŽBY</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo">V</div>
+                        <span class="footer-company-name">Virtuálne sídlo</span>
+                    </div>
+                    <p class="footer-description">Profesionálne virtuálne sídlo pre vašu firmu</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Kontakt</h3>
+                    <div class="footer-contact">
+                        <p>📞 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a></p>
+                        <p>📧 <a href="mailto:yyyy@yyyy.com">yyyy@yyyy.com</a></p>
+                        <p>📍 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Stránky</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Domov</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="services.html">Služby</a></li>
+                        <li><a href="https://mastersoffice.sk/sk/" target="_blank">Masters Office</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Právne</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showCookiePolicy()">Cookies</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()">Ochrana údajov</a></li>
+                        <li><a href="#" onclick="showTerms()">Obchodné podmienky</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

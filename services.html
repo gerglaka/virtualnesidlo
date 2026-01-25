@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Služby - Virtuálne sídlo</title>
+    <meta name="description" content="Naše služby virtuálneho sídla. Flexibilné možnosti platby pre každého. Komárno, Bratislava, Rimavská Sobota.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">V</div>
+                <h1 class="company-name"><a href="index.html" style="color: white; text-decoration: none;">Virtuálne sídlo</a></h1>
+            </div>
+
+            <nav class="nav-section">
+                <!-- Mobile hamburger menu -->
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Navigation links -->
+                <div class="nav-links" id="navLinks">
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Účtovníctvo</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Mzdy</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Kúpa spoločnosti</a>
+                    <span class="separator">•</span>
+                    <a href="contact.html" class="nav-link">Kontakt</a>
+                    <a href="services.html" class="cta-button">Naše Balíky</a>
+                    <a href="index-hu.html" class="flag-link" title="Magyar verzió">
+                        <img src="images/flag-hu.png" alt="Hungarian flag" class="flag-icon">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <span class="services-hero-label">Služby</span>
+                <h1 class="services-hero-title">Flexibilné možnosti platby pre každého.</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="pricing-title">Jednoduché a rýchle riešenia.</h2>
+            <p class="pricing-subtitle">Postaráme sa o doručovanie pošty a komunikáciu s úradmi, aby ste sa mohli sústrediť na svoje podnikanie.</p>
+            
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <span class="billing-label monthly-label active">Mesačne</span>
+                <div class="toggle-switch" id="billingToggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="billing-label yearly-label">Ročne</span>
+                <span class="discount-badge" id="discountBadge">-10% zľava</span>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="pricing-cards-container">
+                <!-- Bratislava Card -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="location-name">Bratislava</h3>
+                        <div class="price" id="price-bratislava">25€</div>
+                        <div class="price-period" id="period-bratislava">+ DPH / mesiac</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Preberanie zásielok ročne</li>
+                        <li>Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li>E-mailové notifikácie</li>
+                        <li>Skenovanie obsahu zásielok</li>
+                        <li>Preberanie doporučenej pošty</li>
+                        <li>1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-cta-button">Mám záujem</a>
+                </div>
+
+                <!-- Komárno Card (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Top voľba</div>
+                    <div class="card-header">
+                        <h3 class="location-name">Komárno</h3>
+                        <div class="price" id="price-komarno">25€</div>
+                        <div class="price-period" id="period-komarno">+ DPH / mesiac</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Preberanie zásielok ročne</li>
+                        <li>Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li>E-mailové notifikácie</li>
+                        <li>Skenovanie obsahu zásielok</li>
+                        <li>Preberanie doporučenej pošty</li>
+                        <li>1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-cta-button">Mám záujem</a>
+                </div>
+
+                <!-- Rimavská Sobota Card -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="location-name">Rimavská Sobota</h3>
+                        <div class="price" id="price-rimavska">25€</div>
+                        <div class="price-period" id="period-rimavska">+ DPH / mesiac</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Preberanie zásielok ročne</li>
+                        <li>Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li>E-mailové notifikácie</li>
+                        <li>Skenovanie obsahu zásielok</li>
+                        <li>Preberanie doporučenej pošty</li>
+                        <li>1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-cta-button">Mám záujem</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
+                    </div>
+                    <h3 class="feature-title">Rýchle zriadenie</h3>
+                    <p class="feature-description">Váš súhlas so zriadením sídla pripravíme do 24 hodín od objednávky.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
+                    </div>
+                    <h3 class="feature-title">Profesionálna adresa</h3>
+                    <p class="feature-description">Získajte prestížnu adresu v centre mesta pre vašu firmu.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
+                    </div>
+                    <h3 class="feature-title">Správa pošty</h3>
+                    <p class="feature-description">Kompletná starostlivosť o vašu poštu vrátane skenovania a preposielania.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/checkmark.png" alt="Checkmark" class="checkmark-icon">
+                    </div>
+                    <h3 class="feature-title">Bez skrytých poplatkov</h3>
+                    <p class="feature-description">Transparentné ceny bez ďalších poplatkov alebo nepríjemných prekvapení.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Často kladené otázky</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Ako dlho trvá zriadenie virtuálneho sídla?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Súhlas so zriadením sídla pripravíme do 24 hodín od objednávky a zaplatenia. Dokument obdržíte elektronicky a môžete ho ihneď použiť pre registráciu firmy.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Môžem používať virtuálne sídlo pre rôzne typy firiem?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Áno, naše virtuálne sídlo je vhodné pre s.r.o., živnosti, občianske združenia aj iné právne formy podnikania. Služba je v súlade so slovenským právom.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Čo zahŕňa správa pošty?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Preberáme všetku poštu na vašu adresu, skenujeme dôležité dokumenty, posielame emailové notifikácie a 1x mesačne vám preposielame poštu na vami zvolenú adresu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Sú v cene zahrnuté všetky služby?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Áno, cena 25€ + DPH mesačne zahŕňa všetky uvedené služby bez ďalších poplatkov. Neúčtujeme žiadne skryté poplatky alebo dodatočné náklady.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Je možné službu kedykoľvek ukončiť?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Službu môžete ukončiť kedykoľvek s jednomesačnou výpovednou lehotou. Pri ročnom balíčku je výpovedná lehota 3 mesiace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo">V</div>
+                        <span class="footer-company-name">Virtuálne sídlo</span>
+                    </div>
+                    <p class="footer-description">Profesionálne virtuálne sídlo pre vašu firmu</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Kontakt</h3>
+                    <div class="footer-contact">
+                        <p>📞 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a></p>
+                        <p>📧 <a href="mailto:yxyxyxy@yxxyxyyx.sk">yxyxyxy@yxxyxyyx.sk</a></p>
+                        <p>📍 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Stránky</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Domov</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="services.html">Služby</a></li>
+                        <li><a href="https://mastersoffice.sk/sk/" target="_blank">Masters Office</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Právne</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showCookiePolicy()">Cookies</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()">Ochrana údajov</a></li>
+                        <li><a href="#" onclick="showTerms()">Obchodné podmienky</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
