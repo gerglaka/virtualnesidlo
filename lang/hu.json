@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "title": {
+      "index": "Virtuálne sídlo - A legjobb virtuális székhely Szlovákiában",
+      "services": "Szolgáltatások - Virtuálne sídlo",
+      "contact": "Kontakt - Virtuálne sídlo"
+    },
+    "description": {
+      "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
+      "services": "Virtuális ülésszolgáltatásaink. Rugalmas fizetési lehetőségek mindenki számára. Komárno, Pozsony, Rimavská Sobota.",
+      "contact": "Kontaktujte nás pre virtuálne sídlo. Hradná 2, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
+    }
+  },
+  "nav": {
+    "accounting": "Könyvelés",
+    "payroll": "Bérszámfejtés",
+    "buyCompany": "Cég vásárlása",
+    "contact": "Kontakt",
+    "packages": "Csomagjaink",
+    "flagTitle": "Slovenská verzia"
+  },
+  "hero": {
+    "title": "A legjobb virtuális székhely Szlovákiában",
+    "subtitle": "25€+Áfa-tól kezdődően havonta, további díjak nélkül",
+    "button": "Csomagjaink"
+  },
+  "servicesOverview": {
+    "title": "Virtuális székhelyszolgáltatás egyszerűen és megbízhatóan:",
+    "subtitle": "Szabaduljon meg az adminisztratív terhektől, és biztosítson cégének professzionális székhelyet a legjobb körülmények között.",
+    "benefit1Title": "Szabad kezek",
+    "benefit1Desc": "Bízzon mindent ránk. Örömmel intézünk Önnek minden szükséges folyamatot.",
+    "benefit2Title": "Szolgáltatások",
+    "benefit2Desc": "Az átfogó szolgáltatási portfólió valódi kényelmet nyújt Önnek vállalkozása irányításában.",
+    "benefit3Title": "Megérés",
+    "benefit3Desc": "A virtuális címbe való befektetése a megtakarított idő formájában térül meg."
+  },
+  "howItWorks": {
+    "title": "Hogyan működik a virtuális székhely?",
+    "description": "A virtuális iroda rendkívül hasznos szolgáltatás azon vállalkozások és szabadúszók számára, akiknek anélkül kell bejegyeztetniük cégük székhelyét, hogy fizikailag irodát kellene bérelniük. Ha egy vállalat nem tudja megszerezni az ingatlan tulajdonosának közjegyzői hozzájárulását, vagy más várost választ, mint ahol jelenleg működik, ideális megoldás a virtuális székhely igénybevétele.",
+    "contactLink": "Kontakt"
+  },
+  "gallery": {
+    "alt1": "Irodánk 1",
+    "alt2": "Irodánk 2",
+    "alt3": "Irodánk 3"
+  },
+  "additionalBenefits": {
+    "title": "Az Ön előnyei szolgáltatásunkkal",
+    "text": "További előnyök közé tartozik, hogy az ingatlan, amelyben a központi iroda található, a mi tulajdonunkban van. Ha megvásárolja ezt a szolgáltatást, akkor online iktatást és postakezelést, szkennelést, a posta átvételét és tárolását, a beérkező postáról szóló e-mail értesítést, valamint havonta egyszer a posta továbbítását is megkapja az Ön által választott címre. Szerezzen prémium címet vállalkozásának, hitelességet üzleti partnerei előtt."
+  },
+  "whyChooseUs": {
+    "title1": "Miért válasszon virtuális irodát vállalkozása számára?",
+    "subtitle1": "Gyors, egyszerű és jövedelmező megoldás a vállalkozók számára.",
+    "desc1": "Virtuális székhelyszolgáltatásunk mindent megad Önnek, amire szüksége van, és díj ellenében azonnal elküldjük Önnek a székhely létrehozásához szükséges hivatalos jóváhagyást, amely a cégjegyzékbe való bejegyzéshez szükséges. Ezen túlmenően a beérkező postával kapcsolatos összes papírmunkát is elintézzük, így időt takarítunk meg Önnek, és biztosítjuk vállalkozása zökkenőmentes működését.",
+    "title2": "Takarítson meg időt és pénzt szolgáltatásainkkal.",
+    "subtitle2": "A virtuális iroda rugalmasságot és professzionális megjelenést biztosít.",
+    "desc2": "Miért fektetne be egy fizikai irodabérletbe, ha nincs rá szükség? Egy virtuális irodával jelentősen csökkentheti vállalkozásának azon költségeit, amelyeket egyébként bérleti díjra, közüzemi szolgáltatásokra és egyéb, a fizikai helyiséggel kapcsolatos működési költségekre kellene fordítania. A virtuális iroda lehetővé teszi, hogy pénzt takarítson meg, miközben professzionális megjelenést és stabilitást biztosít vállalkozásának.",
+    "imageAlt1": "Irodánk",
+    "imageAlt2": "Irodánk"
+  },
+  "cta": {
+    "question": "Szeretne többet megtudni csomagjainkról?",
+    "link": "TEKINTSE MEG AZ ÖSSZES SZOLGÁLTATÁSUNKAT"
+  },
+  "footer": {
+    "description": "Professzionális virtuális iroda cége számára",
+    "contactTitle": "Kontakt",
+    "pagesTitle": "Oldalak",
+    "legalTitle": "Jogi",
+    "home": "Otthon",
+    "contact": "Kontakt",
+    "services": "Csomagjaink",
+    "cookies": "Cookies",
+    "privacy": "Adatvédelem",
+    "terms": "Általános Szerződési Feltételek",
+    "copyright": "© 2025 Virtuálne sídlo. Minden jog fenntartva."
+  },
+  "servicesPage": {
+    "heroLabel": "Csomagjaink",
+    "heroTitle": "Rugalmas fizetési lehetőségek mindenki számára.",
+    "pricingTitle": "Egyszerű és gyors megoldások.",
+    "pricingSubtitle": "Mi gondoskodunk a postai kézbesítésről és a hatóságokkal való kommunikációról, hogy Ön a vállalkozására koncentrálhasson.",
+    "monthly": "Havi",
+    "yearly": "Éves",
+    "discount": "-10% kedvezmény",
+    "periodMonthly": "+ ÁFA / hónap",
+    "periodYearly": "+ ÁFA / év",
+    "topChoice": "Legjobb választás",
+    "interested": "Érdekel",
+    "locations": {
+      "bratislava": "Pozsony",
+      "komarno": "Komárom",
+      "rimavska": "Rimaszombat"
+    },
+    "servicesList": {
+      "item1": "Csomagok átvétele évente",
+      "item2": "Hozzájárulás az s.r.o. székhelyének létrehozásához.",
+      "item3": "E-mail értesítések",
+      "item4": "A levelek tartalmának beolvasása",
+      "item5": "Ajánlott postai küldemények fogadása",
+      "item6": "1x havi továbbítás az Ön által választott címre"
+    },
+    "features": {
+      "title1": "Gyors beállítás",
+      "desc1": "A megrendeléstől számított 24 órán belül elkészítjük az Ön hozzájárulását a székhely létrehozásához.",
+      "title2": "Professzionális cím",
+      "desc2": "Szerezzen presztízsértékű belvárosi címet vállalkozásának.",
+      "title3": "Levélkezelés",
+      "desc3": "Postájának teljes körű kezelése, beleértve a szkennelést és a továbbítást.",
+      "title4": "Nincsenek rejtett díjak",
+      "desc4": "Átlátható árképzés, extra díjak és kellemetlen meglepetések nélkül."
+    },
+    "faq": {
+      "title": "Gyakran feltett kérdések",
+      "q1": "Mennyi időbe telik egy virtuális ülés beállítása?",
+      "a1": "A megrendeléstől és a fizetéstől számított 24 órán belül elkészítjük a hozzájárulást a székhely létrehozásához. A dokumentumot elektronikusan kapja meg, és azonnal felhasználhatja a cégbejegyzéshez.",
+      "q2": "Használhatok virtuális helyet különböző típusú vállalatok számára?",
+      "a2": "Igen, virtuális irodánk alkalmas kft-k, kereskedelmi társaságok, polgári társulások és más jogi formájú vállalkozások számára. A szolgáltatás megfelel a szlovák törvényeknek.",
+      "q3": "Mit jelent a levelek kezelése?",
+      "a3": "Minden levelet elviszünk az Ön címére, beszkenneljük a fontos dokumentumokat, e-mail értesítést küldünk, és havonta egyszer továbbítjuk leveleit az Ön által kiválasztott címre.",
+      "q4": "Minden szolgáltatás benne van?",
+      "a4": "Igen, a havi 25€ + ÁFA ár a fenti szolgáltatásokat tartalmazza, további költségek nélkül. Nem számítunk fel semmilyen rejtett díjat vagy további költséget.",
+      "q5": "A szolgáltatás bármikor megszüntethető?",
+      "a5": "Ön bármikor felmondhatja a Szolgáltatást egy hónapos felmondási idővel. Az éves csomag esetében a felmondási idő 3 hónap."
+    }
+  },
+  "contactPage": {
+    "heroLabel": "Kontakt",
+    "heroTitle": "Kérdése van hozzánk?",
+    "infoTitle": "Elérhetőségeink",
+    "emailLabel": "Email:",
+    "addressLabel": "Cím:",
+    "phoneLabel": "Telefon:",
+    "hoursTitle": "Nyitvatartási idő",
+    "weekdays": "Hétfő - Péntek:",
+    "weekdaysHours": "8:00 - 17:00",
+    "weekend": "Szombat - Vasárnap",
+    "weekendHours": "Zárva",
+    "formTitle": "Írjon nekünk",
+    "formDescription": "Szívesen válaszolunk kérdéseire, és segítünk kiválasztani a vállalkozásának legmegfelelőbb megoldást.",
+    "nameLabel": "Elő- és utónév *",
+    "emailFormLabel": "Email *",
+    "phoneFormLabel": "Telefon",
+    "messageLabel": "Az Ön üzenete *",
+    "messagePlaceholder": "Mondja el, mi érdekli, vagy milyen kérdései vannak...",
+    "hasCompany": "Van egy meglévő cégem",
+    "companyName": "Cég neve",
+    "ico": "IČO",
+    "icoPlaceholder": "12345678",
+    "formSubject": "Új üzenet a kapcsolatfelvételi űrlapról",
+    "submitButton": "Üzenet küldése",
+    "mapsTitle": "Hol talál minket",
+    "mapsInfo": "Irodánk Komárom központjában található, jó megközelíthetőséggel és parkolási lehetőséggel a közelben.",
+    "mapsIframeTitle": "Címünk: Hradná 2, Komárno"
+  },
+  "alerts": {
+    "fillRequired": "Kérjük, töltse ki az összes kötelező mezőt *",
+    "invalidEmail": "Kérjük, adjon meg érvényes email címet",
+    "thankYou": "Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.",
+    "cookieInfo": "A cookie-kkal kapcsolatos információk hamarosan elérhetők lesznek.",
+    "privacyInfo": "Az adatvédelmi szabályzat hamarosan elérhető lesz.",
+    "termsInfo": "Az általános szerződési feltételek hamarosan elérhetők lesznek."
+  }
+}

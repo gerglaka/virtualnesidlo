@@ -26,13 +26,13 @@
 
                 <!-- Navigation links -->
                 <div class="nav-links" id="navLinks">
-                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Účtovníctvo</a>
-                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Mzdy</a>
-                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank">Kúpa spoločnosti</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.accounting">Účtovníctvo</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.payroll">Mzdy</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.buyCompany">Kúpa spoločnosti</a>
                     <span class="separator">•</span>
-                    <a href="contact.html" class="nav-link">Kontakt</a>
-                    <a href="services.html" class="cta-button">Naše Balíky</a>
-                    <a href="index-hu.html" class="flag-link" title="Magyar verzió">
+                    <a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a>
+                    <a href="services.html" class="cta-button" data-i18n="nav.packages">Naše Balíky</a>
+                    <a href="javascript:void(0)" class="flag-link" data-i18n-title="nav.flagTitle" title="Magyar verzió">
                         <img src="images/flag-hu.png" alt="Hungarian flag" class="flag-icon">
                     </a>
                 </div>
@@ -44,8 +44,8 @@
     <section class="contact-hero">
         <div class="container">
             <div class="contact-hero-content">
-                <span class="contact-hero-label">Kontakt</span>
-                <h1 class="contact-hero-title">Máte na nás otázku?</h1>
+                <span class="contact-hero-label" data-i18n="contactPage.heroLabel">Kontakt</span>
+                <h1 class="contact-hero-title" data-i18n="contactPage.heroTitle">Máte na nás otázku?</h1>
             </div>
         </div>
     </section>
@@ -56,12 +56,12 @@
             <div class="contact-container">
                 <!-- Contact Info -->
                 <div class="contact-info">
-                    <h2>Naše kontaktné údaje</h2>
-                    
+                    <h2 data-i18n="contactPage.infoTitle">Naše kontaktné údaje</h2>
+
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div class="contact-details">
-                            <div class="contact-label">Email:</div>
+                            <div class="contact-label" data-i18n="contactPage.emailLabel">Email:</div>
                             <div class="contact-value">
                                 <a href="mailto:yxyxyxy@yxxyxyyx.sk">yxyxyxy@yxxyxyyx.sk</a>
                             </div>
@@ -71,7 +71,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
                         <div class="contact-details">
-                            <div class="contact-label">Adresa:</div>
+                            <div class="contact-label" data-i18n="contactPage.addressLabel">Adresa:</div>
                             <div class="contact-value">
                                 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">
                                     Hradná 2, Komárno, 945 01
@@ -83,7 +83,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">📞</div>
                         <div class="contact-details">
-                            <div class="contact-label">Telefón:</div>
+                            <div class="contact-label" data-i18n="contactPage.phoneLabel">Telefón:</div>
                             <div class="contact-value">
                                 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a>
                             </div>
@@ -91,42 +91,42 @@
                     </div>
 
                     <div class="contact-hours">
-                        <h3>Pracovné hodiny</h3>
+                        <h3 data-i18n="contactPage.hoursTitle">Pracovné hodiny</h3>
                         <div class="hours-item">
-                            <span>Pondelok - Piatok:</span>
-                            <span>8:00 - 17:00</span>
+                            <span data-i18n="contactPage.weekdays">Pondelok - Piatok:</span>
+                            <span data-i18n="contactPage.weekdaysHours">8:00 - 17:00</span>
                         </div>
                         <div class="hours-item">
-                            <span>Sobota - Nedeľa:</span>
-                            <span>Zatvorené</span>
+                            <span data-i18n="contactPage.weekend">Sobota - Nedeľa:</span>
+                            <span data-i18n="contactPage.weekendHours">Zatvorené</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="contact-form">
-                    <h2>Napíšte nám</h2>
-                    <p class="form-description">Radi odpovieme na vaše otázky a pomôžeme vám s výberom najlepšieho riešenia pre vašu firmu.</p>
-                    
+                    <h2 data-i18n="contactPage.formTitle">Napíšte nám</h2>
+                    <p class="form-description" data-i18n="contactPage.formDescription">Radi odpovieme na vaše otázky a pomôžeme vám s výberom najlepšieho riešenia pre vašu firmu.</p>
+
                     <form action="https://formspree.io/f/myzwrrgb" method="POST" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Meno a priezvisko *</label>
+                            <label for="name" data-i18n="contactPage.nameLabel">Meno a priezvisko *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="email" data-i18n="contactPage.emailFormLabel">Email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Telefón</label>
+                            <label for="phone" data-i18n="contactPage.phoneFormLabel">Telefón</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Vaša správa *</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Opíšte nám, čo vás zaujíma alebo aké máte otázky..." required></textarea>
+                            <label for="message" data-i18n="contactPage.messageLabel">Vaša správa *</label>
+                            <textarea id="message" name="message" rows="6" data-i18n-placeholder="contactPage.messagePlaceholder" placeholder="Opíšte nám, čo vás zaujíma alebo aké máte otázky..." required></textarea>
                         </div>
 
                         <!-- Company Toggle -->
@@ -135,7 +135,7 @@
                                 <input type="checkbox" id="hasCompany" name="hasCompany" value="yes">
                                 <label for="hasCompany" class="checkbox-label">
                                     <span class="checkbox-custom"></span>
-                                    Mám existujúcu firmu
+                                    <span data-i18n="contactPage.hasCompany">Mám existujúcu firmu</span>
                                 </label>
                             </div>
                         </div>
@@ -143,21 +143,21 @@
                         <!-- Company Fields (Initially Hidden) -->
                         <div class="company-fields" id="companyFields">
                             <div class="form-group">
-                                <label for="companyName">Názov firmy</label>
+                                <label for="companyName" data-i18n="contactPage.companyName">Názov firmy</label>
                                 <input type="text" id="companyName" name="companyName">
                             </div>
 
                             <div class="form-group">
-                                <label for="ico">IČO</label>
-                                <input type="text" id="ico" name="ico" placeholder="12345678">
+                                <label for="ico" data-i18n="contactPage.ico">IČO</label>
+                                <input type="text" id="ico" name="ico" data-i18n-placeholder="contactPage.icoPlaceholder" placeholder="12345678">
                             </div>
                         </div>
 
                         <!-- Hidden field for form identification -->
-                        <input type="hidden" name="_subject" value="Nová správa z kontaktného formulára">
+                        <input type="hidden" name="_subject" data-i18n-value="contactPage.formSubject" value="Nová správa z kontaktného formulára">
                         <input type="hidden" name="_next" value="thank-you.html">
 
-                        <button type="submit" class="submit-button">
+                        <button type="submit" class="submit-button" data-i18n="contactPage.submitButton">
                             Odoslať správu
                         </button>
                     </form>
@@ -169,22 +169,23 @@
     <!-- Google Maps Section -->
     <section class="maps-section">
         <div class="container">
-            <h2 class="maps-title">Kde nás nájdete</h2>
+            <h2 class="maps-title" data-i18n="contactPage.mapsTitle">Kde nás nájdete</h2>
             <div class="maps-container">
-                <iframe 
+                <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2664.8669831847634!2d18.128636!3d47.761644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476a7f8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sHradn%C3%A1%202%2C%20945%2001%20Kom%C3%A1rno!5e0!3m2!1ssk!2ssk!4v1234567890123!5m2!1ssk!2ssk"
-                    width="100%" 
-                    height="400" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
+                    data-i18n-title="contactPage.mapsIframeTitle"
                     title="Naša adresa: Hradná 2, Komárno">
                 </iframe>
             </div>
             <div class="maps-info">
                 <p>📍 <strong>Hradná 2, 945 01 Komárno</strong></p>
-                <p>Naša kancelária sa nachádza v centre Komárna s dobrým prístupom a parkovaním v okolí.</p>
+                <p data-i18n="contactPage.mapsInfo">Naša kancelária sa nachádza v centre Komárna s dobrým prístupom a parkovaním v okolí.</p>
             </div>
         </div>
     </section>
@@ -198,40 +199,40 @@
                         <div class="logo">V</div>
                         <span class="footer-company-name">Virtuálne sídlo</span>
                     </div>
-                    <p class="footer-description">Profesionálne virtuálne sídlo pre vašu firmu</p>
+                    <p class="footer-description" data-i18n="footer.description">Profesionálne virtuálne sídlo pre vašu firmu</p>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h3 class="footer-title">Kontakt</h3>
+                    <h3 class="footer-title" data-i18n="footer.contactTitle">Kontakt</h3>
                     <div class="footer-contact">
                         <p>📞 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a></p>
                         <p>📧 <a href="mailto:yxyxyxy@yxxyxyyx.sk">yxyxyxy@yxxyxyyx.sk</a></p>
                         <p>📍 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h3 class="footer-title">Stránky</h3>
+                    <h3 class="footer-title" data-i18n="footer.pagesTitle">Stránky</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Domov</a></li>
-                        <li><a href="contact.html">Kontakt</a></li>
-                        <li><a href="services.html">Služby</a></li>
+                        <li><a href="index.html" data-i18n="footer.home">Domov</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Kontakt</a></li>
+                        <li><a href="services.html" data-i18n="footer.services">Služby</a></li>
                         <li><a href="https://mastersoffice.sk/sk/" target="_blank">Masters Office</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h3 class="footer-title">Právne</h3>
+                    <h3 class="footer-title" data-i18n="footer.legalTitle">Právne</h3>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="showCookiePolicy()">Cookies</a></li>
-                        <li><a href="#" onclick="showPrivacyPolicy()">Ochrana údajov</a></li>
-                        <li><a href="#" onclick="showTerms()">Obchodné podmienky</a></li>
+                        <li><a href="#" onclick="showCookiePolicy()" data-i18n="footer.cookies">Cookies</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()" data-i18n="footer.privacy">Ochrana údajov</a></li>
+                        <li><a href="#" onclick="showTerms()" data-i18n="footer.terms">Obchodné podmienky</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
             </div>
         </div>
     </footer>
@@ -241,6 +242,7 @@
         ↑
     </button>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
