@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollToTop();
     initializeAnimations();
     initializeContactForm();
+    initializeProcessSection();
 });
 
 // Slideshow functionality
@@ -116,9 +117,205 @@ function initializeAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.benefit-card, .section-title, .why-choose-content');
+    const animateElements = document.querySelectorAll('.exclusive-card, .section-title, .why-choose-content');
     animateElements.forEach(el => observer.observe(el));
+}
+
+// ===== PROCESS SECTION - JS-Pinned Scroll Timeline =====
+function initializeProcessSection() {
+    var wrapper = document.querySelector('.process-wrapper');
+    var section = document.querySelector('.process-section');
+    var board = document.getElementById('processBoard');
+    var svg = document.getElementById('processSvg');
+    var bg = section ? section.querySelector('.process-bg') : null;
+
+    if (!wrapper || !section || !board || !svg) return;
+
+    var steps = Array.from(board.querySelectorAll('.process-step'))
+        .sort(function(a, b) { return parseInt(a.dataset.step) - parseInt(b.dataset.step); });
+
+    function isMobile() { return window.innerWidth <= 768; }
+
+    var arrows = [];
+
+    // Pin/unpin section with JS (bulletproof, no overflow issues)
+    function pinSection() {
+        if (isMobile()) {
+            section.style.position = '';
+            section.style.top = '';
+            section.style.left = '';
+            section.style.width = '';
+            return;
+        }
+
+        var wRect = wrapper.getBoundingClientRect();
+        var vh = window.innerHeight;
+
+        if (wRect.top <= 0 && wRect.bottom > vh) {
+            // Pinned
+            section.style.position = 'fixed';
+            section.style.top = '0';
+            section.style.left = '0';
+            section.style.width = '100%';
+        } else if (wRect.bottom <= vh) {
+            // Past — anchor to bottom of wrapper
+            section.style.position = 'absolute';
+            section.style.top = (wrapper.clientHeight - vh) + 'px';
+            section.style.left = '0';
+            section.style.width = '100%';
+        } else {
+            // Before — normal flow
+            section.style.position = 'relative';
+            section.style.top = '0';
+            section.style.left = '';
+            section.style.width = '';
+        }
+    }
+
+    // Draw individual bent arrows between consecutive steps
+    function drawArrows() {
+        arrows = [];
+
+        if (isMobile()) {
+            svg.innerHTML = '';
+            return;
+        }
+
+        var boardRect = board.getBoundingClientRect();
+        var points = steps.map(function(step) {
+            var rect = step.getBoundingClientRect();
+            return {
+                x: rect.left + rect.width / 2 - boardRect.left,
+                y: rect.top + rect.height / 2 - boardRect.top
+            };
+        });
+
+        svg.setAttribute('viewBox', '0 0 ' + boardRect.width + ' ' + boardRect.height);
+
+        var svgContent = '';
+
+        for (var i = 0; i < points.length - 1; i++) {
+            var a = points[i];
+            var b = points[i + 1];
+            var midX = (a.x + b.x) / 2;
+
+            // Cubic bezier S-curve between steps
+            var d = 'M ' + a.x + ' ' + a.y +
+                    ' C ' + midX + ' ' + a.y + ', ' + midX + ' ' + b.y + ', ' + b.x + ' ' + b.y;
+
+            // Grey background arrow
+            svgContent += '<path d="' + d + '" fill="none" stroke="#ddd" stroke-width="3" stroke-linecap="round"/>';
+            // Green animated arrow
+            svgContent += '<path class="arrow-fg" data-arrow="' + i + '" d="' + d + '" fill="none" stroke="#308003" stroke-width="3" stroke-linecap="round"/>';
+        }
+
+        svg.innerHTML = svgContent;
+
+        // Measure and prep each green arrow for dash animation
+        var fgPaths = svg.querySelectorAll('.arrow-fg');
+        for (var j = 0; j < fgPaths.length; j++) {
+            var len = fgPaths[j].getTotalLength();
+            fgPaths[j].style.strokeDasharray = len;
+            fgPaths[j].style.strokeDashoffset = len;
+            arrows.push({ el: fgPaths[j], len: len });
+        }
+    }
+
+    // Main scroll handler
+    function onScroll() {
+        pinSection();
+
+        if (isMobile()) return;
+
+        var wRect = wrapper.getBoundingClientRect();
+        var scrollDist = wrapper.clientHeight - window.innerHeight;
+        if (scrollDist <= 0) return;
+
+        var progress = Math.max(0, Math.min(1, -wRect.top / scrollDist));
+
+        // Animate each arrow independently
+        var segCount = steps.length - 1; // 6 arrows for 7 steps
+        for (var i = 0; i < arrows.length; i++) {
+            var arrowStart = i / segCount;
+            var arrowEnd = (i + 1) / segCount;
+            var arrowProgress;
+
+            if (progress <= arrowStart) {
+                arrowProgress = 0;
+            } else if (progress >= arrowEnd) {
+                arrowProgress = 1;
+            } else {
+                arrowProgress = (progress - arrowStart) / (arrowEnd - arrowStart);
+            }
+
+            arrows[i].el.style.strokeDashoffset = arrows[i].len * (1 - arrowProgress);
+        }
+
+        // Activate steps
+        for (var s = 0; s < steps.length; s++) {
+            var threshold = s / segCount;
+            if (progress >= threshold - 0.01) {
+                steps[s].classList.add('active');
+            } else {
+                steps[s].classList.remove('active');
+            }
+        }
+
+        // Move background pattern
+        if (bg) {
+            bg.style.transform = 'translateX(' + (-progress * 300) + 'px)';
+        }
+    }
+
+    // Mobile: IntersectionObserver for step activation
+    var mobileObserver = null;
+    function initMobile() {
+        if (mobileObserver) {
+            mobileObserver.disconnect();
+            mobileObserver = null;
+        }
+        if (!isMobile()) return;
+
+        mobileObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        steps.forEach(function(step) { mobileObserver.observe(step); });
+    }
+
+    // Init: wait two frames for layout to settle
+    requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+            drawArrows();
+            onScroll();
+        });
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Reset section position before redrawing
+            section.style.position = 'relative';
+            section.style.top = '0';
+            section.style.left = '';
+            section.style.width = '';
+
+            requestAnimationFrame(function() {
+                drawArrows();
+                onScroll();
+                initMobile();
+            });
+        }, 250);
+    });
+
+    initMobile();
 }
 
 // Contact form functionality

@@ -24,20 +24,32 @@
     "subtitle": "Už od 25€+dph mesačne, bez ďalších poplatkov",
     "button": "Naše balíky"
   },
-  "servicesOverview": {
-    "title": "Služba virtuálnej centrály jednoducho a spoľahlivo:",
-    "subtitle": "Osloboďte sa od administratívnej záťaže a zabezpečte svojej firme profesionálne sídlo za najlepších podmienok.",
-    "benefit1Title": "Voľné ruky",
-    "benefit1Desc": "Nechajte všetko na nás. Radi za Vás vyriešime všetky potrebné procesy.",
-    "benefit2Title": "Služby",
-    "benefit2Desc": "Komplexné portfólio služieb Vám poskytne skutočný komfort pri správe Vašej firmy.",
-    "benefit3Title": "Návratnosť",
-    "benefit3Desc": "Investícia do virtuálnej adresy sa Vám vráti v podobe času, ktorý ušetríte."
+  "exclusive": {
+    "limitedAccess": "Aby bola adresa sídla skutočne exkluzívna, je dostupná len pre limitovaný počet firiem / živnostníkov.",
+    "ownership": "Priestory sú v našom vlastníctve (na rozdiel od konkurencie), takže môžete mať istotu dlhodobej spolupráce a nemennosti adresy sídla.",
+    "title": "Postaráme sa nielen o vašu korešpondenciu",
+    "subtitle": "Naše sídlo je viac ako poštová schránka",
+    "servicesIntro": "V cene našim klientom poskytujeme:",
+    "service1": "Súhlas so zriadením sídla na adrese VIVA PARK 6139/1-A0, Komárno",
+    "service2": "Preberanie, úschovu zásielok a online evidenciu pošty",
+    "service3": "Emailovú notifikáciu o prijatej pošte. Zásielky si môžete vyzdvihnúť v sídle našej spoločnosti, ponúkame bezplatné parkovanie priamo v objekte.",
+    "service4": "Skenovanie zásielok a preposielanie skenov priamo klientovi"
   },
-  "howItWorks": {
-    "title": "Ako funguje virtuálne sídlo s.r.o.?",
-    "description": "Virtuálne sídlo je mimoriadne užitočná služba pre podniky a živnostníkov, ktorí potrebujú registrovať svoje sídlo firmy bez nutnosti fyzického prenájmu kancelárie. Ak spoločnosť nemôže získať notárom overený súhlas od vlastníka nehnuteľnosti, alebo sa rozhodne pre iné mesto v ktorom práve pôsobí, ideálnym riešením je využiť virtuálne sídlo.",
-    "contactLink": "Kontakt"
+  "process": {
+    "title": "Ako to funguje?",
+    "startText": "Chcem zmeniť sídlo, názov, konateľa",
+    "step1Title": "Kontaktujte nás",
+    "step1Desc": "bezplatná konzultácia telefonicky, e-mailom alebo osobne",
+    "step2Title": "Zistíme vaše potreby",
+    "step2Desc": "dodanie údajov k zmene (názov spol., sídlo, konateľ, atď)",
+    "step3Title": "Pripravíme a pošleme",
+    "step3Desc": "všetky potrebné dokumenty pre vás pripravíme a pošleme",
+    "step4Title": "Návratka",
+    "step4Desc": "dokumenty podpíšete a pošlete nám späť",
+    "step5Title": "Náš tím vyrieši celý proces zmien",
+    "step5Desc": "náš tím vybaví všetko za vás na príslušných úradoch",
+    "step6Title": "Zmeny zapísané v príslušných registroch",
+    "step6Desc": "Zmeny zapísané v obchodnom registri"
   },
   "gallery": {
     "alt1": "Naša kancelária 1",

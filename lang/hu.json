@@ -24,20 +24,32 @@
     "subtitle": "25€+Áfa-tól kezdődően havonta, további díjak nélkül",
     "button": "Csomagjaink"
   },
-  "servicesOverview": {
-    "title": "Virtuális székhelyszolgáltatás egyszerűen és megbízhatóan:",
-    "subtitle": "Szabaduljon meg az adminisztratív terhektől, és biztosítson cégének professzionális székhelyet a legjobb körülmények között.",
-    "benefit1Title": "Szabad kezek",
-    "benefit1Desc": "Bízzon mindent ránk. Örömmel intézünk Önnek minden szükséges folyamatot.",
-    "benefit2Title": "Szolgáltatások",
-    "benefit2Desc": "Az átfogó szolgáltatási portfólió valódi kényelmet nyújt Önnek vállalkozása irányításában.",
-    "benefit3Title": "Megérés",
-    "benefit3Desc": "A virtuális címbe való befektetése a megtakarított idő formájában térül meg."
+  "exclusive": {
+    "limitedAccess": "Annak érdekében, hogy a székhely címe valóban exkluzív legyen, csak korlátozott számú vállalkozás / egyéni vállalkozó számára érhető el.",
+    "ownership": "A helyiségek a mi tulajdonunkban vannak (a versenytársakkal ellentétben), így biztos lehet a hosszú távú együttműködésben és a székhely címének változatlanságában.",
+    "title": "Nem csak a levelezéséről gondoskodunk",
+    "subtitle": "Székhelyünk több mint egy postaláda",
+    "servicesIntro": "Az árban ügyfeleinknek biztosítjuk:",
+    "service1": "Hozzájárulás a székhely létrehozásához a VIVA PARK 6139/1-A0, Komárno címen",
+    "service2": "Küldemények átvétele, megőrzése és online postanyilvántartás",
+    "service3": "E-mail értesítés a beérkezett postáról. A küldeményeket cégünk székhelyén veheti át, ingyenes parkolást biztosítunk közvetlenül az épületben.",
+    "service4": "Küldemények szkennelése és a szkennelt másolatok közvetlen továbbítása az ügyfélnek"
   },
-  "howItWorks": {
-    "title": "Hogyan működik a virtuális székhely?",
-    "description": "A virtuális iroda rendkívül hasznos szolgáltatás azon vállalkozások és szabadúszók számára, akiknek anélkül kell bejegyeztetniük cégük székhelyét, hogy fizikailag irodát kellene bérelniük. Ha egy vállalat nem tudja megszerezni az ingatlan tulajdonosának közjegyzői hozzájárulását, vagy más várost választ, mint ahol jelenleg működik, ideális megoldás a virtuális székhely igénybevétele.",
-    "contactLink": "Kontakt"
+  "process": {
+    "title": "Hogyan működik?",
+    "startText": "Változtatni akarom a székhelyet, nevet, ügyvezetőt",
+    "step1Title": "Lépjen velünk kapcsolatba",
+    "step1Desc": "ingyenes konzultáció telefonon, e-mailben vagy személyesen",
+    "step2Title": "Felmérjük az igényeit",
+    "step2Desc": "a változáshoz szükséges adatok megadása (cégnév, székhely, ügyvezető stb.)",
+    "step3Title": "Elkészítjük és elküldjük",
+    "step3Desc": "minden szükséges dokumentumot elkészítünk és elküldünk Önnek",
+    "step4Title": "Visszaküldés",
+    "step4Desc": "a dokumentumokat aláírja és visszaküldi nekünk",
+    "step5Title": "Csapatunk elintézi a teljes változási folyamatot",
+    "step5Desc": "csapatunk mindent elintéz Ön helyett az illetékes hivataloknál",
+    "step6Title": "Változások bejegyezve az illetékes nyilvántartásokba",
+    "step6Desc": "Változások bejegyezve a cégjegyzékbe"
   },
   "gallery": {
     "alt1": "Irodánk 1",
