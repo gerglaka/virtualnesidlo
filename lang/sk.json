@@ -65,11 +65,6 @@
     "priceTitle": "Cena",
     "priceDesc": "Cena za virtuálne sídlo je niekoľkonásobne nižšia ako prenájom drahej kancelárie."
   },
-  "gallery": {
-    "alt1": "Naša kancelária 1",
-    "alt2": "Naša kancelária 2",
-    "alt3": "Naša kancelária 3"
-  },
   "additionalBenefits": {
     "title": "Vaše výhody s našou službou",
     "text": "Medzi ďalšie výhody patrí fakt, že nehnuteľnosť, v ktorej sa sídlo nachádza je v našom vlastníctve. Pri zakúpení tejto služby ďalej získate online evidenciu a správu pošty, skenovanie, preberanie a úschovu zásielok, emailovú notifikáciu o prijatej pošte a 1x mesačne preposielanie zásielok na vami zvolenú adresu. Získajte prémiovú adresu pre vašu firmu, dôveryhodnosť pred obchodnými partnermi."
@@ -87,6 +82,20 @@
   "cta": {
     "question": "Chcete sa dozvedieť viac o našich balíkoch?",
     "link": "POZRITE SI VŠETKY NAŠE SLUŽBY"
+  },
+  "errorPage": {
+    "title": "Stránka nebola nájdená - Virtuálne sídlo",
+    "heading": "Táto stránka neexistuje",
+    "message": "Možno bola presunutá alebo je adresa nesprávna. Skúste sa vrátiť na úvodnú stránku alebo nás kontaktovať.",
+    "backHome": "Späť na domov",
+    "contact": "Kontaktovať nás"
+  },
+  "errorPage500": {
+    "title": "Interná chyba servera - Virtuálne sídlo",
+    "heading": "Interná chyba servera",
+    "message": "Niečo sa pokazilo na našej strane. Skúste to prosím o chvíľu znova.",
+    "backHome": "Späť na domov",
+    "contact": "Kontaktovať nás"
   },
   "footer": {
     "description": "Profesionálne virtuálne sídlo pre vašu firmu",
@@ -159,7 +168,7 @@
     "phoneLabel": "Telefón:",
     "hoursTitle": "Pracovné hodiny",
     "weekdays": "Pondelok - Piatok:",
-    "weekdaysHours": "8:00 - 17:00",
+    "weekdaysHours": "9:00 - 16:00",
     "weekend": "Sobota - Nedeľa:",
     "weekendHours": "Zatvorené",
     "formTitle": "Napíšte nám",
@@ -185,6 +194,7 @@
     "tooFast": "Prosím chvíľu počkajte a skúste to znova.",
     "tooMany": "Dosiahli ste limit odoslaní. Skúste to neskôr.",
     "submitError": "Odoslanie sa nepodarilo. Skúste to prosím neskôr.",
+    "sending": "Odosielanie správy...",
     "invalidName": "Meno môže obsahovať len písmená",
     "invalidPhone": "Telefón môže obsahovať len čísla a +",
     "thankYou": "Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.",

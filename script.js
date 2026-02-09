@@ -1,67 +1,9 @@
-// Global variables
-let slideIndex = 1;
-
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeSlideshow();
     initializeScrollToTop();
     initializeAnimations();
     initializeContactForm();
     initializeProcessSection();
-});
-
-// Slideshow functionality
-function initializeSlideshow() {
-    showSlides(slideIndex);
-}
-
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    const slides = document.getElementsByClassName('slide');
-    const indicators = document.getElementsByClassName('indicator');
-    
-    if (!slides.length) return; // Exit if no slides exist
-    
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove('active');
-    }
-    
-    for (let i = 0; i < indicators.length; i++) {
-        indicators[i].classList.remove('active');
-    }
-    
-    if (slides[slideIndex - 1]) {
-        slides[slideIndex - 1].classList.add('active');
-    }
-    if (indicators[slideIndex - 1]) {
-        indicators[slideIndex - 1].classList.add('active');
-    }
-}
-
-// Auto-advance slideshow
-function autoSlideshow() {
-    slideIndex++;
-    showSlides(slideIndex);
-    setTimeout(autoSlideshow, 5000); // Change slide every 5 seconds
-}
-
-// Start auto slideshow after page load
-window.addEventListener('load', function() {
-    setTimeout(autoSlideshow, 5000);
 });
 
 // Scroll to top functionality
@@ -500,7 +442,7 @@ function initializeContactForm() {
 
     // Form submission handler
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const nameValue = document.getElementById('name')?.value?.trim() || '';
@@ -528,28 +470,67 @@ function initializeContactForm() {
                 return;
             }
 
-            // Ensure fields are filled (already bound to entry.* names in HTML)
-            document.getElementById('name').value = nameValue;
-            document.getElementById('email').value = emailValue;
-            document.getElementById('phone').value = phoneValue;
-            document.getElementById('message').value = messageValue;
-            document.getElementById('companyName').value = companyNameValue;
-            document.getElementById('ico').value = icoValue;
+            const submitButton = this.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.classList.add('is-loading');
+                submitButton.dataset.originalText = submitButton.dataset.originalText || submitButton.textContent;
+                submitButton.textContent = getI18nMessage('alerts.sending', 'Odosielanie správy...');
+            }
 
-            // Submit via native POST to hidden iframe (avoids XHR/CORS issues)
-            this.submit();
-            recordSubmit();
-
-            // Show success message
             showAlert(
-                getI18nMessage('alerts.thankYou', 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.'),
-                'success'
+                getI18nMessage('alerts.sending', 'Odosielanie správy...'),
+                'info'
             );
+
+            const payload = new URLSearchParams();
+            payload.append('name', nameValue);
+            payload.append('email', emailValue);
+            if (phoneValue) payload.append('phone', phoneValue);
+            payload.append('message', messageValue);
+            if (companyNameValue) payload.append('companyName', companyNameValue);
+            if (icoValue) payload.append('ico', icoValue);
+
+            try {
+                await fetch(this.action, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: payload.toString()
+                });
+
+                recordSubmit();
+
+                // Show success message
+                showAlert(
+                    getI18nMessage('alerts.thankYou', 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.'),
+                    'success'
+                );
+            } catch (error) {
+                showAlert(
+                    getI18nMessage('alerts.submitError', 'Odoslanie sa nepodarilo. Skúste to prosím neskôr.'),
+                    'error'
+                );
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('is-loading');
+                    submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
+                }
+                return;
+            }
 
             // Reset form
             this.reset();
             if (companyFields) {
                 companyFields.classList.remove('show');
+            }
+
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.classList.remove('is-loading');
+                submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
             }
         });
     }
@@ -676,41 +657,6 @@ window.addEventListener('load', function() {
 // Error handling for missing elements
 window.addEventListener('error', function(e) {
     console.warn('Non-critical error:', e.message);
-});
-
-// Keyboard navigation for slideshow
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowLeft') {
-        changeSlide(-1);
-    } else if (e.key === 'ArrowRight') {
-        changeSlide(1);
-    }
-});
-
-// Touch/swipe support for mobile slideshow
-let touchStartX = 0;
-let touchEndX = 0;
-
-function handleSwipe() {
-    const threshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > threshold) {
-        if (diff > 0) {
-            changeSlide(1); // Swipe left - next slide
-        } else {
-            changeSlide(-1); // Swipe right - previous slide
-        }
-    }
-}
-
-document.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
 });
 
 // Prevent form double submission

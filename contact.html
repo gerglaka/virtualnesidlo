@@ -109,28 +109,28 @@
                     <h2 data-i18n="contactPage.formTitle">Napíšte nám</h2>
                     <p class="form-description" data-i18n="contactPage.formDescription">Radi odpovieme na vaše otázky a pomôžeme vám s výberom najlepšieho riešenia pre vašu firmu.</p>
 
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfaEqE2gq3elUyZKIhbp_fzFP-k6neKPdGUo_OpdbdLbA3yOw/formResponse" method="POST" id="contactForm" data-google-form="true" target="hidden_iframe" novalidate>
+                    <form action="https://script.google.com/macros/s/AKfycbziJI_XWXr3vnMbaVSb2GZivVebVxDDlavKY9jw-pRjlrmOj3CkcLiNFSXIdoNZln89cQ/exec" method="POST" id="contactForm" novalidate>
                         <div class="form-group">
                             <label for="name" data-i18n="contactPage.nameLabel">Meno a priezvisko *</label>
-                            <input type="text" id="name" name="entry.1984771152" required autocomplete="name">
+                            <input type="text" id="name" name="name" required autocomplete="name">
                             <div class="field-error" id="nameError" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="email" data-i18n="contactPage.emailFormLabel">Email *</label>
-                            <input type="email" id="email" name="entry.295639869" required autocomplete="email">
+                            <input type="email" id="email" name="email" required autocomplete="email">
                             <div class="field-error" id="emailError" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="phone" data-i18n="contactPage.phoneFormLabel">Telefón</label>
-                            <input type="tel" id="phone" name="entry.1245312888" inputmode="tel" autocomplete="tel">
+                            <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel">
                             <div class="field-error" id="phoneError" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="message" data-i18n="contactPage.messageLabel">Vaša správa *</label>
-                            <textarea id="message" name="entry.1743115944" rows="6" data-i18n-placeholder="contactPage.messagePlaceholder" placeholder="Opíšte nám, čo vás zaujíma alebo aké máte otázky..." required></textarea>
+                            <textarea id="message" name="message" rows="6" data-i18n-placeholder="contactPage.messagePlaceholder" placeholder="Opíšte nám, čo vás zaujíma alebo aké máte otázky..." required></textarea>
                             <div class="field-error" id="messageError" aria-live="polite"></div>
                         </div>
 
@@ -155,12 +155,12 @@
                         <div class="company-fields" id="companyFields">
                             <div class="form-group">
                                 <label for="companyName" data-i18n="contactPage.companyName">Názov firmy</label>
-                                <input type="text" id="companyName" name="entry.272461575">
+                                <input type="text" id="companyName" name="companyName">
                             </div>
 
                             <div class="form-group">
                                 <label for="ico" data-i18n="contactPage.ico">IČO</label>
-                                <input type="text" id="ico" name="entry.1149254980" data-i18n-placeholder="contactPage.icoPlaceholder" placeholder="12345678">
+                                <input type="text" id="ico" name="ico" data-i18n-placeholder="contactPage.icoPlaceholder" placeholder="12345678">
                             </div>
                         </div>
 
@@ -168,7 +168,6 @@
                             Odoslať správu
                         </button>
                     </form>
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                 </div>
             </div>
         </div>

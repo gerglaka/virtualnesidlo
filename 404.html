@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="errorPage.title">Stránka nebola nájdená - Virtuálne sídlo</title>
+    <meta name="description" content="Stránka, ktorú hľadáte, neexistuje alebo bola presunutá.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">V</div>
+                <h1 class="company-name"><a href="index.html" style="color: white; text-decoration: none;">Virtuálne sídlo</a></h1>
+            </div>
+
+            <nav class="nav-section">
+                <!-- Mobile hamburger menu -->
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Navigation links -->
+                <div class="nav-links" id="navLinks">
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.accounting">Účtovníctvo</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.payroll">Mzdy</a>
+                    <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.buyCompany">Kúpa spoločnosti</a>
+                    <span class="separator">•</span>
+                    <a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a>
+                    <a href="services.html" class="cta-button" data-i18n="nav.packages">Naše Balíky</a>
+                    <a href="javascript:void(0)" class="flag-link" data-i18n-title="nav.flagTitle" title="Magyar verzió">
+                        <img src="images/flag-hu.png" alt="Hungarian flag" class="flag-icon">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 Section -->
+    <section class="error-hero">
+        <div class="error-bg"></div>
+        <div class="container">
+            <div class="error-card">
+                <div class="error-code">404</div>
+                <h1 class="error-title" data-i18n="errorPage.heading">Táto stránka neexistuje</h1>
+                <p class="error-text" data-i18n="errorPage.message">Možno bola presunutá alebo je adresa nesprávna. Skúste sa vrátiť na úvodnú stránku alebo nás kontaktovať.</p>
+                <div class="error-actions">
+                    <a href="index.html" class="error-primary" data-i18n="errorPage.backHome">Späť na domov</a>
+                    <a href="contact.html" class="error-secondary" data-i18n="errorPage.contact">Kontaktovať nás</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo">V</div>
+                        <span class="footer-company-name">Virtuálne sídlo</span>
+                    </div>
+                    <p class="footer-description" data-i18n="footer.description">Profesionálne virtuálne sídlo pre vašu firmu</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.contactTitle">Kontakt</h3>
+                    <div class="footer-contact">
+                        <p><img src="images/svg/general-phone.svg" alt="Phone" class="footer-icon"> <img src="images/flag-sk.png" alt="Slovak flag" class="footer-flag"> <a href="tel:+421907056857">+421907056857</a></p>
+                        <p><img src="images/svg/general-phone.svg" alt="Phone" class="footer-icon"> <img src="images/flag-hu.png" alt="Hungarian flag" class="footer-flag"> <a href="tel:+421908684500">+421908684500</a></p>
+                        <p><img src="images/svg/general-mail.svg" alt="Email" class="footer-icon"> <a href="mailto:yyyy@yyyy.com">yyyy@yyyy.com</a></p>
+                        <p><img src="images/svg/general-location.svg" alt="Location" class="footer-icon"> <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.pagesTitle">Stránky</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="footer.home">Domov</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Kontakt</a></li>
+                        <li><a href="services.html" data-i18n="footer.services">Služby</a></li>
+                        <li><a href="https://mastersoffice.sk/sk/" target="_blank">Masters Office</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-title" data-i18n="footer.legalTitle">Právne</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showCookiePolicy()" data-i18n="footer.cookies">Cookies</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()" data-i18n="footer.privacy">Ochrana údajov</a></li>
+                        <li><a href="#" onclick="showTerms()" data-i18n="footer.terms">Obchodné podmienky</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Virtuálne sídlo. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

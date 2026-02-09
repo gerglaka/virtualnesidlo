@@ -65,11 +65,6 @@
     "priceTitle": "Ár",
     "priceDesc": "A virtuális székhely ára többszörösen alacsonyabb, mint egy drága iroda bérlése."
   },
-  "gallery": {
-    "alt1": "Irodánk 1",
-    "alt2": "Irodánk 2",
-    "alt3": "Irodánk 3"
-  },
   "additionalBenefits": {
     "title": "Az Ön előnyei szolgáltatásunkkal",
     "text": "További előnyök közé tartozik, hogy az ingatlan, amelyben a központi iroda található, a mi tulajdonunkban van. Ha megvásárolja ezt a szolgáltatást, akkor online iktatást és postakezelést, szkennelést, a posta átvételét és tárolását, a beérkező postáról szóló e-mail értesítést, valamint havonta egyszer a posta továbbítását is megkapja az Ön által választott címre. Szerezzen prémium címet vállalkozásának, hitelességet üzleti partnerei előtt."
@@ -87,6 +82,20 @@
   "cta": {
     "question": "Szeretne többet megtudni csomagjainkról?",
     "link": "TEKINTSE MEG AZ ÖSSZES SZOLGÁLTATÁSUNKAT"
+  },
+  "errorPage": {
+    "title": "Az oldal nem található - Virtuálne sídlo",
+    "heading": "Ez az oldal nem található",
+    "message": "Lehet, hogy áthelyezték vagy a cím hibás. Próbáljon visszatérni a kezdőlapra, vagy lépjen velünk kapcsolatba.",
+    "backHome": "Vissza a kezdőlapra",
+    "contact": "Kapcsolat"
+  },
+  "errorPage500": {
+    "title": "Szerverhiba - Virtuálne sídlo",
+    "heading": "Belső szerverhiba",
+    "message": "Valami hiba történt a szerveren. Kérjük, próbálja meg később.",
+    "backHome": "Vissza a kezdőlapra",
+    "contact": "Kapcsolat"
   },
   "footer": {
     "description": "Professzionális virtuális iroda cége számára",
@@ -159,7 +168,7 @@
     "phoneLabel": "Telefon:",
     "hoursTitle": "Nyitvatartási idő",
     "weekdays": "Hétfő - Péntek:",
-    "weekdaysHours": "8:00 - 17:00",
+    "weekdaysHours": "9:00 - 16:00",
     "weekend": "Szombat - Vasárnap",
     "weekendHours": "Zárva",
     "formTitle": "Írjon nekünk",
@@ -185,6 +194,7 @@
     "tooFast": "Kérjük, várjon egy pillanatot, majd próbálja újra.",
     "tooMany": "Elérte a beküldési limitet. Kérjük, próbálja később.",
     "submitError": "A beküldés sikertelen. Kérjük, próbálja később.",
+    "sending": "Üzenet küldése...",
     "invalidName": "A név csak betűket tartalmazhat",
     "invalidPhone": "A telefonszám csak számokat és + jelet tartalmazhat",
     "thankYou": "Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.",
