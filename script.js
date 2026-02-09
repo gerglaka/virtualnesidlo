@@ -1,66 +1,11 @@
-// Global variables
-let slideIndex = 1;
-
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeSlideshow();
     initializeScrollToTop();
     initializeAnimations();
     initializeContactForm();
-});
-
-// Slideshow functionality
-function initializeSlideshow() {
-    showSlides(slideIndex);
-}
-
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    const slides = document.getElementsByClassName('slide');
-    const indicators = document.getElementsByClassName('indicator');
-    
-    if (!slides.length) return; // Exit if no slides exist
-    
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove('active');
-    }
-    
-    for (let i = 0; i < indicators.length; i++) {
-        indicators[i].classList.remove('active');
-    }
-    
-    if (slides[slideIndex - 1]) {
-        slides[slideIndex - 1].classList.add('active');
-    }
-    if (indicators[slideIndex - 1]) {
-        indicators[slideIndex - 1].classList.add('active');
-    }
-}
-
-// Auto-advance slideshow
-function autoSlideshow() {
-    slideIndex++;
-    showSlides(slideIndex);
-    setTimeout(autoSlideshow, 5000); // Change slide every 5 seconds
-}
-
-// Start auto slideshow after page load
-window.addEventListener('load', function() {
-    setTimeout(autoSlideshow, 5000);
+    initializeProcessSection();
+    initializePricingAnimations();
+    initializeGallerySlideshow();
 });
 
 // Scroll to top functionality
@@ -116,9 +61,271 @@ function initializeAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.benefit-card, .section-title, .why-choose-content');
+    const animateElements = document.querySelectorAll('.exclusive-card, .section-title, .why-choose-content');
     animateElements.forEach(el => observer.observe(el));
+}
+
+// Pricing card entrance animations
+function initializePricingAnimations() {
+    var pricingCards = document.querySelectorAll('[data-animate="pricing"]');
+    if (pricingCards.length) {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        pricingCards.forEach(function(card) { observer.observe(card); });
+    }
+}
+
+// Gallery slideshow (mobile)
+var galleryCurrentIndex = 0;
+
+function initializeGallerySlideshow() {
+    var slideshow = document.querySelector('.gallery-slideshow');
+    if (!slideshow) return;
+
+    var slides = slideshow.querySelectorAll('.gallery-slide');
+    var dotsContainer = slideshow.querySelector('.gallery-dots');
+    if (!slides.length || !dotsContainer) return;
+
+    // Create dots
+    for (var i = 0; i < slides.length; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+            galleryGoTo(parseInt(this.dataset.index));
+        });
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function galleryGoTo(index) {
+    var slideshow = document.querySelector('.gallery-slideshow');
+    if (!slideshow) return;
+
+    var slides = slideshow.querySelectorAll('.gallery-slide');
+    var dots = slideshow.querySelectorAll('.gallery-dot');
+    if (!slides.length) return;
+
+    // Wrap around
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+        if (dots[i]) dots[i].classList.remove('active');
+    }
+
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+    galleryCurrentIndex = index;
+}
+
+function galleryNav(direction) {
+    galleryGoTo(galleryCurrentIndex + direction);
+}
+
+// ===== PROCESS SECTION - JS-Pinned Scroll Timeline =====
+function initializeProcessSection() {
+    var wrapper = document.querySelector('.process-wrapper');
+    var section = document.querySelector('.process-section');
+    var board = document.getElementById('processBoard');
+    var svg = document.getElementById('processSvg');
+    var bg = section ? section.querySelector('.process-bg') : null;
+
+    if (!wrapper || !section || !board || !svg) return;
+
+    var steps = Array.from(board.querySelectorAll('.process-step'))
+        .sort(function(a, b) { return parseInt(a.dataset.step) - parseInt(b.dataset.step); });
+
+    function isMobile() { return window.innerWidth <= 768; }
+
+    var arrows = [];
+
+    // Pin/unpin section with JS (bulletproof, no overflow issues)
+    function pinSection() {
+        if (isMobile()) {
+            section.style.position = '';
+            section.style.top = '';
+            section.style.left = '';
+            section.style.width = '';
+            return;
+        }
+
+        var wRect = wrapper.getBoundingClientRect();
+        var vh = window.innerHeight;
+
+        if (wRect.top <= 0 && wRect.bottom > vh) {
+            // Pinned
+            section.style.position = 'fixed';
+            section.style.top = '0';
+            section.style.left = '0';
+            section.style.width = '100%';
+        } else if (wRect.bottom <= vh) {
+            // Past — anchor to bottom of wrapper
+            section.style.position = 'absolute';
+            section.style.top = (wrapper.clientHeight - vh) + 'px';
+            section.style.left = '0';
+            section.style.width = '100%';
+        } else {
+            // Before — normal flow
+            section.style.position = 'relative';
+            section.style.top = '0';
+            section.style.left = '';
+            section.style.width = '';
+        }
+    }
+
+    // Draw individual bent arrows between consecutive steps
+    function drawArrows() {
+        arrows = [];
+
+        if (isMobile()) {
+            svg.innerHTML = '';
+            return;
+        }
+
+        var boardRect = board.getBoundingClientRect();
+        var points = steps.map(function(step) {
+            var rect = step.getBoundingClientRect();
+            return {
+                x: rect.left + rect.width / 2 - boardRect.left,
+                y: rect.top + rect.height / 2 - boardRect.top
+            };
+        });
+
+        svg.setAttribute('viewBox', '0 0 ' + boardRect.width + ' ' + boardRect.height);
+
+        var svgContent = '';
+
+        for (var i = 0; i < points.length - 1; i++) {
+            var a = points[i];
+            var b = points[i + 1];
+            var midX = (a.x + b.x) / 2;
+
+            // Cubic bezier S-curve between steps
+            var d = 'M ' + a.x + ' ' + a.y +
+                    ' C ' + midX + ' ' + a.y + ', ' + midX + ' ' + b.y + ', ' + b.x + ' ' + b.y;
+
+            // Subtle background arrow
+            svgContent += '<path d="' + d + '" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3" stroke-linecap="round"/>';
+            // Green animated arrow
+            svgContent += '<path class="arrow-fg" data-arrow="' + i + '" d="' + d + '" fill="none" stroke="#4CAF50" stroke-width="3" stroke-linecap="round"/>';
+        }
+
+        svg.innerHTML = svgContent;
+
+        // Measure and prep each green arrow for dash animation
+        var fgPaths = svg.querySelectorAll('.arrow-fg');
+        for (var j = 0; j < fgPaths.length; j++) {
+            var len = fgPaths[j].getTotalLength();
+            fgPaths[j].style.strokeDasharray = len;
+            fgPaths[j].style.strokeDashoffset = len;
+            arrows.push({ el: fgPaths[j], len: len });
+        }
+    }
+
+    // Main scroll handler
+    function onScroll() {
+        pinSection();
+
+        if (isMobile()) return;
+
+        var wRect = wrapper.getBoundingClientRect();
+        var scrollDist = wrapper.clientHeight - window.innerHeight;
+        if (scrollDist <= 0) return;
+
+        var progress = Math.max(0, Math.min(1, -wRect.top / scrollDist));
+
+        // Animate each arrow independently
+        var segCount = steps.length - 1; // 6 arrows for 7 steps
+        for (var i = 0; i < arrows.length; i++) {
+            var arrowStart = i / segCount;
+            var arrowEnd = (i + 1) / segCount;
+            var arrowProgress;
+
+            if (progress <= arrowStart) {
+                arrowProgress = 0;
+            } else if (progress >= arrowEnd) {
+                arrowProgress = 1;
+            } else {
+                arrowProgress = (progress - arrowStart) / (arrowEnd - arrowStart);
+            }
+
+            arrows[i].el.style.strokeDashoffset = arrows[i].len * (1 - arrowProgress);
+        }
+
+        // Activate steps
+        for (var s = 0; s < steps.length; s++) {
+            var threshold = s / segCount;
+            if (progress >= threshold - 0.01) {
+                steps[s].classList.add('active');
+            } else {
+                steps[s].classList.remove('active');
+            }
+        }
+
+        // Move background pattern
+        if (bg) {
+            bg.style.transform = 'translateX(' + (progress * 600) + 'px)';
+        }
+    }
+
+    // Mobile: IntersectionObserver for step activation
+    var mobileObserver = null;
+    function initMobile() {
+        if (mobileObserver) {
+            mobileObserver.disconnect();
+            mobileObserver = null;
+        }
+        if (!isMobile()) return;
+
+        mobileObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        steps.forEach(function(step) { mobileObserver.observe(step); });
+    }
+
+    // Init: wait two frames for layout to settle
+    requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+            drawArrows();
+            onScroll();
+        });
+    });
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Reset section position before redrawing
+            section.style.position = 'relative';
+            section.style.top = '0';
+            section.style.left = '';
+            section.style.width = '';
+
+            requestAnimationFrame(function() {
+                drawArrows();
+                onScroll();
+                initMobile();
+            });
+        }, 250);
+    });
+
+    initMobile();
 }
 
 // Contact form functionality
@@ -126,6 +333,16 @@ function initializeContactForm() {
     const hasCompanyCheckbox = document.getElementById('hasCompany');
     const companyFields = document.getElementById('companyFields');
     const contactForm = document.getElementById('contactForm');
+    const formStartTime = Date.now();
+    const submitHistoryKey = 'contact-submit-history';
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const messageError = document.getElementById('messageError');
 
     // Company checkbox toggle
     if (hasCompanyCheckbox && companyFields) {
@@ -143,39 +360,234 @@ function initializeContactForm() {
         });
     }
 
-        // Form submission handler
+    function getI18nMessage(key, fallback) {
+        if (window.I18n && typeof window.I18n.t === 'function') {
+            const value = window.I18n.t(key);
+            if (value !== key) return value;
+        }
+        return fallback;
+    }
+
+    function setFieldError(input, errorEl, message) {
+        if (!input || !errorEl) return;
+        if (message) {
+            input.classList.add('is-invalid');
+            errorEl.textContent = message;
+        } else {
+            input.classList.remove('is-invalid');
+            errorEl.textContent = '';
+        }
+    }
+
+    function validateName() {
+        if (!nameInput) return true;
+        const value = nameInput.value.trim();
+        if (!value) {
+            setFieldError(nameInput, nameError, getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'));
+            return false;
+        }
+        const nameRegex = /^[A-Za-zÀ-ž\s'.-]{2,}$/;
+        if (!nameRegex.test(value)) {
+            setFieldError(nameInput, nameError, getI18nMessage('alerts.invalidName', 'Meno môže obsahovať len písmená'));
+            return false;
+        }
+        setFieldError(nameInput, nameError, '');
+        return true;
+    }
+
+    function validateEmail() {
+        if (!emailInput) return true;
+        const value = emailInput.value.trim();
+        if (!value) {
+            setFieldError(emailInput, emailError, getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'));
+            return false;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            setFieldError(emailInput, emailError, getI18nMessage('alerts.invalidEmail', 'Prosím zadajte platnú emailovú adresu'));
+            return false;
+        }
+        setFieldError(emailInput, emailError, '');
+        return true;
+    }
+
+    function validatePhone() {
+        if (!phoneInput) return true;
+        const value = phoneInput.value.trim();
+        if (!value) {
+            setFieldError(phoneInput, phoneError, '');
+            return true;
+        }
+        const phoneRegex = /^\+?[0-9\s]+$/;
+        const digitsCount = value.replace(/\D/g, '').length;
+        if (!phoneRegex.test(value) || digitsCount < 6) {
+            setFieldError(phoneInput, phoneError, getI18nMessage('alerts.invalidPhone', 'Telefón môže obsahovať len čísla a +'));
+            return false;
+        }
+        setFieldError(phoneInput, phoneError, '');
+        return true;
+    }
+
+    function validateMessage() {
+        if (!messageInput) return true;
+        const value = messageInput.value.trim();
+        if (!value) {
+            setFieldError(messageInput, messageError, getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'));
+            return false;
+        }
+        setFieldError(messageInput, messageError, '');
+        return true;
+    }
+
+    function validateAll() {
+        const v1 = validateName();
+        const v2 = validateEmail();
+        const v3 = validatePhone();
+        const v4 = validateMessage();
+        return v1 && v2 && v3 && v4;
+    }
+
+    function attachLiveValidation(input, validator) {
+        if (!input) return;
+        input.addEventListener('input', validator);
+        input.addEventListener('blur', validator);
+    }
+
+    attachLiveValidation(nameInput, validateName);
+    attachLiveValidation(emailInput, validateEmail);
+    attachLiveValidation(phoneInput, validatePhone);
+    attachLiveValidation(messageInput, validateMessage);
+
+    window.addEventListener('languageChanged', () => {
+        validateAll();
+    });
+
+    function canSubmitNow() {
+        const now = Date.now();
+
+        // Require a short dwell time to reduce bot submissions
+        if (now - formStartTime < 3000) {
+            showAlert(
+                getI18nMessage('alerts.tooFast', 'Prosím chvíľu počkajte a skúste to znova.'),
+                'error'
+            );
+            return false;
+        }
+
+        try {
+            const historyRaw = localStorage.getItem(submitHistoryKey);
+            const history = historyRaw ? JSON.parse(historyRaw) : [];
+            const tenMinutesAgo = now - 10 * 60 * 1000;
+            const recent = history.filter(ts => ts >= tenMinutesAgo);
+
+            if (recent.length >= 2) {
+                showAlert(
+                    getI18nMessage('alerts.tooMany', 'Dosiahli ste limit odoslaní. Skúste to neskôr.'),
+                    'error'
+                );
+                return false;
+            }
+        } catch (e) {
+            // If localStorage fails, allow submit
+        }
+
+        return true;
+    }
+
+    function recordSubmit() {
+        const now = Date.now();
+        try {
+            const historyRaw = localStorage.getItem(submitHistoryKey);
+            const history = historyRaw ? JSON.parse(historyRaw) : [];
+            history.push(now);
+            const tenMinutesAgo = now - 10 * 60 * 1000;
+            const trimmed = history.filter(ts => ts >= tenMinutesAgo);
+            localStorage.setItem(submitHistoryKey, JSON.stringify(trimmed));
+        } catch (e) {
+            // ignore
+        }
+    }
+
+    // Form submission handler
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const nameValue = document.getElementById('name')?.value?.trim() || '';
+            const emailValue = document.getElementById('email')?.value?.trim() || '';
+            const phoneValue = document.getElementById('phone')?.value?.trim() || '';
+            const messageValue = document.getElementById('message')?.value?.trim() || '';
+            const companyNameValue = document.getElementById('companyName')?.value?.trim() || '';
+            const icoValue = document.getElementById('ico')?.value?.trim() || '';
+            const honeypotValue = document.getElementById('website')?.value || '';
 
-            // Simple validation
-            if (!data.name || !data.email || !data.message) {
+            // Honeypot check (silent fail)
+            if (honeypotValue) {
+                return;
+            }
+
+            if (!validateAll()) {
                 showAlert(
-                    window.I18n ? window.I18n.t('alerts.fillRequired') : 'Prosím vyplňte všetky povinné polia označené *',
+                    getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'),
                     'error'
                 );
                 return;
             }
 
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showAlert(
-                    window.I18n ? window.I18n.t('alerts.invalidEmail') : 'Prosím zadajte platnú emailovú adresu',
-                    'error'
-                );
+            if (!canSubmitNow()) {
                 return;
             }
 
-            // Show success message
+            const submitButton = this.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.classList.add('is-loading');
+                submitButton.dataset.originalText = submitButton.dataset.originalText || submitButton.textContent;
+                submitButton.textContent = getI18nMessage('alerts.sending', 'Odosielanie správy...');
+            }
+
             showAlert(
-                window.I18n ? window.I18n.t('alerts.thankYou') : 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.',
-                'success'
+                getI18nMessage('alerts.sending', 'Odosielanie správy...'),
+                'info'
             );
+
+            const payload = new URLSearchParams();
+            payload.append('name', nameValue);
+            payload.append('email', emailValue);
+            if (phoneValue) payload.append('phone', phoneValue);
+            payload.append('message', messageValue);
+            if (companyNameValue) payload.append('companyName', companyNameValue);
+            if (icoValue) payload.append('ico', icoValue);
+
+            try {
+                await fetch(this.action, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: payload.toString()
+                });
+
+                recordSubmit();
+
+                // Show success message
+                showAlert(
+                    getI18nMessage('alerts.thankYou', 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.'),
+                    'success'
+                );
+            } catch (error) {
+                showAlert(
+                    getI18nMessage('alerts.submitError', 'Odoslanie sa nepodarilo. Skúste to prosím neskôr.'),
+                    'error'
+                );
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('is-loading');
+                    submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
+                }
+                return;
+            }
 
             // Reset form
             this.reset();
@@ -183,7 +595,11 @@ function initializeContactForm() {
                 companyFields.classList.remove('show');
             }
 
-            console.log('Form data:', data); // For debugging
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.classList.remove('is-loading');
+                submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
+            }
         });
     }
 }
@@ -309,41 +725,6 @@ window.addEventListener('load', function() {
 // Error handling for missing elements
 window.addEventListener('error', function(e) {
     console.warn('Non-critical error:', e.message);
-});
-
-// Keyboard navigation for slideshow
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowLeft') {
-        changeSlide(-1);
-    } else if (e.key === 'ArrowRight') {
-        changeSlide(1);
-    }
-});
-
-// Touch/swipe support for mobile slideshow
-let touchStartX = 0;
-let touchEndX = 0;
-
-function handleSwipe() {
-    const threshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > threshold) {
-        if (diff > 0) {
-            changeSlide(1); // Swipe left - next slide
-        } else {
-            changeSlide(-1); // Swipe right - previous slide
-        }
-    }
-}
-
-document.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
 });
 
 // Prevent form double submission

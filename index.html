@@ -5,20 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtuálne sídlo - Najlepšie virtuálne sídlo na Slovensku</title>
     <meta name="description" content="Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.">
+    <meta property="og:title" content="Virtuálne sídlo - Najlepšie virtuálne sídlo na Slovensku">
+    <meta property="og:description" content="Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Virtuálne sídlo",
+        "description": "Profesionálne virtuálne sídlo pre vašu firmu na Slovensku.",
+        "image": "images/og-image.jpg",
+        "telephone": "+421907056857",
+        "email": "yyyy@yyyy.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "VIVA PARK 6139/1-A0",
+            "addressLocality": "Komárno",
+            "postalCode": "945 01",
+            "addressCountry": "SK"
+        },
+        "openingHours": "Mo-Fr 09:00-16:00",
+        "priceRange": "€€"
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Preskočiť na obsah</a>
+
     <!-- Header -->
     <header class="header">
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo">V</div>
+                <div class="logo"><img src="images/logo.png" alt="Virtuálne sídlo logo" class="logo-img"></div>
                 <h1 class="company-name"><a href="index.html" style="color: white; text-decoration: none;">Virtuálne sídlo</a></h1>
             </div>
 
             <nav class="nav-section">
                 <!-- Mobile hamburger menu -->
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" role="button" aria-label="Menu" tabindex="0">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -31,7 +58,7 @@
                     <a href="https://mastersoffice.sk/sk/" class="nav-link" target="_blank" data-i18n="nav.buyCompany">Kúpa spoločnosti</a>
                     <span class="separator">•</span>
                     <a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a>
-                    <a href="services.html" class="cta-button" data-i18n="nav.packages">Naše Balíky</a>
+                    <a href="#homePricing" class="cta-button" data-i18n="nav.packages">Naše Balíky</a>
                     <a href="javascript:void(0)" class="flag-link" data-i18n-title="nav.flagTitle" title="Magyar verzió">
                         <img src="images/flag-hu.png" alt="Hungarian flag" class="flag-icon">
                     </a>
@@ -41,76 +68,227 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1 class="hero-title" data-i18n="hero.title">Najlepšie virtuálne sídlo na Slovensku</h1>
                 <p class="hero-subtitle" data-i18n="hero.subtitle">Už od 25€+dph mesačne, bez ďalších poplatkov</p>
-                <a href="services.html" class="hero-button" data-i18n="hero.button">Naše balíky</a>
+                <a href="#homePricing" class="hero-button" data-i18n="hero.button">Naše balíky</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview Section -->
-    <section class="services-overview">
+    <!-- Exclusive Section -->
+    <section class="exclusive-section">
         <div class="container">
-            <h2 class="section-title" data-i18n="servicesOverview.title">Služba virtuálnej centrály jednoducho a spoľahlivo:</h2>
-            <p class="section-subtitle" data-i18n="servicesOverview.subtitle">Osloboďte sa od administratívnej záťaže a zabezpečte svojej firme profesionálne sídlo za najlepších podmienok.</p>
-
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🤝</div>
-                    <h3 class="benefit-title" data-i18n="servicesOverview.benefit1Title">Voľné ruky</h3>
-                    <p class="benefit-description" data-i18n="servicesOverview.benefit1Desc">Nechajte všetko na nás. Radi za Vás vyriešime všetky potrebné procesy.</p>
+            <div class="exclusive-highlights">
+                <div class="exclusive-card">
+                    <div class="exclusive-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#308003" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <p data-i18n="exclusive.limitedAccess">Aby bola adresa sídla skutočne exkluzívna, je dostupná len pre limitovaný počet firiem / živnostníkov.</p>
                 </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚙️</div>
-                    <h3 class="benefit-title" data-i18n="servicesOverview.benefit2Title">Služby</h3>
-                    <p class="benefit-description" data-i18n="servicesOverview.benefit2Desc">Komplexné portfólio služieb Vám poskytne skutočný komfort pri správe Vašej firmy.</p>
+                <div class="exclusive-card">
+                    <div class="exclusive-card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#308003" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <p data-i18n="exclusive.ownership">Priestory sú v našom vlastníctve (na rozdiel od konkurencie), takže môžete mať istotu dlhodobej spolupráce a nemennosti adresy sídla.</p>
                 </div>
+            </div>
 
-                <div class="benefit-card">
-                    <div class="benefit-icon">📈</div>
-                    <h3 class="benefit-title" data-i18n="servicesOverview.benefit3Title">Návratnosť</h3>
-                    <p class="benefit-description" data-i18n="servicesOverview.benefit3Desc">Investícia do virtuálnej adresy sa Vám vráti v podobe času, ktorý ušetríte.</p>
+            <div class="exclusive-services">
+                <h2 class="exclusive-services-title" data-i18n="exclusive.title">Postaráme sa nielen o vašu korešpondenciu</h2>
+                <p class="exclusive-services-subtitle" data-i18n="exclusive.subtitle">Naše sídlo je viac ako poštová schránka</p>
+                <p class="exclusive-services-intro" data-i18n="exclusive.servicesIntro">V cene našim klientom poskytujeme:</p>
+                <ul class="exclusive-list">
+                    <li data-i18n="exclusive.service1">Súhlas so zriadením sídla na adrese VIVA PARK 6139/1-A0, Komárno</li>
+                    <li data-i18n="exclusive.service2">Preberanie, úschovu zásielok a online evidenciu pošty</li>
+                    <li data-i18n="exclusive.service3">Emailovú notifikáciu o prijatej pošte. Zásielky si môžete vyzdvihnúť v sídle našej spoločnosti, ponúkame bezplatné parkovanie priamo v objekte.</li>
+                    <li data-i18n="exclusive.service4">Skenovanie zásielok a preposielanie skenov priamo klientovi</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <div class="process-wrapper">
+        <section class="process-section" id="processSection">
+            <div class="process-bg"></div>
+            <div class="process-inner">
+                <h2 class="process-title" data-i18n="process.title">Ako to funguje?</h2>
+                <div class="process-board" id="processBoard">
+                    <svg class="process-svg" id="processSvg"></svg>
+                    <div class="process-grid">
+                        <!-- Start (top row, col 1) -->
+                        <div class="process-step" data-step="0">
+                            <div class="step-icon">
+                                <img src="images/svg/man.svg" alt="">
+                            </div>
+                            <p class="step-text" data-i18n="process.startText">Chcem zmeniť sídlo, názov, konateľa</p>
+                        </div>
+                        <!-- Step 1 (bottom row, col 2) -->
+                        <div class="process-step" data-step="1">
+                            <div class="step-icon">
+                                <img src="images/svg/handphone.svg" alt="">
+                            </div>
+                            <h4 class="step-title" data-i18n="process.step1Title">Kontaktujte nás</h4>
+                            <p class="step-desc" data-i18n="process.step1Desc">bezplatná konzultácia telefonicky, e-mailom alebo osobne</p>
+                        </div>
+                        <!-- Step 2 (top row, col 3) -->
+                        <div class="process-step" data-step="2">
+                            <div class="step-icon">
+                                <img src="images/svg/megaphone.svg" alt="">
+                            </div>
+                            <h4 class="step-title" data-i18n="process.step2Title">Zistíme vaše potreby</h4>
+                            <p class="step-desc" data-i18n="process.step2Desc">dodanie údajov k zmene (názov spol., sídlo, konateľ, atď)</p>
+                        </div>
+                        <!-- Step 3 (bottom row, col 4) -->
+                        <div class="process-step" data-step="3">
+                            <div class="step-icon">
+                                <img src="images/svg/archive.svg" alt="">
+                            </div>
+                            <h4 class="step-title" data-i18n="process.step3Title">Pripravíme a pošleme</h4>
+                            <p class="step-desc" data-i18n="process.step3Desc">všetky potrebné dokumenty pre vás pripravíme a pošleme</p>
+                        </div>
+                        <!-- Step 4 (top row, col 5) -->
+                        <div class="process-step" data-step="4">
+                            <div class="step-icon">
+                                <img src="images/svg/paper-airplane.svg" alt="">
+                            </div>
+                            <h4 class="step-title" data-i18n="process.step4Title">Návratka</h4>
+                            <p class="step-desc" data-i18n="process.step4Desc">dokumenty podpíšete a pošlete nám späť</p>
+                        </div>
+                        <!-- Step 5 (bottom row, col 6) -->
+                        <div class="process-step" data-step="5">
+                            <div class="step-icon">
+                                <img src="images/svg/gavel.svg" alt="">
+                            </div>
+                            <h4 class="step-title" data-i18n="process.step5Title">Náš tím vyrieši celý proces zmien</h4>
+                            <p class="step-desc" data-i18n="process.step5Desc">náš tím vybaví všetko za vás na príslušných úradoch</p>
+                        </div>
+                        <!-- Step 6 (top row, col 7) -->
+                        <div class="process-step" data-step="6">
+                            <div class="step-icon">
+                                <img src="images/svg/tie.svg" alt="">
+                            </div>
+                            <h4 class="step-title" data-i18n="process.step6Title">Zmeny zapísané v príslušných registroch</h4>
+                            <p class="step-desc" data-i18n="process.step6Desc">Zmeny zapísané v obchodnom registri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Home Pricing Section -->
+    <section class="home-pricing" id="homePricing">
+        <div class="home-pricing-bg"></div>
+        <div class="container home-pricing-inner">
+            <h2 class="home-pricing-title" data-i18n="homePricing.title">Naše balíky</h2>
+            <p class="home-pricing-subtitle" data-i18n="homePricing.subtitle">Jednoduché a transparentné ceny bez skrytých poplatkov.</p>
+            <div class="home-pricing-cards">
+                <!-- Komárno Card (Featured) -->
+                <div class="home-pricing-card featured" data-animate="pricing">
+                    <div class="featured-badge" data-i18n="servicesPage.topChoice">Top voľba</div>
+                    <div class="card-header">
+                        <h3 class="location-name" data-i18n="homePricing.komarno">Komárno</h3>
+                        <div class="price">300€</div>
+                        <div class="price-period" data-i18n="homePricing.period">bez DPH / rok</div>
+                    </div>
+                    <ul class="services-list">
+                        <li data-i18n="servicesPage.servicesList.item1">Preberanie zásielok ročne</li>
+                        <li data-i18n="servicesPage.servicesList.item2">Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li data-i18n="servicesPage.servicesList.item3">E-mailové notifikácie</li>
+                        <li data-i18n="servicesPage.servicesList.item4">Skenovanie obsahu zásielok</li>
+                        <li data-i18n="servicesPage.servicesList.item5">Preberanie doporučenej pošty</li>
+                        <li data-i18n="servicesPage.servicesList.item6">1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-cta-button" data-i18n="servicesPage.interested">Mám záujem</a>
+                </div>
+                <!-- Bratislava Card -->
+                <div class="home-pricing-card" data-animate="pricing">
+                    <div class="card-header">
+                        <h3 class="location-name" data-i18n="homePricing.bratislava">Bratislava</h3>
+                        <div class="price">384€</div>
+                        <div class="price-period" data-i18n="homePricing.period">bez DPH / rok</div>
+                    </div>
+                    <ul class="services-list">
+                        <li data-i18n="servicesPage.servicesList.item1">Preberanie zásielok ročne</li>
+                        <li data-i18n="servicesPage.servicesList.item2">Súhlas so zriadením sídla s.r.o. / živnosti</li>
+                        <li data-i18n="servicesPage.servicesList.item3">E-mailové notifikácie</li>
+                        <li data-i18n="servicesPage.servicesList.item4">Skenovanie obsahu zásielok</li>
+                        <li data-i18n="servicesPage.servicesList.item5">Preberanie doporučenej pošty</li>
+                        <li data-i18n="servicesPage.servicesList.item6">1x mesačne preposielanie zásielok na vami zvolenú adresu</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-cta-button" data-i18n="servicesPage.interested">Mám záujem</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
+    <!-- Services Section -->
+    <section class="services-section">
         <div class="container">
-            <h2 class="section-title" data-i18n="howItWorks.title">Ako funguje virtuálne sídlo s.r.o.?</h2>
-            <p class="section-description" data-i18n="howItWorks.description">Virtuálne sídlo je mimoriadne užitočná služba pre podniky a živnostníkov, ktorí potrebujú registrovať svoje sídlo firmy bez nutnosti fyzického prenájmu kancelárie. Ak spoločnosť nemôže získať notárom overený súhlas od vlastníka nehnuteľnosti, alebo sa rozhodne pre iné mesto v ktorom práve pôsobí, ideálnym riešením je využiť virtuálne sídlo.</p>
-            <a href="contact.html" class="contact-link" data-i18n="howItWorks.contactLink">Kontakt</a>
+            <div class="services-intro">
+                <p data-i18n="servicesIntro.text1">Ak ste sa rozhodli zmeniť sídlo, názov, spoločníkov, konateľov či doplniť predmety podnikania do vašej SRO tak je tu naša spoločnosť pre vás plne k dispozícií. Cez nás môžete zrealizovať akúkoľvek zmenu vo vašej SRO bez behania po úradoch, stresov či nekonečnej byrokracie. Naša spoločnosť sa o všetko postará a vy sa môžete pokojne naďalej venovať svojim podnikateľským aktivitám</p>
+                <p data-i18n="servicesIntro.text2">Naša spoločnosť ponúka a sprostredkúva svojim klientom aj služby čoraz populárnejšieho virtuálneho sídla. Každá spoločnosť musí mať v obchodnom registri zapísanú nejakú adresu (sídlo). Pri zvažovaní nad alternatívami podnikatelia často zvažujú možnosť zapísať si do obchodného registra virtuálne sídlo z viacerých pozitívnych dôvodov.</p>
+            </div>
+
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/svg/general-mail.svg" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <h3 data-i18n="servicesCards.mailTitle">Starostlivosť o vašu poštu</h3>
+                    <p data-i18n="servicesCards.mailDesc">Vašu poštu budeme preberať, fotiť a môžeme skenovať aj jej obsah na požiadanie.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/svg/notification.svg" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <h3 data-i18n="servicesCards.notifyTitle">Notifikácia</h3>
+                    <p data-i18n="servicesCards.notifyDesc">Ak vám príde pošta, informujeme vás o tom e-mailom.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/svg/send.svg" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <h3 data-i18n="servicesCards.forwardTitle">Preposielanie pošty</h3>
+                    <p data-i18n="servicesCards.forwardDesc">Naša spoločnosť svojim klientom poštu aj preposiela fyzicky v dohodnutom termíne.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/svg/price.svg" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <h3 data-i18n="servicesCards.priceTitle">Cena</h3>
+                    <p data-i18n="servicesCards.priceDesc">Cena za virtuálne sídlo je niekoľkonásobne nižšia ako prenájom drahej kancelárie.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Office Gallery Section -->
-    <section class="office-gallery">
-        <div class="container">
-            <div class="slideshow-container">
-                <div class="slide active">
-                    <img src="images/office1.jpg" data-i18n-alt="gallery.alt1" alt="Naša kancelária 1">
-                </div>
-                <div class="slide">
-                    <img src="images/office2.jpg" data-i18n-alt="gallery.alt2" alt="Naša kancelária 2">
-                </div>
-                <div class="slide">
-                    <img src="images/office3.jpg" data-i18n-alt="gallery.alt3" alt="Naša kancelária 3">
-                </div>
-
-                <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-                <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
-
-                <div class="slide-indicators">
-                    <span class="indicator active" onclick="currentSlide(1)"></span>
-                    <span class="indicator" onclick="currentSlide(2)"></span>
-                    <span class="indicator" onclick="currentSlide(3)"></span>
-                </div>
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-collage">
+            <div class="gallery-item gi-1"><img src="images/gallery/photo1.jpg" alt="Gallery photo 1" loading="lazy"></div>
+            <div class="gallery-item gi-2"><img src="images/gallery/photo2.jpeg" alt="Gallery photo 2" loading="lazy"></div>
+            <div class="gallery-item gi-3"><img src="images/gallery/photo3.jpg" alt="Gallery photo 3" loading="lazy"></div>
+            <div class="gallery-item gi-4"><img src="images/gallery/photo4.jpg" alt="Gallery photo 4" loading="lazy"></div>
+            <div class="gallery-item gi-5"><img src="images/gallery/photo5.jpeg" alt="Gallery photo 5" loading="lazy"></div>
+            <div class="gallery-item gi-6"><img src="images/gallery/photo6.jpg" alt="Gallery photo 6" loading="lazy"></div>
+        </div>
+        <div class="gallery-slideshow">
+            <div class="gallery-slide-track">
+                <img src="images/gallery/photo1.jpg" alt="Gallery photo 1" class="gallery-slide active" loading="lazy">
+                <img src="images/gallery/photo2.jpg" alt="Gallery photo 2" class="gallery-slide" loading="lazy">
+                <img src="images/gallery/photo3.jpg" alt="Gallery photo 3" class="gallery-slide" loading="lazy">
+                <img src="images/gallery/photo4.jpg" alt="Gallery photo 4" class="gallery-slide" loading="lazy">
+                <img src="images/gallery/photo5.jpg" alt="Gallery photo 5" class="gallery-slide" loading="lazy">
+                <img src="images/gallery/photo6.jpg" alt="Gallery photo 6" class="gallery-slide" loading="lazy">
             </div>
+            <button class="gallery-arrow gallery-arrow-left" onclick="galleryNav(-1)" aria-label="Predchádzajúca fotka">&#8249;</button>
+            <button class="gallery-arrow gallery-arrow-right" onclick="galleryNav(1)" aria-label="Nasledujúca fotka">&#8250;</button>
+            <div class="gallery-dots"></div>
         </div>
     </section>
 
@@ -134,13 +312,13 @@
                     <p class="why-choose-description" data-i18n="whyChooseUs.desc1">Naša služba virtuálneho sídla vám poskytne všetko potrebné a za poplatok vám obratom zašleme oficiálny súhlas na zriadenie sídla, ktorý je nevyhnutný na zápis do Obchodného registra. Okrem toho sa postaráme o všetku administratívu spojenú s prichádzajúcou poštou, čím vám ušetríme čas a zabezpečíme bezproblémový chod vašej firmy.</p>
                 </div>
                 <div class="why-choose-image">
-                    <img src="images/office-main.jpg" data-i18n-alt="whyChooseUs.imageAlt1" alt="Naša kancelária" class="office-image">
+                    <img src="images/office-main.jpg" data-i18n-alt="whyChooseUs.imageAlt1" alt="Naša kancelária" class="office-image" loading="lazy">
                 </div>
             </div>
 
             <div class="why-choose-row reverse">
                 <div class="why-choose-image">
-                    <img src="images/office-secondary.jpg" data-i18n-alt="whyChooseUs.imageAlt2" alt="Naša kancelária" class="office-image">
+                    <img src="images/office-secondary.jpg" data-i18n-alt="whyChooseUs.imageAlt2" alt="Naša kancelária" class="office-image" loading="lazy">
                 </div>
                 <div class="why-choose-content">
                     <h2 class="why-choose-title" data-i18n="whyChooseUs.title2">Šetrite čas aj peniaze s našimi službami.</h2>
@@ -155,7 +333,7 @@
     <section class="cta-section">
         <div class="container">
             <p class="cta-question" data-i18n="cta.question">Chcete sa dozvedieť viac o našich balíkoch?</p>
-            <a href="services.html" class="cta-link" data-i18n="cta.link">POZRITE SI VŠETKY NAŠE SLUŽBY</a>
+            <a href="#homePricing" class="cta-link" data-i18n="cta.link">POZRITE SI VŠETKY NAŠE SLUŽBY</a>
         </div>
     </section>
 
@@ -165,7 +343,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="logo">V</div>
+                        <div class="logo"><img src="images/logo.png" alt="Virtuálne sídlo logo" class="logo-img"></div>
                         <span class="footer-company-name">Virtuálne sídlo</span>
                     </div>
                     <p class="footer-description" data-i18n="footer.description">Profesionálne virtuálne sídlo pre vašu firmu</p>
@@ -174,9 +352,10 @@
                 <div class="footer-section">
                     <h3 class="footer-title" data-i18n="footer.contactTitle">Kontakt</h3>
                     <div class="footer-contact">
-                        <p>📞 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a></p>
-                        <p>📧 <a href="mailto:yyyy@yyyy.com">yyyy@yyyy.com</a></p>
-                        <p>📍 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
+                        <p><img src="images/svg/general-phone.svg" alt="Phone" class="footer-icon"> <img src="images/flag-sk.png" alt="Slovak flag" class="footer-flag"> <a href="tel:+421907056857">+421907056857</a></p>
+                        <p><img src="images/svg/general-phone.svg" alt="Phone" class="footer-icon"> <img src="images/flag-hu.png" alt="Hungarian flag" class="footer-flag"> <a href="tel:+421908684500">+421908684500</a></p>
+                        <p><img src="images/svg/general-mail.svg" alt="Email" class="footer-icon"> <a href="mailto:yyyy@yyyy.com">yyyy@yyyy.com</a></p>
+                        <p><img src="images/svg/general-location.svg" alt="Location" class="footer-icon"> <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
                     </div>
                 </div>
 
@@ -185,7 +364,7 @@
                     <ul class="footer-links">
                         <li><a href="index.html" data-i18n="footer.home">Domov</a></li>
                         <li><a href="contact.html" data-i18n="footer.contact">Kontakt</a></li>
-                        <li><a href="services.html" data-i18n="footer.services">Služby</a></li>
+                        <li><a href="#homePricing" data-i18n="footer.services">Služby</a></li>
                         <li><a href="https://mastersoffice.sk/sk/" target="_blank">Masters Office</a></li>
                     </ul>
                 </div>
@@ -207,7 +386,12 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+    <!-- Floating Phone Button (mobile) -->
+    <a href="tel:+421907056857" class="floating-phone" aria-label="Zavolajte nám">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Späť nahor">
         ↑
     </button>
 

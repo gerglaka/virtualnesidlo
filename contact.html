@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt - Virtuálne sídlo</title>
-    <meta name="description" content="Kontaktujte nás pre virtuálne sídlo. Hradná 2, Komárno. Rýchle a profesionálne riešenie pre vašu firmu.">
+    <meta name="description" content="Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu.">
+    <meta property="og:title" content="Kontakt - Virtuálne sídlo">
+    <meta property="og:description" content="Kontaktujte nás pre virtuálne sídlo. Rýchle a profesionálne riešenie pre vašu firmu.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Preskočiť na obsah</a>
+
     <!-- Header -->
     <header class="header">
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo">V</div>
+                <div class="logo"><img src="images/logo.png" alt="Virtuálne sídlo logo" class="logo-img"></div>
                 <h1 class="company-name"><a href="index.html" style="color: white; text-decoration: none;">Virtuálne sídlo</a></h1>
             </div>
 
             <nav class="nav-section">
                 <!-- Mobile hamburger menu -->
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" role="button" aria-label="Menu" tabindex="0">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -41,7 +48,7 @@
     </header>
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <section class="contact-hero" id="main-content">
         <div class="container">
             <div class="contact-hero-content">
                 <span class="contact-hero-label" data-i18n="contactPage.heroLabel">Kontakt</span>
@@ -59,7 +66,7 @@
                     <h2 data-i18n="contactPage.infoTitle">Naše kontaktné údaje</h2>
 
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon"><img src="images/svg/general-mail.svg" alt="Email" class="contact-icon-img"></div>
                         <div class="contact-details">
                             <div class="contact-label" data-i18n="contactPage.emailLabel">Email:</div>
                             <div class="contact-value">
@@ -69,23 +76,24 @@
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon"><img src="images/svg/general-location.svg" alt="Location" class="contact-icon-img"></div>
                         <div class="contact-details">
                             <div class="contact-label" data-i18n="contactPage.addressLabel">Adresa:</div>
                             <div class="contact-value">
-                                <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">
-                                    Hradná 2, Komárno, 945 01
+                                <a href="https://maps.google.com/?q=VIVA%20PARK%206139%2F1-A0,%20Kom%C3%A1rno" target="_blank">
+                                    VIVA PARK 6139/1-A0, Komárno
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon"><img src="images/svg/general-phone.svg" alt="Phone" class="contact-icon-img"></div>
                         <div class="contact-details">
                             <div class="contact-label" data-i18n="contactPage.phoneLabel">Telefón:</div>
-                            <div class="contact-value">
-                                <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a>
+                            <div class="contact-value lang-toggle">
+                                <a class="phone-sk" href="tel:+421907056857">+421907056857</a>
+                                <a class="phone-hu" href="tel:+421908684500">+421908684500</a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +102,7 @@
                         <h3 data-i18n="contactPage.hoursTitle">Pracovné hodiny</h3>
                         <div class="hours-item">
                             <span data-i18n="contactPage.weekdays">Pondelok - Piatok:</span>
-                            <span data-i18n="contactPage.weekdaysHours">8:00 - 17:00</span>
+                            <span data-i18n="contactPage.weekdaysHours">9:00 - 16:00</span>
                         </div>
                         <div class="hours-item">
                             <span data-i18n="contactPage.weekend">Sobota - Nedeľa:</span>
@@ -108,25 +116,35 @@
                     <h2 data-i18n="contactPage.formTitle">Napíšte nám</h2>
                     <p class="form-description" data-i18n="contactPage.formDescription">Radi odpovieme na vaše otázky a pomôžeme vám s výberom najlepšieho riešenia pre vašu firmu.</p>
 
-                    <form action="https://formspree.io/f/myzwrrgb" method="POST" id="contactForm">
+                    <form action="https://script.google.com/macros/s/AKfycbziJI_XWXr3vnMbaVSb2GZivVebVxDDlavKY9jw-pRjlrmOj3CkcLiNFSXIdoNZln89cQ/exec" method="POST" id="contactForm" novalidate>
                         <div class="form-group">
                             <label for="name" data-i18n="contactPage.nameLabel">Meno a priezvisko *</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                            <div class="field-error" id="nameError" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="email" data-i18n="contactPage.emailFormLabel">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                            <div class="field-error" id="emailError" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="phone" data-i18n="contactPage.phoneFormLabel">Telefón</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel">
+                            <div class="field-error" id="phoneError" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="message" data-i18n="contactPage.messageLabel">Vaša správa *</label>
                             <textarea id="message" name="message" rows="6" data-i18n-placeholder="contactPage.messagePlaceholder" placeholder="Opíšte nám, čo vás zaujíma alebo aké máte otázky..." required></textarea>
+                            <div class="field-error" id="messageError" aria-live="polite"></div>
+                        </div>
+
+                        <!-- Honeypot field (anti-spam) -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </div>
 
                         <!-- Company Toggle -->
@@ -153,10 +171,6 @@
                             </div>
                         </div>
 
-                        <!-- Hidden field for form identification -->
-                        <input type="hidden" name="_subject" data-i18n-value="contactPage.formSubject" value="Nová správa z kontaktného formulára">
-                        <input type="hidden" name="_next" value="thank-you.html">
-
                         <button type="submit" class="submit-button" data-i18n="contactPage.submitButton">
                             Odoslať správu
                         </button>
@@ -172,7 +186,7 @@
             <h2 class="maps-title" data-i18n="contactPage.mapsTitle">Kde nás nájdete</h2>
             <div class="maps-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2664.8669831847634!2d18.128636!3d47.761644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476a7f8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sHradn%C3%A1%202%2C%20945%2001%20Kom%C3%A1rno!5e0!3m2!1ssk!2ssk!4v1234567890123!5m2!1ssk!2ssk"
+                    src="https://www.google.com/maps?q=VIVA%20PARK%206139%2F1-A0%2C%20Kom%C3%A1rno&output=embed"
                     width="100%"
                     height="400"
                     style="border:0;"
@@ -180,11 +194,11 @@
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     data-i18n-title="contactPage.mapsIframeTitle"
-                    title="Naša adresa: Hradná 2, Komárno">
+                    title="Naša adresa: VIVA PARK 6139/1-A0, Komárno">
                 </iframe>
             </div>
             <div class="maps-info">
-                <p>📍 <strong>Hradná 2, 945 01 Komárno</strong></p>
+                <p><img src="images/svg/general-location.svg" alt="Location" class="footer-icon"> <strong>VIVA PARK 6139/1-A0, Komárno</strong></p>
                 <p data-i18n="contactPage.mapsInfo">Naša kancelária sa nachádza v centre Komárna s dobrým prístupom a parkovaním v okolí.</p>
             </div>
         </div>
@@ -196,7 +210,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="logo">V</div>
+                        <div class="logo"><img src="images/logo.png" alt="Virtuálne sídlo logo" class="logo-img"></div>
                         <span class="footer-company-name">Virtuálne sídlo</span>
                     </div>
                     <p class="footer-description" data-i18n="footer.description">Profesionálne virtuálne sídlo pre vašu firmu</p>
@@ -205,9 +219,10 @@
                 <div class="footer-section">
                     <h3 class="footer-title" data-i18n="footer.contactTitle">Kontakt</h3>
                     <div class="footer-contact">
-                        <p>📞 <a href="tel:+421xxxxxxxxx">+421xxxxxxxxx</a></p>
-                        <p>📧 <a href="mailto:yxyxyxy@yxxyxyyx.sk">yxyxyxy@yxxyxyyx.sk</a></p>
-                        <p>📍 <a href="https://maps.google.com/?q=Hradná 2, Komárno, 945 01" target="_blank">Hradná 2, Komárno, 945 01</a></p>
+                        <p><img src="images/svg/general-phone.svg" alt="Phone" class="footer-icon"> <img src="images/flag-sk.png" alt="Slovak flag" class="footer-flag"> <a href="tel:+421907056857">+421907056857</a></p>
+                        <p><img src="images/svg/general-phone.svg" alt="Phone" class="footer-icon"> <img src="images/flag-hu.png" alt="Hungarian flag" class="footer-flag"> <a href="tel:+421908684500">+421908684500</a></p>
+                        <p><img src="images/svg/general-mail.svg" alt="Email" class="footer-icon"> <a href="mailto:yxyxyxy@yxxyxyyx.sk">yxyxyxy@yxxyxyyx.sk</a></p>
+                        <p><img src="images/svg/general-location.svg" alt="Location" class="footer-icon"> <a href="https://maps.google.com/?q=VIVA%20PARK%206139%2F1-A0,%20Kom%C3%A1rno" target="_blank">VIVA PARK 6139/1-A0, Komárno</a></p>
                     </div>
                 </div>
 
@@ -237,8 +252,13 @@
         </div>
     </footer>
 
+    <!-- Floating Phone Button (mobile) -->
+    <a href="tel:+421907056857" class="floating-phone" aria-label="Zavolajte nám">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Späť nahor">
         ↑
     </button>
 

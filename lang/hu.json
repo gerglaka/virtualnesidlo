@@ -8,7 +8,7 @@
     "description": {
       "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
       "services": "Virtuális ülésszolgáltatásaink. Rugalmas fizetési lehetőségek mindenki számára. Komárno, Pozsony, Rimavská Sobota.",
-      "contact": "Kontaktujte nás pre virtuálne sídlo. Hradná 2, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
+      "contact": "Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
     }
   },
   "nav": {
@@ -20,29 +20,57 @@
     "flagTitle": "Slovenská verzia"
   },
   "hero": {
-    "title": "A legjobb virtuális székhely Szlovákiában",
-    "subtitle": "25€+Áfa-tól kezdődően havonta, további díjak nélkül",
+    "title": "Virtuális székhely presztízscímen",
+    "subtitle": "Havi 25€-tól, csak korlátozott számú cég számára",
     "button": "Csomagjaink"
   },
-  "servicesOverview": {
-    "title": "Virtuális székhelyszolgáltatás egyszerűen és megbízhatóan:",
-    "subtitle": "Szabaduljon meg az adminisztratív terhektől, és biztosítson cégének professzionális székhelyet a legjobb körülmények között.",
-    "benefit1Title": "Szabad kezek",
-    "benefit1Desc": "Bízzon mindent ránk. Örömmel intézünk Önnek minden szükséges folyamatot.",
-    "benefit2Title": "Szolgáltatások",
-    "benefit2Desc": "Az átfogó szolgáltatási portfólió valódi kényelmet nyújt Önnek vállalkozása irányításában.",
-    "benefit3Title": "Megérés",
-    "benefit3Desc": "A virtuális címbe való befektetése a megtakarított idő formájában térül meg."
+  "exclusive": {
+    "limitedAccess": "Annak érdekében, hogy a székhely címe valóban exkluzív legyen, csak korlátozott számú vállalkozás / egyéni vállalkozó számára érhető el.",
+    "ownership": "A helyiségek a mi tulajdonunkban vannak (a versenytársakkal ellentétben), így biztos lehet a hosszú távú együttműködésben és a székhely címének változatlanságában.",
+    "title": "Nem csak a levelezéséről gondoskodunk",
+    "subtitle": "Székhelyünk több mint egy postaláda",
+    "servicesIntro": "Az árban ügyfeleinknek biztosítjuk:",
+    "service1": "Hozzájárulás a székhely létrehozásához a VIVA PARK 6139/1-A0, Komárno címen",
+    "service2": "Küldemények átvétele, megőrzése és online postanyilvántartás",
+    "service3": "E-mail értesítés a beérkezett postáról. A küldeményeket cégünk székhelyén veheti át, ingyenes parkolást biztosítunk közvetlenül az épületben.",
+    "service4": "Küldemények szkennelése és a szkennelt másolatok közvetlen továbbítása az ügyfélnek"
   },
-  "howItWorks": {
-    "title": "Hogyan működik a virtuális székhely?",
-    "description": "A virtuális iroda rendkívül hasznos szolgáltatás azon vállalkozások és szabadúszók számára, akiknek anélkül kell bejegyeztetniük cégük székhelyét, hogy fizikailag irodát kellene bérelniük. Ha egy vállalat nem tudja megszerezni az ingatlan tulajdonosának közjegyzői hozzájárulását, vagy más várost választ, mint ahol jelenleg működik, ideális megoldás a virtuális székhely igénybevétele.",
-    "contactLink": "Kontakt"
+  "process": {
+    "title": "Hogyan működik?",
+    "startText": "Változtatni akarom a székhelyet, nevet, ügyvezetőt",
+    "step1Title": "Lépjen velünk kapcsolatba",
+    "step1Desc": "ingyenes konzultáció telefonon, e-mailben vagy személyesen",
+    "step2Title": "Felmérjük az igényeit",
+    "step2Desc": "a változáshoz szükséges adatok megadása (cégnév, székhely, ügyvezető stb.)",
+    "step3Title": "Elkészítjük és elküldjük",
+    "step3Desc": "minden szükséges dokumentumot elkészítünk és elküldünk Önnek",
+    "step4Title": "Visszaküldés",
+    "step4Desc": "a dokumentumokat aláírja és visszaküldi nekünk",
+    "step5Title": "Csapatunk elintézi a teljes változási folyamatot",
+    "step5Desc": "csapatunk mindent elintéz Ön helyett az illetékes hivataloknál",
+    "step6Title": "Változások bejegyezve az illetékes nyilvántartásokba",
+    "step6Desc": "Változások bejegyezve a cégjegyzékbe"
   },
-  "gallery": {
-    "alt1": "Irodánk 1",
-    "alt2": "Irodánk 2",
-    "alt3": "Irodánk 3"
+  "homePricing": {
+    "title": "Csomagjaink",
+    "subtitle": "Egyszerű és átlátható árak rejtett díjak nélkül.",
+    "bratislava": "Pozsony",
+    "komarno": "Komárom",
+    "period": "ÁFA nélkül / év"
+  },
+  "servicesIntro": {
+    "text1": "Ha úgy döntött, hogy megváltoztatja székhelyét, nevét, tagjait, ügyvezetőit vagy bővíti tevékenységi köreit az Ön Kft-jében, vállalatunk teljes mértékben az Ön rendelkezésére áll. Nálunk bármilyen változást elintézhet Kft-jében hivatalról hivatalra járás, stressz és végtelen bürokrácia nélkül. Cégünk mindent elintéz, Ön pedig nyugodtan folytathatja üzleti tevékenységét.",
+    "text2": "Cégünk ügyfeleinek a egyre népszerűbb virtuális székhely szolgáltatást is kínálja és közvetíti. Minden társaságnak szerepelnie kell a cégjegyzékben egy címmel (székhellyel). Az alternatívák mérlegelésekor a vállalkozók gyakran több pozitív okból is a virtuális székhely bejegyzését fontolják."
+  },
+  "servicesCards": {
+    "mailTitle": "Postája kezelése",
+    "mailDesc": "Postáját átvesszük, lefotózzuk, és igény szerint a tartalmát is beszkenneljük.",
+    "notifyTitle": "Értesítés",
+    "notifyDesc": "Ha érkezik posta, e-mailben értesítjük.",
+    "forwardTitle": "Posta továbbítása",
+    "forwardDesc": "Cégünk a leveleket egyeztetett időpontban fizikailag is továbbítja ügyfeleinek.",
+    "priceTitle": "Ár",
+    "priceDesc": "A virtuális székhely ára többszörösen alacsonyabb, mint egy drága iroda bérlése."
   },
   "additionalBenefits": {
     "title": "Az Ön előnyei szolgáltatásunkkal",
@@ -61,6 +89,20 @@
   "cta": {
     "question": "Szeretne többet megtudni csomagjainkról?",
     "link": "TEKINTSE MEG AZ ÖSSZES SZOLGÁLTATÁSUNKAT"
+  },
+  "errorPage": {
+    "title": "Az oldal nem található - Virtuálne sídlo",
+    "heading": "Ez az oldal nem található",
+    "message": "Lehet, hogy áthelyezték vagy a cím hibás. Próbáljon visszatérni a kezdőlapra, vagy lépjen velünk kapcsolatba.",
+    "backHome": "Vissza a kezdőlapra",
+    "contact": "Kapcsolat"
+  },
+  "errorPage500": {
+    "title": "Szerverhiba - Virtuálne sídlo",
+    "heading": "Belső szerverhiba",
+    "message": "Valami hiba történt a szerveren. Kérjük, próbálja meg később.",
+    "backHome": "Vissza a kezdőlapra",
+    "contact": "Kapcsolat"
   },
   "footer": {
     "description": "Professzionális virtuális iroda cége számára",
@@ -133,7 +175,7 @@
     "phoneLabel": "Telefon:",
     "hoursTitle": "Nyitvatartási idő",
     "weekdays": "Hétfő - Péntek:",
-    "weekdaysHours": "8:00 - 17:00",
+    "weekdaysHours": "9:00 - 16:00",
     "weekend": "Szombat - Vasárnap",
     "weekendHours": "Zárva",
     "formTitle": "Írjon nekünk",
@@ -151,11 +193,17 @@
     "submitButton": "Üzenet küldése",
     "mapsTitle": "Hol talál minket",
     "mapsInfo": "Irodánk Komárom központjában található, jó megközelíthetőséggel és parkolási lehetőséggel a közelben.",
-    "mapsIframeTitle": "Címünk: Hradná 2, Komárno"
+    "mapsIframeTitle": "Címünk: VIVA PARK 6139/1-A0, Komárno"
   },
   "alerts": {
     "fillRequired": "Kérjük, töltse ki az összes kötelező mezőt *",
     "invalidEmail": "Kérjük, adjon meg érvényes email címet",
+    "tooFast": "Kérjük, várjon egy pillanatot, majd próbálja újra.",
+    "tooMany": "Elérte a beküldési limitet. Kérjük, próbálja később.",
+    "submitError": "A beküldés sikertelen. Kérjük, próbálja később.",
+    "sending": "Üzenet küldése...",
+    "invalidName": "A név csak betűket tartalmazhat",
+    "invalidPhone": "A telefonszám csak számokat és + jelet tartalmazhat",
     "thankYou": "Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.",
     "cookieInfo": "A cookie-kkal kapcsolatos információk hamarosan elérhetők lesznek.",
     "privacyInfo": "Az adatvédelmi szabályzat hamarosan elérhető lesz.",

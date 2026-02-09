@@ -8,7 +8,7 @@
     "description": {
       "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
       "services": "Naše služby virtuálneho sídla. Flexibilné možnosti platby pre každého. Komárno, Bratislava, Rimavská Sobota.",
-      "contact": "Kontaktujte nás pre virtuálne sídlo. Hradná 2, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
+      "contact": "Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
     }
   },
   "nav": {
@@ -20,29 +20,57 @@
     "flagTitle": "Magyar verzió"
   },
   "hero": {
-    "title": "Najlepšie virtuálne sídlo na Slovensku",
-    "subtitle": "Už od 25€+dph mesačne, bez ďalších poplatkov",
+    "title": "Virtuálne sídlo na prestížnej adrese",
+    "subtitle": "od 25€ mesačne iba pre limitovaný počet firiem",
     "button": "Naše balíky"
   },
-  "servicesOverview": {
-    "title": "Služba virtuálnej centrály jednoducho a spoľahlivo:",
-    "subtitle": "Osloboďte sa od administratívnej záťaže a zabezpečte svojej firme profesionálne sídlo za najlepších podmienok.",
-    "benefit1Title": "Voľné ruky",
-    "benefit1Desc": "Nechajte všetko na nás. Radi za Vás vyriešime všetky potrebné procesy.",
-    "benefit2Title": "Služby",
-    "benefit2Desc": "Komplexné portfólio služieb Vám poskytne skutočný komfort pri správe Vašej firmy.",
-    "benefit3Title": "Návratnosť",
-    "benefit3Desc": "Investícia do virtuálnej adresy sa Vám vráti v podobe času, ktorý ušetríte."
+  "exclusive": {
+    "limitedAccess": "Aby bola adresa sídla skutočne exkluzívna, je dostupná len pre limitovaný počet firiem / živnostníkov.",
+    "ownership": "Priestory sú v našom vlastníctve (na rozdiel od konkurencie), takže môžete mať istotu dlhodobej spolupráce a nemennosti adresy sídla.",
+    "title": "Postaráme sa nielen o vašu korešpondenciu",
+    "subtitle": "Naše sídlo je viac ako poštová schránka",
+    "servicesIntro": "V cene našim klientom poskytujeme:",
+    "service1": "Súhlas so zriadením sídla na adrese VIVA PARK 6139/1-A0, Komárno",
+    "service2": "Preberanie, úschovu zásielok a online evidenciu pošty",
+    "service3": "Emailovú notifikáciu o prijatej pošte. Zásielky si môžete vyzdvihnúť v sídle našej spoločnosti, ponúkame bezplatné parkovanie priamo v objekte.",
+    "service4": "Skenovanie zásielok a preposielanie skenov priamo klientovi"
   },
-  "howItWorks": {
-    "title": "Ako funguje virtuálne sídlo s.r.o.?",
-    "description": "Virtuálne sídlo je mimoriadne užitočná služba pre podniky a živnostníkov, ktorí potrebujú registrovať svoje sídlo firmy bez nutnosti fyzického prenájmu kancelárie. Ak spoločnosť nemôže získať notárom overený súhlas od vlastníka nehnuteľnosti, alebo sa rozhodne pre iné mesto v ktorom práve pôsobí, ideálnym riešením je využiť virtuálne sídlo.",
-    "contactLink": "Kontakt"
+  "process": {
+    "title": "Ako to funguje?",
+    "startText": "Chcem zmeniť sídlo, názov, konateľa",
+    "step1Title": "Kontaktujte nás",
+    "step1Desc": "bezplatná konzultácia telefonicky, e-mailom alebo osobne",
+    "step2Title": "Zistíme vaše potreby",
+    "step2Desc": "dodanie údajov k zmene (názov spol., sídlo, konateľ, atď)",
+    "step3Title": "Pripravíme a pošleme",
+    "step3Desc": "všetky potrebné dokumenty pre vás pripravíme a pošleme",
+    "step4Title": "Návratka",
+    "step4Desc": "dokumenty podpíšete a pošlete nám späť",
+    "step5Title": "Náš tím vyrieši celý proces zmien",
+    "step5Desc": "náš tím vybaví všetko za vás na príslušných úradoch",
+    "step6Title": "Zmeny zapísané v príslušných registroch",
+    "step6Desc": "Zmeny zapísané v obchodnom registri"
   },
-  "gallery": {
-    "alt1": "Naša kancelária 1",
-    "alt2": "Naša kancelária 2",
-    "alt3": "Naša kancelária 3"
+  "homePricing": {
+    "title": "Naše balíky",
+    "subtitle": "Jednoduché a transparentné ceny bez skrytých poplatkov.",
+    "bratislava": "Bratislava",
+    "komarno": "Komárno",
+    "period": "bez DPH / rok"
+  },
+  "servicesIntro": {
+    "text1": "Ak ste sa rozhodli zmeniť sídlo, názov, spoločníkov, konateľov či doplniť predmety podnikania do vašej SRO tak je tu naša spoločnosť pre vás plne k dispozícií. Cez nás môžete zrealizovať akúkoľvek zmenu vo vašej SRO bez behania po úradoch, stresov či nekonečnej byrokracie. Naša spoločnosť sa o všetko postará a vy sa môžete pokojne naďalej venovať svojim podnikateľským aktivitám",
+    "text2": "Naša spoločnosť ponúka a sprostredkúva svojim klientom aj služby čoraz populárnejšieho virtuálneho sídla. Každá spoločnosť musí mať v obchodnom registri zapísanú nejakú adresu (sídlo). Pri zvažovaní nad alternatívami podnikatelia často zvažujú možnosť zapísať si do obchodného registra virtuálne sídlo z viacerých pozitívnych dôvodov."
+  },
+  "servicesCards": {
+    "mailTitle": "Starostlivosť o vašu poštu",
+    "mailDesc": "Vašu poštu budeme preberať, fotiť a môžeme skenovať aj jej obsah na požiadanie.",
+    "notifyTitle": "Notifikácia",
+    "notifyDesc": "Ak vám príde pošta, informujeme vás o tom e-mailom.",
+    "forwardTitle": "Preposielanie pošty",
+    "forwardDesc": "Naša spoločnosť svojim klientom poštu aj preposiela fyzicky v dohodnutom termíne.",
+    "priceTitle": "Cena",
+    "priceDesc": "Cena za virtuálne sídlo je niekoľkonásobne nižšia ako prenájom drahej kancelárie."
   },
   "additionalBenefits": {
     "title": "Vaše výhody s našou službou",
@@ -61,6 +89,20 @@
   "cta": {
     "question": "Chcete sa dozvedieť viac o našich balíkoch?",
     "link": "POZRITE SI VŠETKY NAŠE SLUŽBY"
+  },
+  "errorPage": {
+    "title": "Stránka nebola nájdená - Virtuálne sídlo",
+    "heading": "Táto stránka neexistuje",
+    "message": "Možno bola presunutá alebo je adresa nesprávna. Skúste sa vrátiť na úvodnú stránku alebo nás kontaktovať.",
+    "backHome": "Späť na domov",
+    "contact": "Kontaktovať nás"
+  },
+  "errorPage500": {
+    "title": "Interná chyba servera - Virtuálne sídlo",
+    "heading": "Interná chyba servera",
+    "message": "Niečo sa pokazilo na našej strane. Skúste to prosím o chvíľu znova.",
+    "backHome": "Späť na domov",
+    "contact": "Kontaktovať nás"
   },
   "footer": {
     "description": "Profesionálne virtuálne sídlo pre vašu firmu",
@@ -133,7 +175,7 @@
     "phoneLabel": "Telefón:",
     "hoursTitle": "Pracovné hodiny",
     "weekdays": "Pondelok - Piatok:",
-    "weekdaysHours": "8:00 - 17:00",
+    "weekdaysHours": "9:00 - 16:00",
     "weekend": "Sobota - Nedeľa:",
     "weekendHours": "Zatvorené",
     "formTitle": "Napíšte nám",
@@ -151,11 +193,17 @@
     "submitButton": "Odoslať správu",
     "mapsTitle": "Kde nás nájdete",
     "mapsInfo": "Naša kancelária sa nachádza v centre Komárna s dobrým prístupom a parkovaním v okolí.",
-    "mapsIframeTitle": "Naša adresa: Hradná 2, Komárno"
+    "mapsIframeTitle": "Naša adresa: VIVA PARK 6139/1-A0, Komárno"
   },
   "alerts": {
     "fillRequired": "Prosím vyplňte všetky povinné polia označené *",
     "invalidEmail": "Prosím zadajte platnú emailovú adresu",
+    "tooFast": "Prosím chvíľu počkajte a skúste to znova.",
+    "tooMany": "Dosiahli ste limit odoslaní. Skúste to neskôr.",
+    "submitError": "Odoslanie sa nepodarilo. Skúste to prosím neskôr.",
+    "sending": "Odosielanie správy...",
+    "invalidName": "Meno môže obsahovať len písmená",
+    "invalidPhone": "Telefón môže obsahovať len čísla a +",
     "thankYou": "Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.",
     "cookieInfo": "Informácie o cookies budú dostupné čoskoro.",
     "privacyInfo": "Zásady ochrany údajov budú dostupné čoskoro.",
