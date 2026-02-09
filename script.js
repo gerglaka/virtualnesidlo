@@ -203,10 +203,10 @@ function initializeProcessSection() {
             var d = 'M ' + a.x + ' ' + a.y +
                     ' C ' + midX + ' ' + a.y + ', ' + midX + ' ' + b.y + ', ' + b.x + ' ' + b.y;
 
-            // Grey background arrow
-            svgContent += '<path d="' + d + '" fill="none" stroke="#ddd" stroke-width="3" stroke-linecap="round"/>';
+            // Subtle background arrow
+            svgContent += '<path d="' + d + '" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3" stroke-linecap="round"/>';
             // Green animated arrow
-            svgContent += '<path class="arrow-fg" data-arrow="' + i + '" d="' + d + '" fill="none" stroke="#308003" stroke-width="3" stroke-linecap="round"/>';
+            svgContent += '<path class="arrow-fg" data-arrow="' + i + '" d="' + d + '" fill="none" stroke="#4CAF50" stroke-width="3" stroke-linecap="round"/>';
         }
 
         svg.innerHTML = svgContent;
@@ -263,7 +263,7 @@ function initializeProcessSection() {
 
         // Move background pattern
         if (bg) {
-            bg.style.transform = 'translateX(' + (-progress * 300) + 'px)';
+            bg.style.transform = 'translateX(' + (progress * 600) + 'px)';
         }
     }
 
@@ -323,6 +323,16 @@ function initializeContactForm() {
     const hasCompanyCheckbox = document.getElementById('hasCompany');
     const companyFields = document.getElementById('companyFields');
     const contactForm = document.getElementById('contactForm');
+    const formStartTime = Date.now();
+    const submitHistoryKey = 'contact-submit-history';
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const messageError = document.getElementById('messageError');
 
     // Company checkbox toggle
     if (hasCompanyCheckbox && companyFields) {
@@ -340,37 +350,199 @@ function initializeContactForm() {
         });
     }
 
-        // Form submission handler
+    function getI18nMessage(key, fallback) {
+        if (window.I18n && typeof window.I18n.t === 'function') {
+            const value = window.I18n.t(key);
+            if (value !== key) return value;
+        }
+        return fallback;
+    }
+
+    function setFieldError(input, errorEl, message) {
+        if (!input || !errorEl) return;
+        if (message) {
+            input.classList.add('is-invalid');
+            errorEl.textContent = message;
+        } else {
+            input.classList.remove('is-invalid');
+            errorEl.textContent = '';
+        }
+    }
+
+    function validateName() {
+        if (!nameInput) return true;
+        const value = nameInput.value.trim();
+        if (!value) {
+            setFieldError(nameInput, nameError, getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'));
+            return false;
+        }
+        const nameRegex = /^[A-Za-zÀ-ž\s'.-]{2,}$/;
+        if (!nameRegex.test(value)) {
+            setFieldError(nameInput, nameError, getI18nMessage('alerts.invalidName', 'Meno môže obsahovať len písmená'));
+            return false;
+        }
+        setFieldError(nameInput, nameError, '');
+        return true;
+    }
+
+    function validateEmail() {
+        if (!emailInput) return true;
+        const value = emailInput.value.trim();
+        if (!value) {
+            setFieldError(emailInput, emailError, getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'));
+            return false;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            setFieldError(emailInput, emailError, getI18nMessage('alerts.invalidEmail', 'Prosím zadajte platnú emailovú adresu'));
+            return false;
+        }
+        setFieldError(emailInput, emailError, '');
+        return true;
+    }
+
+    function validatePhone() {
+        if (!phoneInput) return true;
+        const value = phoneInput.value.trim();
+        if (!value) {
+            setFieldError(phoneInput, phoneError, '');
+            return true;
+        }
+        const phoneRegex = /^\+?[0-9\s]+$/;
+        const digitsCount = value.replace(/\D/g, '').length;
+        if (!phoneRegex.test(value) || digitsCount < 6) {
+            setFieldError(phoneInput, phoneError, getI18nMessage('alerts.invalidPhone', 'Telefón môže obsahovať len čísla a +'));
+            return false;
+        }
+        setFieldError(phoneInput, phoneError, '');
+        return true;
+    }
+
+    function validateMessage() {
+        if (!messageInput) return true;
+        const value = messageInput.value.trim();
+        if (!value) {
+            setFieldError(messageInput, messageError, getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'));
+            return false;
+        }
+        setFieldError(messageInput, messageError, '');
+        return true;
+    }
+
+    function validateAll() {
+        const v1 = validateName();
+        const v2 = validateEmail();
+        const v3 = validatePhone();
+        const v4 = validateMessage();
+        return v1 && v2 && v3 && v4;
+    }
+
+    function attachLiveValidation(input, validator) {
+        if (!input) return;
+        input.addEventListener('input', validator);
+        input.addEventListener('blur', validator);
+    }
+
+    attachLiveValidation(nameInput, validateName);
+    attachLiveValidation(emailInput, validateEmail);
+    attachLiveValidation(phoneInput, validatePhone);
+    attachLiveValidation(messageInput, validateMessage);
+
+    window.addEventListener('languageChanged', () => {
+        validateAll();
+    });
+
+    function canSubmitNow() {
+        const now = Date.now();
+
+        // Require a short dwell time to reduce bot submissions
+        if (now - formStartTime < 3000) {
+            showAlert(
+                getI18nMessage('alerts.tooFast', 'Prosím chvíľu počkajte a skúste to znova.'),
+                'error'
+            );
+            return false;
+        }
+
+        try {
+            const historyRaw = localStorage.getItem(submitHistoryKey);
+            const history = historyRaw ? JSON.parse(historyRaw) : [];
+            const tenMinutesAgo = now - 10 * 60 * 1000;
+            const recent = history.filter(ts => ts >= tenMinutesAgo);
+
+            if (recent.length >= 2) {
+                showAlert(
+                    getI18nMessage('alerts.tooMany', 'Dosiahli ste limit odoslaní. Skúste to neskôr.'),
+                    'error'
+                );
+                return false;
+            }
+        } catch (e) {
+            // If localStorage fails, allow submit
+        }
+
+        return true;
+    }
+
+    function recordSubmit() {
+        const now = Date.now();
+        try {
+            const historyRaw = localStorage.getItem(submitHistoryKey);
+            const history = historyRaw ? JSON.parse(historyRaw) : [];
+            history.push(now);
+            const tenMinutesAgo = now - 10 * 60 * 1000;
+            const trimmed = history.filter(ts => ts >= tenMinutesAgo);
+            localStorage.setItem(submitHistoryKey, JSON.stringify(trimmed));
+        } catch (e) {
+            // ignore
+        }
+    }
+
+    // Form submission handler
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const nameValue = document.getElementById('name')?.value?.trim() || '';
+            const emailValue = document.getElementById('email')?.value?.trim() || '';
+            const phoneValue = document.getElementById('phone')?.value?.trim() || '';
+            const messageValue = document.getElementById('message')?.value?.trim() || '';
+            const companyNameValue = document.getElementById('companyName')?.value?.trim() || '';
+            const icoValue = document.getElementById('ico')?.value?.trim() || '';
+            const honeypotValue = document.getElementById('website')?.value || '';
 
-            // Simple validation
-            if (!data.name || !data.email || !data.message) {
+            // Honeypot check (silent fail)
+            if (honeypotValue) {
+                return;
+            }
+
+            if (!validateAll()) {
                 showAlert(
-                    window.I18n ? window.I18n.t('alerts.fillRequired') : 'Prosím vyplňte všetky povinné polia označené *',
+                    getI18nMessage('alerts.fillRequired', 'Prosím vyplňte všetky povinné polia označené *'),
                     'error'
                 );
                 return;
             }
 
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showAlert(
-                    window.I18n ? window.I18n.t('alerts.invalidEmail') : 'Prosím zadajte platnú emailovú adresu',
-                    'error'
-                );
+            if (!canSubmitNow()) {
                 return;
             }
+
+            // Ensure fields are filled (already bound to entry.* names in HTML)
+            document.getElementById('name').value = nameValue;
+            document.getElementById('email').value = emailValue;
+            document.getElementById('phone').value = phoneValue;
+            document.getElementById('message').value = messageValue;
+            document.getElementById('companyName').value = companyNameValue;
+            document.getElementById('ico').value = icoValue;
+
+            // Submit via native POST to hidden iframe (avoids XHR/CORS issues)
+            this.submit();
+            recordSubmit();
 
             // Show success message
             showAlert(
-                window.I18n ? window.I18n.t('alerts.thankYou') : 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.',
+                getI18nMessage('alerts.thankYou', 'Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.'),
                 'success'
             );
 
@@ -379,8 +551,6 @@ function initializeContactForm() {
             if (companyFields) {
                 companyFields.classList.remove('show');
             }
-
-            console.log('Form data:', data); // For debugging
         });
     }
 }

@@ -8,7 +8,7 @@
     "description": {
       "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
       "services": "Virtuális ülésszolgáltatásaink. Rugalmas fizetési lehetőségek mindenki számára. Komárno, Pozsony, Rimavská Sobota.",
-      "contact": "Kontaktujte nás pre virtuálne sídlo. Hradná 2, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
+      "contact": "Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
     }
   },
   "nav": {
@@ -163,11 +163,16 @@
     "submitButton": "Üzenet küldése",
     "mapsTitle": "Hol talál minket",
     "mapsInfo": "Irodánk Komárom központjában található, jó megközelíthetőséggel és parkolási lehetőséggel a közelben.",
-    "mapsIframeTitle": "Címünk: Hradná 2, Komárno"
+    "mapsIframeTitle": "Címünk: VIVA PARK 6139/1-A0, Komárno"
   },
   "alerts": {
     "fillRequired": "Kérjük, töltse ki az összes kötelező mezőt *",
     "invalidEmail": "Kérjük, adjon meg érvényes email címet",
+    "tooFast": "Kérjük, várjon egy pillanatot, majd próbálja újra.",
+    "tooMany": "Elérte a beküldési limitet. Kérjük, próbálja később.",
+    "submitError": "A beküldés sikertelen. Kérjük, próbálja később.",
+    "invalidName": "A név csak betűket tartalmazhat",
+    "invalidPhone": "A telefonszám csak számokat és + jelet tartalmazhat",
     "thankYou": "Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.",
     "cookieInfo": "A cookie-kkal kapcsolatos információk hamarosan elérhetők lesznek.",
     "privacyInfo": "Az adatvédelmi szabályzat hamarosan elérhető lesz.",

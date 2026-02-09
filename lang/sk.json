@@ -8,7 +8,7 @@
     "description": {
       "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
       "services": "Naše služby virtuálneho sídla. Flexibilné možnosti platby pre každého. Komárno, Bratislava, Rimavská Sobota.",
-      "contact": "Kontaktujte nás pre virtuálne sídlo. Hradná 2, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
+      "contact": "Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
     }
   },
   "nav": {
@@ -163,11 +163,16 @@
     "submitButton": "Odoslať správu",
     "mapsTitle": "Kde nás nájdete",
     "mapsInfo": "Naša kancelária sa nachádza v centre Komárna s dobrým prístupom a parkovaním v okolí.",
-    "mapsIframeTitle": "Naša adresa: Hradná 2, Komárno"
+    "mapsIframeTitle": "Naša adresa: VIVA PARK 6139/1-A0, Komárno"
   },
   "alerts": {
     "fillRequired": "Prosím vyplňte všetky povinné polia označené *",
     "invalidEmail": "Prosím zadajte platnú emailovú adresu",
+    "tooFast": "Prosím chvíľu počkajte a skúste to znova.",
+    "tooMany": "Dosiahli ste limit odoslaní. Skúste to neskôr.",
+    "submitError": "Odoslanie sa nepodarilo. Skúste to prosím neskôr.",
+    "invalidName": "Meno môže obsahovať len písmená",
+    "invalidPhone": "Telefón môže obsahovať len čísla a +",
     "thankYou": "Ďakujeme za vašu správu! Kontaktujeme vás čoskoro.",
     "cookieInfo": "Informácie o cookies budú dostupné čoskoro.",
     "privacyInfo": "Zásady ochrany údajov budú dostupné čoskoro.",

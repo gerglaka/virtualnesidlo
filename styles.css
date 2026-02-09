@@ -217,7 +217,7 @@ body {
 /* Exclusive Section */
 .exclusive-section {
     padding: 100px 0;
-    background: white;
+    background: #f5f5f5;
 }
 
 .section-title {
@@ -355,19 +355,21 @@ body {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: #f5f5f5;
+    background: #2d4a2d;
     will-change: transform;
 }
 
 .process-bg {
     position: absolute;
     top: 0;
-    left: -50%;
-    width: 200%;
+    left: -60%;
+    width: 220%;
     height: 100%;
-    background-image: radial-gradient(circle, #d0d0d0 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.4;
+    background:
+        radial-gradient(ellipse 600px 400px at 25% 45%, rgba(76, 175, 80, 0.35), transparent),
+        radial-gradient(ellipse 400px 350px at 38% 65%, rgba(48, 128, 3, 0.3), transparent),
+        radial-gradient(ellipse 500px 300px at 48% 30%, rgba(100, 200, 100, 0.2), transparent);
+    opacity: 1;
     z-index: 0;
     will-change: transform;
 }
@@ -377,8 +379,9 @@ body {
     z-index: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 100%;
-    padding: 100px 30px 40px;
+    padding: 80px 30px 30px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -386,7 +389,7 @@ body {
 .process-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #333;
+    color: white;
     text-align: center;
     margin-bottom: 30px;
     flex-shrink: 0;
@@ -394,7 +397,7 @@ body {
 
 .process-board {
     position: relative;
-    flex: 1;
+    flex: 0 1 auto;
     min-height: 0;
 }
 
@@ -417,9 +420,8 @@ body {
 .process-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 16px 12px;
-    height: 100%;
+    grid-template-rows: auto auto;
+    gap: 60px 12px;
     position: relative;
     z-index: 2;
 }
@@ -433,23 +435,26 @@ body {
 .process-step[data-step="5"] { grid-column: 6; grid-row: 2; align-self: start; }
 .process-step[data-step="6"] { grid-column: 7; grid-row: 1; align-self: end; }
 
-/* Step card styling */
+/* Step card styling - Apple frosted glass */
 .process-step {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 18px 12px;
-    border-radius: 14px;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    border: 2px solid transparent;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transition: all 0.4s ease;
 }
 
 .process-step.active {
-    border-color: rgba(48, 128, 3, 0.25);
-    box-shadow: 0 6px 25px rgba(48, 128, 3, 0.12);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 8px 32px rgba(48, 128, 3, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .step-icon {
@@ -457,20 +462,21 @@ body {
     height: 52px;
     margin-bottom: 10px;
     flex-shrink: 0;
-    color: #bbb;
-    transition: color 0.4s ease;
 }
 
-.step-icon svg {
+.step-icon img {
     width: 100%;
     height: 100%;
     max-width: none;
+    opacity: 0.3;
+    filter: invert(1);
+    transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
 .step-text {
     font-size: 0.88rem;
     font-weight: 600;
-    color: #bbb;
+    color: rgba(255, 255, 255, 0.4);
     line-height: 1.5;
     transition: color 0.4s ease;
 }
@@ -480,7 +486,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #bbb;
+    color: rgba(255, 255, 255, 0.4);
     margin-bottom: 6px;
     line-height: 1.35;
     transition: color 0.4s ease;
@@ -488,23 +494,60 @@ body {
 
 .step-desc {
     font-size: 0.76rem;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.3);
     line-height: 1.5;
     transition: color 0.4s ease;
 }
 
+/* Desktop sizing boost for process section */
+@media (min-width: 1024px) {
+    .process-title {
+        font-size: 2.6rem;
+        margin-bottom: 40px;
+    }
+
+    .process-grid {
+        gap: 80px 18px;
+    }
+
+    .process-step {
+        padding: 26px 16px;
+        border-radius: 18px;
+    }
+
+    .step-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 12px;
+    }
+
+    .step-text {
+        font-size: 1.02rem;
+    }
+
+    .step-title {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .step-desc {
+        font-size: 0.9rem;
+    }
+}
+
 /* Active step state */
-.process-step.active .step-icon {
-    color: #308003;
+.process-step.active .step-icon img {
+    opacity: 1;
+    filter: invert(60%) sepia(52%) saturate(555%) hue-rotate(82deg) brightness(95%) contrast(89%);
 }
 
 .process-step.active .step-text,
 .process-step.active .step-title {
-    color: #333;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .process-step.active .step-desc {
-    color: #666;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Mobile: Vertical Timeline */
@@ -529,6 +572,7 @@ body {
     .process-inner {
         padding: 0 20px;
         height: auto;
+        justify-content: flex-start;
     }
 
     .process-title {
@@ -569,10 +613,12 @@ body {
         align-items: flex-start;
         text-align: left;
         padding: 20px 15px 20px 25px;
-        border-left: 3px solid #ddd;
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
         position: relative;
         border-radius: 0;
         background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         box-shadow: none;
         border-top: none;
         border-right: none;
@@ -580,11 +626,12 @@ body {
     }
 
     .process-step.active {
-        border-left-color: #308003;
+        border-left-color: #4CAF50;
         border-top: none;
         border-right: none;
         border-bottom: none;
         box-shadow: none;
+        background: none;
     }
 
     .process-step::before {
@@ -595,13 +642,13 @@ body {
         width: 13px;
         height: 13px;
         border-radius: 50%;
-        background: #ddd;
-        border: 3px solid #f5f5f5;
+        background: rgba(255, 255, 255, 0.2);
+        border: 3px solid #2d4a2d;
         transition: background 0.4s ease;
     }
 
     .process-step.active::before {
-        background: #308003;
+        background: #4CAF50;
     }
 
     .step-icon {
@@ -815,9 +862,35 @@ body {
     margin-right: 4px;
 }
 
+.footer-flag {
+    width: 16px;
+    height: 12px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin: 0 6px 0 2px;
+}
+
 .contact-icon-img {
     width: 28px;
     height: 28px;
+}
+
+/* Honeypot (anti-spam) */
+.hp-field {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+html[lang="sk"] .contact-value.lang-toggle .phone-hu {
+    display: none;
+}
+
+html[lang="hu"] .contact-value.lang-toggle .phone-sk {
+    display: none;
 }
 
 /* Footer */
@@ -1164,7 +1237,7 @@ body {
 }
 
 .company-fields.show {
-    max-height: 200px;
+    max-height: 500px;
     opacity: 1;
     margin-top: 20px;
 }
@@ -1768,6 +1841,19 @@ body {
     background: white;
 }
 
+.form-group input.is-invalid,
+.form-group textarea.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
+}
+
+.field-error {
+    min-height: 18px;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #dc3545;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -1838,7 +1924,7 @@ body {
 }
 
 .company-fields.show {
-    max-height: 200px;
+    max-height: 500px;
     opacity: 1;
     margin-top: 20px;
 }
