@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeContactForm();
     initializeProcessSection();
+    initializePricingAnimations();
+    initializeGallerySlideshow();
 });
 
 // Scroll to top functionality
@@ -61,6 +63,72 @@ function initializeAnimations() {
 
     const animateElements = document.querySelectorAll('.exclusive-card, .section-title, .why-choose-content');
     animateElements.forEach(el => observer.observe(el));
+}
+
+// Pricing card entrance animations
+function initializePricingAnimations() {
+    var pricingCards = document.querySelectorAll('[data-animate="pricing"]');
+    if (pricingCards.length) {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        pricingCards.forEach(function(card) { observer.observe(card); });
+    }
+}
+
+// Gallery slideshow (mobile)
+var galleryCurrentIndex = 0;
+
+function initializeGallerySlideshow() {
+    var slideshow = document.querySelector('.gallery-slideshow');
+    if (!slideshow) return;
+
+    var slides = slideshow.querySelectorAll('.gallery-slide');
+    var dotsContainer = slideshow.querySelector('.gallery-dots');
+    if (!slides.length || !dotsContainer) return;
+
+    // Create dots
+    for (var i = 0; i < slides.length; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+            galleryGoTo(parseInt(this.dataset.index));
+        });
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function galleryGoTo(index) {
+    var slideshow = document.querySelector('.gallery-slideshow');
+    if (!slideshow) return;
+
+    var slides = slideshow.querySelectorAll('.gallery-slide');
+    var dots = slideshow.querySelectorAll('.gallery-dot');
+    if (!slides.length) return;
+
+    // Wrap around
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+        if (dots[i]) dots[i].classList.remove('active');
+    }
+
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+    galleryCurrentIndex = index;
+}
+
+function galleryNav(direction) {
+    galleryGoTo(galleryCurrentIndex + direction);
 }
 
 // ===== PROCESS SECTION - JS-Pinned Scroll Timeline =====

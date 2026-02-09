@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt - Virtuálne sídlo</title>
     <meta name="description" content="Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu.">
+    <meta property="og:title" content="Kontakt - Virtuálne sídlo">
+    <meta property="og:description" content="Kontaktujte nás pre virtuálne sídlo. Rýchle a profesionálne riešenie pre vašu firmu.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Preskočiť na obsah</a>
+
     <!-- Header -->
     <header class="header">
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo">V</div>
+                <div class="logo"><img src="images/logo.png" alt="Virtuálne sídlo logo" class="logo-img"></div>
                 <h1 class="company-name"><a href="index.html" style="color: white; text-decoration: none;">Virtuálne sídlo</a></h1>
             </div>
 
             <nav class="nav-section">
                 <!-- Mobile hamburger menu -->
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" role="button" aria-label="Menu" tabindex="0">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -41,7 +48,7 @@
     </header>
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <section class="contact-hero" id="main-content">
         <div class="container">
             <div class="contact-hero-content">
                 <span class="contact-hero-label" data-i18n="contactPage.heroLabel">Kontakt</span>
@@ -203,7 +210,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="logo">V</div>
+                        <div class="logo"><img src="images/logo.png" alt="Virtuálne sídlo logo" class="logo-img"></div>
                         <span class="footer-company-name">Virtuálne sídlo</span>
                     </div>
                     <p class="footer-description" data-i18n="footer.description">Profesionálne virtuálne sídlo pre vašu firmu</p>
@@ -245,8 +252,13 @@
         </div>
     </footer>
 
+    <!-- Floating Phone Button (mobile) -->
+    <a href="tel:+421907056857" class="floating-phone" aria-label="Zavolajte nám">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Späť nahor">
         ↑
     </button>
 
