@@ -860,6 +860,7 @@ body {
     height: 18px;
     vertical-align: middle;
     margin-right: 4px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-flag {
