@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": {
-      "index": "Virtuálne sídlo - A legjobb virtuális székhely Szlovákiában",
-      "services": "Szolgáltatások - Virtuálne sídlo",
-      "contact": "Kontakt - Virtuálne sídlo"
+      "index": "Sídlo Komárno - A legjobb virtuális székhely Szlovákiában",
+      "services": "Szolgáltatások - Sídlo Komárno",
+      "contact": "Kontakt - Sídlo Komárno"
     },
     "description": {
-      "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
+      "index": "Sídlo Komárno - virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
       "services": "Virtuális ülésszolgáltatásaink. Rugalmas fizetési lehetőségek mindenki számára. Komárno, Pozsony, Rimavská Sobota.",
       "contact": "Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
     }
@@ -56,7 +56,8 @@
     "subtitle": "Egyszerű és átlátható árak rejtett díjak nélkül.",
     "bratislava": "Pozsony",
     "komarno": "Komárom",
-    "period": "ÁFA nélkül / év"
+    "periodKomarno": "ÁFÁ-val / év",
+    "periodBratislava": "ÁFA nélkül / év"
   },
   "servicesIntro": {
     "text1": "Ha úgy döntött, hogy megváltoztatja székhelyét, nevét, tagjait, ügyvezetőit vagy bővíti tevékenységi köreit az Ön Kft-jében, vállalatunk teljes mértékben az Ön rendelkezésére áll. Nálunk bármilyen változást elintézhet Kft-jében hivatalról hivatalra járás, stressz és végtelen bürokrácia nélkül. Cégünk mindent elintéz, Ön pedig nyugodtan folytathatja üzleti tevékenységét.",
@@ -91,14 +92,14 @@
     "link": "TEKINTSE MEG AZ ÖSSZES SZOLGÁLTATÁSUNKAT"
   },
   "errorPage": {
-    "title": "Az oldal nem található - Virtuálne sídlo",
+    "title": "Az oldal nem található - Sídlo Komárno",
     "heading": "Ez az oldal nem található",
     "message": "Lehet, hogy áthelyezték vagy a cím hibás. Próbáljon visszatérni a kezdőlapra, vagy lépjen velünk kapcsolatba.",
     "backHome": "Vissza a kezdőlapra",
     "contact": "Kapcsolat"
   },
   "errorPage500": {
-    "title": "Szerverhiba - Virtuálne sídlo",
+    "title": "Szerverhiba - Sídlo Komárno",
     "heading": "Belső szerverhiba",
     "message": "Valami hiba történt a szerveren. Kérjük, próbálja meg később.",
     "backHome": "Vissza a kezdőlapra",
@@ -115,7 +116,7 @@
     "cookies": "Cookies",
     "privacy": "Adatvédelem",
     "terms": "Általános Szerződési Feltételek",
-    "copyright": "© 2025 Virtuálne sídlo. Minden jog fenntartva."
+    "copyright": "© 2026 Sídlo Komárno. Minden jog fenntartva."
   },
   "servicesPage": {
     "heroLabel": "Csomagjaink",

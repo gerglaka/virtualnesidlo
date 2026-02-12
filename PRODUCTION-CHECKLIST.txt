@@ -1,0 +1,131 @@
+====================================================
+  PRODUCTION CHECKLIST - sidlokomarno.sk
+====================================================
+
+
+1. DOMAIN & DNS
+----------------------------------------------------
+   [ ] Purchase the domain sidlokomarno.sk (e.g. via Websupport, Wedos, or another .sk registrar)
+   [ ] Point DNS nameservers to your hosting provider
+   [ ] Create an A record pointing to your server's IP address
+   [ ] Create a CNAME record for "www" pointing to sidlokomarno.sk
+   [ ] Wait for DNS propagation (can take up to 48 hours)
+
+
+2. HOSTING
+----------------------------------------------------
+   [ ] Choose a hosting provider (Websupport, Wedos, Netlify, Vercel, or VPS)
+   [ ] Upload all project files to the hosting server
+   [ ] Verify the directory structure is correct on the server
+   [ ] Set index.html as the default document
+
+
+3. SSL CERTIFICATE (HTTPS)
+----------------------------------------------------
+   [ ] Install an SSL certificate (Let's Encrypt is free)
+   [ ] Force HTTPS redirect (redirect all HTTP traffic to HTTPS)
+   [ ] Verify the padlock icon appears in the browser
+
+
+4. MISSING ASSETS
+----------------------------------------------------
+   [ ] Add logo.svg (or logo.png) to the /images/ folder
+   [ ] Add og-image.jpg for social media previews (referenced in HTML but missing)
+   [ ] Verify all gallery images exist (photo1.jpg, photo3.jpg, photo4.jpg, photo6.jpg — note: photo2.jpg and photo5.jpg are missing)
+   [ ] Verify office images load correctly (office-hero.jpg, office-main.jpg, office-secondary.jpg, office1-3.jpg)
+
+
+5. UPDATE PLACEHOLDER CONTENT
+----------------------------------------------------
+   [x] Replace email placeholder "yyyy@yyyy.com" with virtualnesidlokn@gmail.com — DONE
+   [x] Replace email placeholder "yxyxyxy@yxxyxyyx.sk" in contact.html and services.html — DONE
+   [x] Update copyright year to 2026 in all files — DONE
+   [x] Create robots.txt — DONE
+   [x] Create sitemap.xml — DONE
+   [ ] Update the og:url meta tag to https://sidlokomarno.sk (do after domain is live)
+   [ ] Add canonical URL tags to each page (do after domain is live)
+   [ ] Update the structured data (JSON-LD) "url" field to https://sidlokomarno.sk (do after domain is live)
+   [ ] Verify phone number +421907056857 is correct
+   [ ] Verify business address is correct
+   [ ] Review all text content for typos and accuracy
+
+
+6. SEO & META TAGS (do after domain is connected)
+----------------------------------------------------
+   [ ] Update og:url to https://sidlokomarno.sk on all pages
+   [ ] Add canonical URL tags (<link rel="canonical" href="https://sidlokomarno.sk/...">) to each page
+   [ ] Verify meta descriptions are accurate on all pages
+
+
+7. FAVICON
+----------------------------------------------------
+   [ ] Replace logo.png favicon with proper favicon files:
+       - favicon.ico (32x32)
+       - favicon.svg (for modern browsers)
+       - apple-touch-icon.png (180x180)
+   [ ] Update <link rel="icon"> tags in all HTML files
+
+
+8. PERFORMANCE
+----------------------------------------------------
+   [ ] Compress/optimize all JPG images (use TinyPNG, Squoosh, or similar)
+   [ ] Minify styles.css for production
+   [ ] Minify script.js and i18n.js for production
+   [ ] Add cache headers on the server for static assets (images, CSS, JS)
+   [ ] Test page load speed with Google PageSpeed Insights
+
+
+9. ERROR PAGES
+----------------------------------------------------
+   [ ] Configure the server to serve 404.html for not-found pages
+   [ ] Configure the server to serve 500.html for server errors
+   [ ] Test that error pages display correctly
+
+
+10. FORMS & CONTACT
+----------------------------------------------------
+    [x] Contact form connected to Google Forms — DONE
+    [ ] Test that form submissions are received at virtualnesidlokn@gmail.com
+
+
+11. ANALYTICS & TRACKING
+----------------------------------------------------
+    [ ] Set up Google Analytics (or an alternative like Plausible/Umami)
+    [ ] Add the tracking script to all pages
+    [ ] Set up Google Search Console and verify domain ownership
+    [ ] Submit sitemap.xml in Google Search Console
+
+
+12. LEGAL / COMPLIANCE
+----------------------------------------------------
+    [ ] Add a cookie consent banner (required by EU/GDPR)
+    [ ] Create and link a Privacy Policy page (Zasady ochrany osobnych udajov)
+    [ ] Create and link Terms of Service if applicable (Obchodne podmienky)
+    [ ] Verify GDPR compliance for any data collected via forms
+
+
+13. FINAL TESTING
+----------------------------------------------------
+    [ ] Test all pages on desktop (Chrome, Firefox, Safari, Edge)
+    [ ] Test all pages on mobile devices
+    [ ] Test language switching (SK/HU) works correctly
+    [ ] Test all navigation links work (no broken links)
+    [ ] Test contact form submission
+    [ ] Test 404 page by visiting a non-existent URL
+    [ ] Validate HTML with https://validator.w3.org
+    [ ] Check accessibility with Lighthouse or WAVE
+
+
+14. GO LIVE
+----------------------------------------------------
+    [ ] Final DNS verification — sidlokomarno.sk resolves correctly
+    [ ] www.sidlokomarno.sk redirects to sidlokomarno.sk (or vice versa)
+    [ ] HTTPS works on all pages
+    [ ] Share the URL and verify og:image preview on social media (use https://developers.facebook.com/tools/debug/)
+    [ ] Monitor Google Search Console for crawl errors in the following days
+
+
+====================================================
+  Domain: sidlokomarno.sk
+  Project: Virtualne sidlo Komarno
+====================================================

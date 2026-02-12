@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": {
-      "index": "Virtuálne sídlo - Najlepšie virtuálne sídlo na Slovensku",
-      "services": "Služby - Virtuálne sídlo",
-      "contact": "Kontakt - Virtuálne sídlo"
+      "index": "Sídlo Komárno - Najlepšie virtuálne sídlo na Slovensku",
+      "services": "Služby - Sídlo Komárno",
+      "contact": "Kontakt - Sídlo Komárno"
     },
     "description": {
-      "index": "Virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
+      "index": "Sídlo Komárno - virtuálne sídlo už od 25€+DPH mesačne. Profesionálne riešenie pre vašu firmu bez ďalších poplatkov.",
       "services": "Naše služby virtuálneho sídla. Flexibilné možnosti platby pre každého. Komárno, Bratislava, Rimavská Sobota.",
       "contact": "Kontaktujte nás pre virtuálne sídlo. VIVA PARK 6139/1-A0, Komárno. Rýchle a profesionálne riešenie pre vašu firmu."
     }
@@ -56,7 +56,8 @@
     "subtitle": "Jednoduché a transparentné ceny bez skrytých poplatkov.",
     "bratislava": "Bratislava",
     "komarno": "Komárno",
-    "period": "bez DPH / rok"
+    "periodKomarno": "s DPH / rok",
+    "periodBratislava": "bez DPH / rok"
   },
   "servicesIntro": {
     "text1": "Ak ste sa rozhodli zmeniť sídlo, názov, spoločníkov, konateľov či doplniť predmety podnikania do vašej SRO tak je tu naša spoločnosť pre vás plne k dispozícií. Cez nás môžete zrealizovať akúkoľvek zmenu vo vašej SRO bez behania po úradoch, stresov či nekonečnej byrokracie. Naša spoločnosť sa o všetko postará a vy sa môžete pokojne naďalej venovať svojim podnikateľským aktivitám",
@@ -91,14 +92,14 @@
     "link": "POZRITE SI VŠETKY NAŠE SLUŽBY"
   },
   "errorPage": {
-    "title": "Stránka nebola nájdená - Virtuálne sídlo",
+    "title": "Stránka nebola nájdená - Sídlo Komárno",
     "heading": "Táto stránka neexistuje",
     "message": "Možno bola presunutá alebo je adresa nesprávna. Skúste sa vrátiť na úvodnú stránku alebo nás kontaktovať.",
     "backHome": "Späť na domov",
     "contact": "Kontaktovať nás"
   },
   "errorPage500": {
-    "title": "Interná chyba servera - Virtuálne sídlo",
+    "title": "Interná chyba servera - Sídlo Komárno",
     "heading": "Interná chyba servera",
     "message": "Niečo sa pokazilo na našej strane. Skúste to prosím o chvíľu znova.",
     "backHome": "Späť na domov",
@@ -115,7 +116,7 @@
     "cookies": "Cookies",
     "privacy": "Ochrana údajov",
     "terms": "Obchodné podmienky",
-    "copyright": "© 2025 Virtuálne sídlo. Všetky práva vyhradené."
+    "copyright": "© 2026 Sídlo Komárno. Všetky práva vyhradené."
   },
   "servicesPage": {
     "heroLabel": "Služby",
