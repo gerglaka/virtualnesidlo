@@ -1812,9 +1812,8 @@ html[lang="hu"] .contact-value.lang-toggle .phone-sk {
 }
 
 
-.submit-button:active {
-    transform: translateY(0);
-} {
+@media (max-width: 1024px) {
+    .hero-title {
         font-size: 2.5rem;
     }
 
