@@ -668,17 +668,223 @@ function showAlert(message, type = 'info') {
     }, 5000);
 }
 
+// ===== COOKIE CONSENT + GOOGLE ANALYTICS =====
+var CookieConsent = {
+    GA_ID: 'G-MMD1Q2JDMW',
+    STORAGE_KEY: 'cookie-consent',
+
+    init: function() {
+        var consent = this.getConsent();
+        if (consent === 'accepted') {
+            this.loadGA();
+        } else if (consent === null) {
+            this.showBanner();
+        }
+    },
+
+    getConsent: function() {
+        try { return localStorage.getItem(this.STORAGE_KEY); }
+        catch(e) { return null; }
+    },
+
+    setConsent: function(value) {
+        try { localStorage.setItem(this.STORAGE_KEY, value); }
+        catch(e) {}
+    },
+
+    showBanner: function() {
+        var self = this;
+        var isHu = window.I18n && window.I18n.currentLang === 'hu';
+
+        var banner = document.createElement('div');
+        banner.className = 'cookie-banner visible';
+        banner.id = 'cookieBanner';
+        banner.innerHTML =
+            '<div class="cookie-banner-inner">' +
+                '<div class="cookie-banner-text">' +
+                    (isHu
+                        ? 'Ez a webhely cookie-kat használ a weboldal működésének biztosításához és a látogatottság elemzéséhez (Google Analytics). A „Prijať" gombra kattintva elfogadja a cookie-k használatát. <a onclick="showCookiePolicy()">Bővebben</a>'
+                        : 'Táto webová stránka používa cookies na zabezpečenie funkčnosti a analýzu návštevnosti (Google Analytics). Kliknutím na „Prijať" súhlasíte s používaním cookies. <a onclick="showCookiePolicy()">Viac informácií</a>'
+                    ) +
+                '</div>' +
+                '<div class="cookie-banner-buttons">' +
+                    '<button class="cookie-btn cookie-btn-decline" id="cookieDecline">' +
+                        (isHu ? 'Elutasítás' : 'Odmietnuť') +
+                    '</button>' +
+                    '<button class="cookie-btn cookie-btn-accept" id="cookieAccept">' +
+                        (isHu ? 'Elfogadás' : 'Prijať') +
+                    '</button>' +
+                '</div>' +
+            '</div>';
+
+        document.body.appendChild(banner);
+
+        document.getElementById('cookieAccept').addEventListener('click', function() {
+            self.accept();
+        });
+        document.getElementById('cookieDecline').addEventListener('click', function() {
+            self.decline();
+        });
+    },
+
+    hideBanner: function() {
+        var banner = document.getElementById('cookieBanner');
+        if (banner) banner.remove();
+    },
+
+    accept: function() {
+        this.setConsent('accepted');
+        this.hideBanner();
+        this.loadGA();
+    },
+
+    decline: function() {
+        this.setConsent('declined');
+        this.hideBanner();
+    },
+
+    loadGA: function() {
+        if (document.getElementById('ga-script')) return;
+
+        var script = document.createElement('script');
+        script.id = 'ga-script';
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + this.GA_ID;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', this.GA_ID);
+    },
+
+    resetConsent: function() {
+        try { localStorage.removeItem(this.STORAGE_KEY); }
+        catch(e) {}
+        this.showBanner();
+    }
+};
+
+// Init cookie consent after i18n is ready
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() { CookieConsent.init(); }, 300);
+});
+
+// ===== LEGAL MODALS =====
+function getLegalContent() {
+    var isHu = window.I18n && window.I18n.currentLang === 'hu';
+
+    return {
+        cookies: {
+            title: isHu ? 'Cookie szabályzat' : 'Zásady používania cookies',
+            body: isHu
+                ? '<h3>Mik azok a cookie-k?</h3><p>A cookie-k kis szöveges fájlok, amelyeket a weboldal tárol az Ön eszközén a webhely működésének biztosítása és a felhasználói élmény javítása érdekében.</p>' +
+                  '<h3>Milyen cookie-kat használunk?</h3>' +
+                  '<ul><li><strong>Szükséges cookie-k</strong> – a weboldal alapvető működéséhez szükségesek (pl. nyelvi beállítás, cookie-hozzájárulás). Ezek nem gyűjtenek személyes adatokat.</li>' +
+                  '<li><strong>Analitikai cookie-k (Google Analytics)</strong> – anonim statisztikákat gyűjtenek a weboldal látogatottságáról. Ezeket csak az Ön beleegyezésével aktiváljuk.</li></ul>' +
+                  '<h3>Beleegyezés kezelése</h3><p>A cookie-beállításait bármikor módosíthatja. Az analitikai cookie-k csak az Ön kifejezett beleegyezésével kerülnek aktiválásra.</p>' +
+                  '<h3>Kapcsolat</h3><p>Cookie-kkal kapcsolatos kérdéseivel forduljon hozzánk: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
+                : '<h3>Čo sú cookies?</h3><p>Cookies sú malé textové súbory, ktoré webová stránka ukladá vo vašom zariadení na zabezpečenie funkčnosti a zlepšenie používateľského zážitku.</p>' +
+                  '<h3>Aké cookies používame?</h3>' +
+                  '<ul><li><strong>Nevyhnutné cookies</strong> – sú potrebné pre základné fungovanie webu (napr. jazykové nastavenie, súhlas s cookies). Nezhromažďujú osobné údaje.</li>' +
+                  '<li><strong>Analytické cookies (Google Analytics)</strong> – zhromažďujú anonymné štatistiky o návštevnosti webu. Aktivujú sa len s vaším súhlasom.</li></ul>' +
+                  '<h3>Správa súhlasu</h3><p>Svoje nastavenia cookies môžete kedykoľvek zmeniť. Analytické cookies sa aktivujú len s vaším výslovným súhlasom.</p>' +
+                  '<h3>Kontakt</h3><p>S otázkami ohľadom cookies nás kontaktujte na: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
+        },
+        privacy: {
+            title: isHu ? 'Adatvédelmi szabályzat' : 'Zásady ochrany osobných údajov',
+            body: isHu
+                ? '<h3>Adatkezelő</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Szlovákia<br>E-mail: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>' +
+                  '<h3>Milyen adatokat gyűjtünk?</h3>' +
+                  '<ul><li><strong>Kapcsolatfelvételi űrlap</strong> – név, e-mail, telefon (opcionális), üzenet, cégnév és IČO (opcionális)</li>' +
+                  '<li><strong>Analitikai adatok</strong> – anonim látogatottsági adatok Google Analytics-en keresztül (csak beleegyezéssel)</li></ul>' +
+                  '<h3>Adatkezelés célja</h3><p>Az adatokat kizárólag az Ön megkeresésére történő válaszadás és szolgáltatásaink nyújtása céljából dolgozzuk fel. Az adatokat harmadik félnek nem adjuk el és nem adjuk tovább.</p>' +
+                  '<h3>Adatmegőrzés</h3><p>Kapcsolatfelvételi adatait az ügyfélkapcsolat idejére őrizzük meg, de legfeljebb 3 évig. Analitikai adatok 26 hónapig kerülnek megőrzésre.</p>' +
+                  '<h3>Az Ön jogai</h3><p>Az EU GDPR rendelet (2016/679) értelmében Önnek joga van: hozzáférést kérni adataihoz, azok javítását, törlését kérni, az adatkezelés korlátozását kérni, valamint panaszt tenni a felügyeleti hatóságnál.</p>' +
+                  '<h3>Kapcsolat</h3><p>Adatvédelmi kérdéseivel forduljon hozzánk: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
+                : '<h3>Prevádzkovateľ</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Slovensko<br>E-mail: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>' +
+                  '<h3>Aké údaje zbierame?</h3>' +
+                  '<ul><li><strong>Kontaktný formulár</strong> – meno, e-mail, telefón (voliteľné), správa, názov firmy a IČO (voliteľné)</li>' +
+                  '<li><strong>Analytické údaje</strong> – anonymné údaje o návštevnosti cez Google Analytics (len so súhlasom)</li></ul>' +
+                  '<h3>Účel spracovania</h3><p>Údaje spracúvame výlučne za účelom odpovede na vašu požiadavku a poskytovania našich služieb. Údaje nepredávame ani neposkytujeme tretím stranám.</p>' +
+                  '<h3>Doba uchovávania</h3><p>Kontaktné údaje uchovávame po dobu trvania obchodného vzťahu, maximálne 3 roky. Analytické údaje sa uchovávajú 26 mesiacov.</p>' +
+                  '<h3>Vaše práva</h3><p>Podľa nariadenia EÚ GDPR (2016/679) máte právo na: prístup k údajom, opravu, vymazanie, obmedzenie spracovania a podanie sťažnosti na dozorný orgán (Úrad na ochranu osobných údajov SR).</p>' +
+                  '<h3>Kontakt</h3><p>S otázkami ohľadom ochrany údajov nás kontaktujte na: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
+        },
+        terms: {
+            title: isHu ? 'Általános Szerződési Feltételek' : 'Obchodné podmienky',
+            body: isHu
+                ? '<h3>Szolgáltató</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Szlovákia</p>' +
+                  '<h3>Szolgáltatások</h3><p>Társaságunk virtuális székhely szolgáltatást nyújt, amely magában foglalja: a székhely létrehozásához való hozzájárulást, küldemények átvételét és megőrzését, e-mail értesítéseket, szkennelést és a posta továbbítását.</p>' +
+                  '<h3>Árak és fizetés</h3><p>Az árak a weboldalon találhatók. A fizetés előre, banki átutalással történik. Az árak ÁFA nélkül értendők, hacsak másképp nincs feltüntetve.</p>' +
+                  '<h3>Szerződés időtartama</h3><p>A szerződés az előfizetés időtartamára (havi/éves) jön létre, és automatikusan meghosszabbodik, hacsak bármelyik fél a lejárat előtt legalább 1 hónappal nem mondja fel.</p>' +
+                  '<h3>Felmondás</h3><p>Bármelyik fél felmondhatja a szolgáltatást 1 hónapos felmondási idővel (éves csomag esetén 3 hónap). A felmondást írásban kell benyújtani.</p>' +
+                  '<h3>Felelősség</h3><p>A szolgáltató kizárólag a közvetlen károkért felel, legfeljebb az éves szolgáltatási díj összegéig.</p>' +
+                  '<h3>Kapcsolat</h3><p>Kérdéseivel forduljon hozzánk: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
+                : '<h3>Prevádzkovateľ</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Slovensko</p>' +
+                  '<h3>Služby</h3><p>Naša spoločnosť poskytuje službu virtuálneho sídla, ktorá zahŕňa: súhlas so zriadením sídla, preberanie a úschovu zásielok, e-mailové notifikácie, skenovanie a preposielanie pošty.</p>' +
+                  '<h3>Ceny a platba</h3><p>Ceny sú uvedené na webovej stránke. Platba sa realizuje vopred bankovým prevodom. Ceny sú uvedené bez DPH, ak nie je uvedené inak.</p>' +
+                  '<h3>Doba trvania zmluvy</h3><p>Zmluva sa uzatvára na dobu predplatného (mesačne/ročne) a automaticky sa predlžuje, ak ju ktorákoľvek strana nevypovie najmenej 1 mesiac pred uplynutím.</p>' +
+                  '<h3>Výpoveď</h3><p>Ktorákoľvek strana môže službu vypovedať s výpovednou lehotou 1 mesiac (pri ročnom balíku 3 mesiace). Výpoveď musí byť podaná písomne.</p>' +
+                  '<h3>Zodpovednosť</h3><p>Poskytovateľ zodpovedá výlučne za priame škody, maximálne do výšky ročného poplatku za službu.</p>' +
+                  '<h3>Kontakt</h3><p>S otázkami nás kontaktujte na: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
+        }
+    };
+}
+
+function showLegalModal(type) {
+    // Remove existing modal
+    var existing = document.getElementById('legalModal');
+    if (existing) existing.remove();
+
+    var content = getLegalContent()[type];
+    if (!content) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'legal-modal-overlay visible';
+    overlay.id = 'legalModal';
+    overlay.innerHTML =
+        '<div class="legal-modal">' +
+            '<div class="legal-modal-header">' +
+                '<h2>' + content.title + '</h2>' +
+                '<button class="legal-modal-close" onclick="closeLegalModal()">&times;</button>' +
+            '</div>' +
+            '<div class="legal-modal-body">' + content.body + '</div>' +
+        '</div>';
+
+    document.body.appendChild(overlay);
+
+    // Close on overlay click
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeLegalModal();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function handler(e) {
+        if (e.key === 'Escape') {
+            closeLegalModal();
+            document.removeEventListener('keydown', handler);
+        }
+    });
+}
+
+function closeLegalModal() {
+    var modal = document.getElementById('legalModal');
+    if (modal) modal.remove();
+}
+
 // Footer legal links functionality
 function showCookiePolicy() {
-    showAlert(window.I18n ? window.I18n.t('alerts.cookieInfo') : 'Informácie o cookies budú dostupné čoskoro.', 'info');
+    showLegalModal('cookies');
 }
 
 function showPrivacyPolicy() {
-    showAlert(window.I18n ? window.I18n.t('alerts.privacyInfo') : 'Zásady ochrany údajov budú dostupné čoskoro.', 'info');
+    showLegalModal('privacy');
 }
 
 function showTerms() {
-    showAlert(window.I18n ? window.I18n.t('alerts.termsInfo') : 'Obchodné podmienky budú dostupné čoskoro.', 'info');
+    showLegalModal('terms');
 }
 
 // Mobile menu functionality

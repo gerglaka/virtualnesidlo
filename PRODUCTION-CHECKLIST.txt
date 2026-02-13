@@ -6,33 +6,33 @@
 1. DOMAIN & DNS
 ----------------------------------------------------
    [ ] Purchase the domain sidlokomarno.sk (e.g. via Websupport, Wedos, or another .sk registrar)
-   [ ] Point DNS nameservers to your hosting provider
-   [ ] Create an A record pointing to your server's IP address
-   [ ] Create a CNAME record for "www" pointing to sidlokomarno.sk
+   [ ] Point DNS to Vercel (A record: 76.76.21.21)
+   [ ] Create a CNAME record for "www" pointing to cname.vercel-dns.com
    [ ] Wait for DNS propagation (can take up to 48 hours)
 
 
 2. HOSTING
 ----------------------------------------------------
-   [ ] Choose a hosting provider (Websupport, Wedos, Netlify, Vercel, or VPS)
-   [ ] Upload all project files to the hosting server
-   [ ] Verify the directory structure is correct on the server
-   [ ] Set index.html as the default document
+   [x] Vercel selected as hosting provider — DONE
+   [x] vercel.json configured (clean URLs, 404 routing, cache headers) — DONE
+   [ ] Import repository on Vercel and deploy
+   [ ] Connect custom domain in Vercel project settings
 
 
 3. SSL CERTIFICATE (HTTPS)
 ----------------------------------------------------
-   [ ] Install an SSL certificate (Let's Encrypt is free)
-   [ ] Force HTTPS redirect (redirect all HTTP traffic to HTTPS)
-   [ ] Verify the padlock icon appears in the browser
+   [x] Vercel provides automatic SSL — handled by Vercel
+   [ ] Verify the padlock icon appears in the browser after deploy
 
 
 4. MISSING ASSETS
 ----------------------------------------------------
-   [ ] Add logo.svg (or logo.png) to the /images/ folder
-   [ ] Add og-image.jpg for social media previews (referenced in HTML but missing)
-   [ ] Verify all gallery images exist (photo1.jpg, photo3.jpg, photo4.jpg, photo6.jpg — note: photo2.jpg and photo5.jpg are missing)
-   [ ] Verify office images load correctly (office-hero.jpg, office-main.jpg, office-secondary.jpg, office1-3.jpg)
+   [x] Add logo.svg to /images/ folder — DONE
+   [x] Add green-logo.png and black-logo.png to /images/ folder — DONE
+   [x] Generate og-image.jpg (1200x630) from hero image — DONE
+   [x] Update og:image URLs to absolute (https://sidlokomarno.sk/...) — DONE
+   [x] Fix gallery slideshow paths (photo2.jpeg, photo5.jpeg) — DONE
+   [ ] Verify office images load correctly on live site
 
 
 5. UPDATE PLACEHOLDER CONTENT
@@ -41,66 +41,76 @@
    [x] Replace email placeholder "yxyxyxy@yxxyxyyx.sk" in contact.html and services.html — DONE
    [x] Update copyright year to 2026 in all files — DONE
    [x] Create robots.txt — DONE
-   [x] Create sitemap.xml — DONE
-   [ ] Update the og:url meta tag to https://sidlokomarno.sk (do after domain is live)
-   [ ] Add canonical URL tags to each page (do after domain is live)
-   [ ] Update the structured data (JSON-LD) "url" field to https://sidlokomarno.sk (do after domain is live)
+   [x] Create sitemap.xml (updated with clean URLs) — DONE
+   [x] Update og:url meta tags to https://sidlokomarno.sk — DONE
+   [x] Add canonical URL tags to index.html and contact.html — DONE
+   [x] Update structured data (JSON-LD) "url" field — DONE
    [ ] Verify phone number +421907056857 is correct
    [ ] Verify business address is correct
    [ ] Review all text content for typos and accuracy
 
 
-6. SEO & META TAGS (do after domain is connected)
+6. SEO & META TAGS
 ----------------------------------------------------
-   [ ] Update og:url to https://sidlokomarno.sk on all pages
-   [ ] Add canonical URL tags (<link rel="canonical" href="https://sidlokomarno.sk/...">) to each page
+   [x] og:url set to https://sidlokomarno.sk on index.html and contact.html — DONE
+   [x] Canonical URL tags added to index.html and contact.html — DONE
+   [x] og:image set to absolute URL — DONE
+   [x] Structured data URL added — DONE
    [ ] Verify meta descriptions are accurate on all pages
 
 
 7. FAVICON
 ----------------------------------------------------
-   [ ] Replace logo.png favicon with proper favicon files:
-       - favicon.ico (32x32)
-       - favicon.svg (for modern browsers)
-       - apple-touch-icon.png (180x180)
-   [ ] Update <link rel="icon"> tags in all HTML files
+   [x] Generated favicon.ico (16x16 + 32x32) from green-logo.png — DONE
+   [x] Generated favicon-32x32.png — DONE
+   [x] Generated apple-touch-icon.png (180x180) — DONE
+   [x] Updated <link rel="icon"> tags in all 4 HTML files — DONE
 
 
 8. PERFORMANCE
 ----------------------------------------------------
-   [ ] Compress/optimize all JPG images (use TinyPNG, Squoosh, or similar)
-   [ ] Minify styles.css for production
-   [ ] Minify script.js and i18n.js for production
-   [ ] Add cache headers on the server for static assets (images, CSS, JS)
+   [x] Compressed/optimized all JPG images — DONE
+       - office2.jpg: 2.3MB → 599KB (74% saved)
+       - office-main.jpg: 850KB → 91KB (89% saved)
+       - office-secondary.jpg: 775KB → 121KB (84% saved)
+       - office3.jpg: 510KB → 139KB (73% saved)
+       - gallery/photo6.jpg: 492KB → 168KB (66% saved)
+       - Total saved: ~3.4MB
+   [x] Cache headers configured in vercel.json — DONE
+   [ ] Minify styles.css for production (optional, Vercel compresses via gzip)
+   [ ] Minify script.js and i18n.js for production (optional)
    [ ] Test page load speed with Google PageSpeed Insights
 
 
 9. ERROR PAGES
 ----------------------------------------------------
-   [ ] Configure the server to serve 404.html for not-found pages
-   [ ] Configure the server to serve 500.html for server errors
-   [ ] Test that error pages display correctly
+   [x] 404.html routing configured in vercel.json — DONE
+   [ ] Test that 404 page displays correctly on live site
+   [ ] Test that 500.html displays correctly (if applicable)
 
 
 10. FORMS & CONTACT
 ----------------------------------------------------
-    [x] Contact form connected to Google Forms — DONE
+    [x] Contact form connected to Google Sheets — DONE
     [ ] Test that form submissions are received at virtualnesidlokn@gmail.com
 
 
 11. ANALYTICS & TRACKING
 ----------------------------------------------------
-    [ ] Set up Google Analytics (or an alternative like Plausible/Umami)
-    [ ] Add the tracking script to all pages
+    [x] Google Analytics 4 integrated (G-MMD1Q2JDMW) — DONE
+    [x] GA loads only after cookie consent (GDPR compliant) — DONE
+    [x] GA script dynamically injected on all pages via script.js — DONE
     [ ] Set up Google Search Console and verify domain ownership
     [ ] Submit sitemap.xml in Google Search Console
 
 
 12. LEGAL / COMPLIANCE
 ----------------------------------------------------
-    [ ] Add a cookie consent banner (required by EU/GDPR)
-    [ ] Create and link a Privacy Policy page (Zasady ochrany osobnych udajov)
-    [ ] Create and link Terms of Service if applicable (Obchodne podmienky)
+    [x] Cookie consent banner added (GDPR compliant, bilingual SK/HU) — DONE
+    [x] Cookie policy modal with real content (SK/HU) — DONE
+    [x] Privacy policy modal with real content (SK/HU) — DONE
+    [x] Terms of service modal with real content (SK/HU) — DONE
+    [x] GA blocked until explicit consent — DONE
     [ ] Verify GDPR compliance for any data collected via forms
 
 
@@ -109,6 +119,8 @@
     [ ] Test all pages on desktop (Chrome, Firefox, Safari, Edge)
     [ ] Test all pages on mobile devices
     [ ] Test language switching (SK/HU) works correctly
+    [ ] Test cookie consent banner appears and functions correctly
+    [ ] Test legal modals (cookies, privacy, terms) open correctly
     [ ] Test all navigation links work (no broken links)
     [ ] Test contact form submission
     [ ] Test 404 page by visiting a non-existent URL
@@ -118,14 +130,20 @@
 
 14. GO LIVE
 ----------------------------------------------------
+    [ ] Push all changes to GitHub
+    [ ] Deploy on Vercel
+    [ ] Connect domain in Vercel settings
     [ ] Final DNS verification — sidlokomarno.sk resolves correctly
     [ ] www.sidlokomarno.sk redirects to sidlokomarno.sk (or vice versa)
     [ ] HTTPS works on all pages
-    [ ] Share the URL and verify og:image preview on social media (use https://developers.facebook.com/tools/debug/)
+    [ ] Share the URL and verify og:image preview (https://developers.facebook.com/tools/debug/)
+    [ ] Set up Google Search Console and submit sitemap
     [ ] Monitor Google Search Console for crawl errors in the following days
 
 
 ====================================================
   Domain: sidlokomarno.sk
   Project: Virtualne sidlo Komarno
+  Hosting: Vercel
+  Analytics: Google Analytics 4 (G-MMD1Q2JDMW)
 ====================================================
