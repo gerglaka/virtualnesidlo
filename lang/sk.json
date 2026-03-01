@@ -20,7 +20,7 @@
     "flagTitle": "Magyar verzió"
   },
   "hero": {
-    "title": "Virtuálne sídlo na prestížnej adrese",
+    "title": "Reprezentatívne sídlo pre vašu firmu",
     "subtitle": "od 25€ mesačne iba pre limitovaný počet firiem",
     "button": "Naše balíky"
   },
@@ -65,7 +65,7 @@
   },
   "servicesCards": {
     "mailTitle": "Starostlivosť o vašu poštu",
-    "mailDesc": "Vašu poštu budeme preberať, fotiť a môžeme skenovať aj jej obsah na požiadanie.",
+    "mailDesc": "Vašu poštu budeme preberať, fotiť a skenovať jej obsah.",
     "notifyTitle": "Notifikácia",
     "notifyDesc": "Ak vám príde pošta, informujeme vás o tom e-mailom.",
     "forwardTitle": "Preposielanie pošty",
@@ -75,7 +75,7 @@
   },
   "additionalBenefits": {
     "title": "Vaše výhody s našou službou",
-    "text": "Medzi ďalšie výhody patrí fakt, že nehnuteľnosť, v ktorej sa sídlo nachádza je v našom vlastníctve. Pri zakúpení tejto služby ďalej získate online evidenciu a správu pošty, skenovanie, preberanie a úschovu zásielok, emailovú notifikáciu o prijatej pošte a 1x mesačne preposielanie zásielok na vami zvolenú adresu. Získajte prémiovú adresu pre vašu firmu, dôveryhodnosť pred obchodnými partnermi."
+    "text": "Medzi ďalšie výhody patrí fakt, že nehnuteľnosť, v ktorej sa sídlo nachádza je v našom vlastníctve. Pri zakúpení tejto služby ďalej získate online evidenciu a správu pošty, skenovanie, preberanie a úschovu zásielok, emailovú notifikáciu o prijatej pošte a preposielanie zásielok na vami zvolenú adresu. Získajte prémiovú adresu pre vašu firmu, dôveryhodnosť pred obchodnými partnermi."
   },
   "whyChooseUs": {
     "title1": "Prečo si vybrať virtuálne sídlo pre vašu firmu?",
@@ -141,7 +141,7 @@
       "item3": "E-mailové notifikácie",
       "item4": "Skenovanie obsahu zásielok",
       "item5": "Preberanie doporučenej pošty",
-      "item6": "1x mesačne preposielanie zásielok na vami zvolenú adresu"
+      "item6": "Odoslanie listov na Vami uvedenú adresu podľa dohody"
     },
     "features": {
       "title1": "Rýchle zriadenie",
@@ -169,7 +169,7 @@
   },
   "contactPage": {
     "heroLabel": "Kontakt",
-    "heroTitle": "Máte na nás otázku?",
+    "heroTitle": "Máte otázku?",
     "infoTitle": "Naše kontaktné údaje",
     "emailLabel": "Email:",
     "addressLabel": "Adresa:",
@@ -193,7 +193,7 @@
     "formSubject": "Nová správa z kontaktného formulára",
     "submitButton": "Odoslať správu",
     "mapsTitle": "Kde nás nájdete",
-    "mapsInfo": "Naša kancelária sa nachádza v centre Komárna s dobrým prístupom a parkovaním v okolí.",
+    "mapsInfo": "Naša kancelária sa nachádza v Komárne s dobrým prístupom a parkovaním v okolí.",
     "mapsIframeTitle": "Naša adresa: VIVA PARK 6139/1-A0, Komárno"
   },
   "alerts": {
