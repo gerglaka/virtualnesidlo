@@ -795,7 +795,7 @@ function getLegalContent() {
         privacy: {
             title: isHu ? 'Adatvédelmi szabályzat' : 'Zásady ochrany osobných údajov',
             body: isHu
-                ? '<h3>Adatkezelő</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Szlovákia<br>E-mail: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>' +
+                ? '<h3>Adatkezelő</h3><p>FRES-CO 2012 s.r.o., Hradná 168/2, 945 01 Komárno, Szlovákia<br>E-mail: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>' +
                   '<h3>Milyen adatokat gyűjtünk?</h3>' +
                   '<ul><li><strong>Kapcsolatfelvételi űrlap</strong> – név, e-mail, telefon (opcionális), üzenet, cégnév és IČO (opcionális)</li>' +
                   '<li><strong>Analitikai adatok</strong> – anonim látogatottsági adatok Google Analytics-en keresztül (csak beleegyezéssel)</li></ul>' +
@@ -803,7 +803,7 @@ function getLegalContent() {
                   '<h3>Adatmegőrzés</h3><p>Kapcsolatfelvételi adatait az ügyfélkapcsolat idejére őrizzük meg, de legfeljebb 3 évig. Analitikai adatok 26 hónapig kerülnek megőrzésre.</p>' +
                   '<h3>Az Ön jogai</h3><p>Az EU GDPR rendelet (2016/679) értelmében Önnek joga van: hozzáférést kérni adataihoz, azok javítását, törlését kérni, az adatkezelés korlátozását kérni, valamint panaszt tenni a felügyeleti hatóságnál.</p>' +
                   '<h3>Kapcsolat</h3><p>Adatvédelmi kérdéseivel forduljon hozzánk: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
-                : '<h3>Prevádzkovateľ</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Slovensko<br>E-mail: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>' +
+                : '<h3>Prevádzkovateľ</h3><p>FRES-CO 2012 s.r.o., Hradná 168/2, 945 01 Komárno, Slovensko<br>E-mail: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>' +
                   '<h3>Aké údaje zbierame?</h3>' +
                   '<ul><li><strong>Kontaktný formulár</strong> – meno, e-mail, telefón (voliteľné), správa, názov firmy a IČO (voliteľné)</li>' +
                   '<li><strong>Analytické údaje</strong> – anonymné údaje o návštevnosti cez Google Analytics (len so súhlasom)</li></ul>' +
@@ -815,14 +815,14 @@ function getLegalContent() {
         terms: {
             title: isHu ? 'Általános Szerződési Feltételek' : 'Obchodné podmienky',
             body: isHu
-                ? '<h3>Szolgáltató</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Szlovákia</p>' +
+                ? '<h3>Szolgáltató</h3><p>FRES-CO 2012 s.r.o., Hradná 168/2, 945 01 Komárno, Szlovákia</p>' +
                   '<h3>Szolgáltatások</h3><p>Társaságunk virtuális székhely szolgáltatást nyújt, amely magában foglalja: a székhely létrehozásához való hozzájárulást, küldemények átvételét és megőrzését, e-mail értesítéseket, szkennelést és a posta továbbítását.</p>' +
                   '<h3>Árak és fizetés</h3><p>Az árak a weboldalon találhatók. A fizetés előre, banki átutalással történik. Az árak ÁFA nélkül értendők, hacsak másképp nincs feltüntetve.</p>' +
                   '<h3>Szerződés időtartama</h3><p>A szerződés az előfizetés időtartamára (havi/éves) jön létre, és automatikusan meghosszabbodik, hacsak bármelyik fél a lejárat előtt legalább 1 hónappal nem mondja fel.</p>' +
                   '<h3>Felmondás</h3><p>Bármelyik fél felmondhatja a szolgáltatást 1 hónapos felmondási idővel (éves csomag esetén 3 hónap). A felmondást írásban kell benyújtani.</p>' +
                   '<h3>Felelősség</h3><p>A szolgáltató kizárólag a közvetlen károkért felel, legfeljebb az éves szolgáltatási díj összegéig.</p>' +
                   '<h3>Kapcsolat</h3><p>Kérdéseivel forduljon hozzánk: <a href="mailto:virtualnesidlokn@gmail.com">virtualnesidlokn@gmail.com</a></p>'
-                : '<h3>Prevádzkovateľ</h3><p>Masters Office s.r.o., VIVA PARK 6139/1-A0, 945 01 Komárno, Slovensko</p>' +
+                : '<h3>Prevádzkovateľ</h3><p>FRES-CO 2012 s.r.o., Hradná 168/2, 945 01 Komárno, Slovensko</p>' +
                   '<h3>Služby</h3><p>Naša spoločnosť poskytuje službu virtuálneho sídla, ktorá zahŕňa: súhlas so zriadením sídla, preberanie a úschovu zásielok, e-mailové notifikácie, skenovanie a preposielanie pošty.</p>' +
                   '<h3>Ceny a platba</h3><p>Ceny sú uvedené na webovej stránke. Platba sa realizuje vopred bankovým prevodom. Ceny sú uvedené bez DPH, ak nie je uvedené inak.</p>' +
                   '<h3>Doba trvania zmluvy</h3><p>Zmluva sa uzatvára na dobu predplatného (mesačne/ročne) a automaticky sa predlžuje, ak ju ktorákoľvek strana nevypovie najmenej 1 mesiac pred uplynutím.</p>' +
