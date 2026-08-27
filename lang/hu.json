@@ -116,7 +116,8 @@
     "cookies": "Cookies",
     "privacy": "Adatvédelem",
     "terms": "Általános Szerződési Feltételek",
-    "copyright": "© 2026 Sídlo Komárno. Minden jog fenntartva."
+    "copyright": "© 2026 Sídlo Komárno. Minden jog fenntartva.",
+    "madeBy": "Készítette"
   },
   "servicesPage": {
     "heroLabel": "Csomagjaink",

@@ -1462,8 +1462,53 @@ html[lang="hu"] .contact-value.lang-toggle .phone-sk {
 .footer-bottom {
     border-top: 1px solid #555;
     padding-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 24px;
     color: #b3b3b3;
+}
+
+.footer-copyright {
+    margin: 0;
+}
+
+.footer-credit {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #8f8f8f;
+    letter-spacing: 0.02em;
+}
+
+.footer-credit a {
+    position: relative;
+    color: #e0e0e0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-credit a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background: #4CAF50;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.footer-credit a:hover {
+    color: #4CAF50;
+}
+
+.footer-credit a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Scroll to Top Button */
@@ -2169,6 +2214,13 @@ body {
 
     .footer-logo {
         justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
     }
 }
 
