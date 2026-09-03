@@ -3,6 +3,27 @@
 ====================================================
 
 
+0. EDITING THE SITE  (read this first)
+----------------------------------------------------
+   The Slovak pages are the source of truth for markup.
+   The Hungarian pages under hu/ are GENERATED - never edit them by hand.
+
+   After changing index.html, contact.html or lang/hu.json, run:
+
+       node build-hu.js
+
+   and commit the regenerated hu/index.html and hu/kapcsolat.html.
+   Skipping this leaves the Hungarian pages stale while the Slovak
+   ones move on, and Google will index the mismatch.
+
+   URL map:
+       /              <-> /hu               (hu/index.html)
+       /contact       <-> /hu/kapcsolat     (hu/kapcsolat.html)
+   These pairs are cross-linked with hreflang; if you add a page,
+   add both languages, both hreflang clusters, and all of it to
+   sitemap.xml.
+
+
 1. DOMAIN & DNS
 ----------------------------------------------------
    [ ] Purchase the domain sidlokomarno.sk (e.g. via Websupport, Wedos, or another .sk registrar)

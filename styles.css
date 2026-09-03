@@ -1511,6 +1511,118 @@ html[lang="hu"] .contact-value.lang-toggle .phone-sk {
     transform-origin: left;
 }
 
+/* FAQ Section */
+.faq-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8fffe, #f0f8f0);
+}
+
+.faq-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #e3ece1;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(48, 128, 3, 0.04);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item[open] {
+    border-color: #308003;
+    box-shadow: 0 6px 20px rgba(48, 128, 3, 0.09);
+}
+
+.faq-question {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 26px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Hide the native disclosure triangle */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '';
+    flex: 0 0 auto;
+    width: 11px;
+    height: 11px;
+    border-right: 2px solid #308003;
+    border-bottom: 2px solid #308003;
+    transform: rotate(45deg) translate(-3px, -3px);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+    transform: rotate(-135deg) translate(-3px, -3px);
+}
+
+.faq-question:hover {
+    color: #308003;
+}
+
+.faq-answer {
+    padding: 0 26px 24px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #666;
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-title {
+        font-size: 1.8rem;
+        margin-bottom: 32px;
+    }
+
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 20px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-item,
+    .faq-question,
+    .faq-question::after {
+        transition: none;
+    }
+}
+
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
@@ -3006,84 +3118,6 @@ body {
     text-decoration: underline;
 }
 
-/* FAQ Section */
-.faq-section {
-    padding: 100px 0;
-    background: white;
-}
-
-.faq-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 25px 30px;
-    background: #f8f9fa;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-    background: #f0f8f0;
-}
-
-.faq-question h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
-    flex: 1;
-}
-
-.faq-icon {
-    font-size: 1.5rem;
-    color: #308003;
-    font-weight: bold;
-    margin-left: 20px;
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding: 25px 30px;
-}
-
-.faq-answer p {
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-}
-
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .services-hero {
@@ -3129,26 +3163,6 @@ body {
         gap: 25px;
     }
 
-    .faq-section {
-        padding: 60px 0;
-    }
-
-    .faq-title {
-        font-size: 2rem;
-    }
-
-    .faq-question {
-        padding: 20px;
-    }
-
-    .faq-question h3 {
-        font-size: 1.1rem;
-    }
-
-    .faq-item.active .faq-answer {
-        padding: 20px;
-    }
-
     .billing-toggle {
         flex-direction: column;
         gap: 20px;
@@ -3180,18 +3194,6 @@ body {
     .checkmark-icon {
         width: 40px;
         height: 40px;
-    }
-
-    .faq-question {
-        padding: 15px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .faq-icon {
-        margin-left: 0;
-        align-self: flex-end;
     }
 }
 
