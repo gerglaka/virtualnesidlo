@@ -1,3 +1,21 @@
+# https://www.sidlokomarno.sk/robots.txt
+# Canonical host is www. Non-www and http redirect here (308/307).
+
 User-agent: *
 Allow: /
+
+# Answer-engine / AI crawlers — explicitly welcome, so the business can be
+# cited in ChatGPT, Perplexity and Google AI Overviews.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://www.sidlokomarno.sk/sitemap.xml
