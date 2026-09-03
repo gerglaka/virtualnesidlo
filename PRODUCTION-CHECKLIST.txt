@@ -24,6 +24,25 @@
    sitemap.xml.
 
 
+0b. ASSET CACHING  (why the FAQ appeared broken once)
+----------------------------------------------------
+   styles.css and script.js were served with
+   "max-age=31536000, immutable" under unversioned filenames.
+   immutable means browsers AND the Vercel/Cloudflare edge never
+   revalidate, so a CSS change could not reach anyone - the edge kept
+   serving the year-old file. New HTML + old CSS is what made the FAQ
+   look unclickable.
+
+   Fixed two ways:
+     - vercel.json now sends "max-age=0, must-revalidate" for .css/.js,
+       so the edge revalidates against the origin (cheap 304s).
+     - The ?v=20260903 query on styles.css / script.js / i18n.js is a
+       one-time URL change to break out of the existing immutable pin.
+
+   You do NOT need to bump ?v= on future deploys - must-revalidate
+   handles it now. Only bump it if you ever restore long max-age.
+
+
 1. DOMAIN & DNS
 ----------------------------------------------------
    [ ] Purchase the domain sidlokomarno.sk (e.g. via Websupport, Wedos, or another .sk registrar)

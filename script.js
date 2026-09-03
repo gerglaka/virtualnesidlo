@@ -1082,17 +1082,4 @@ function initializeServicesBillingToggle() {
 // Initialize services page functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeServicesBillingToggle();
-    
-    // Add smooth scroll behavior for FAQ items
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            setTimeout(() => {
-                this.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'nearest' 
-                });
-            }, 300);
-        });
-    });
 });
