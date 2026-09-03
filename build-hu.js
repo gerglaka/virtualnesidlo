@@ -189,8 +189,16 @@ function rewriteSchema(html, page) {
           name: "Virtuális székhely Komárom",
           description:
             "Virtuális székhely a székhely létrehozásához szükséges hozzájárulással, küldemények átvételével és megőrzésével, szkenneléssel és e-mail értesítésekkel.",
-          price: "25",
           priceCurrency: "EUR",
+          price: "369",
+          valueAddedTaxIncluded: true,
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "369",
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: true,
+            unitCode: "ANN",
+          },
           availability: "https://schema.org/InStock",
         },
       ],
